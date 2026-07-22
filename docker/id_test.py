@@ -24,7 +24,7 @@ r = requests.get(
 
 output = '''
 ============================
-    Authentication test
+    Authentication Test
 ============================
 
 request done at "/permissions"
