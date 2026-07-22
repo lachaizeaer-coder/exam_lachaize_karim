@@ -28,8 +28,8 @@ output = '''
 ============================
 
 request done at "/permissions"
-| username={username}
-| password={password}
+| username = {username}
+| password = {password}
 
 expected result = 200
 actual restult = {status_code}
