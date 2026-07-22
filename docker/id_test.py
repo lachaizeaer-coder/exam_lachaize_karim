@@ -8,12 +8,16 @@ api_address = '0.0.0.0'
 #### API port
 api_port = 8000
 
+#### Runtime vars
+username = sys.argv[1]
+password = sys.argv[2]
+
 #### Request
 r = requests.get(
     url='http://{address}:{port}/permissions'.format(address=api_address, port=api_port),
     params= {
-        'username': sys.argv[1],
-        'password': sys.argv[2]
+        'username': username,
+        'password': password
     }
 )
 
@@ -24,8 +28,8 @@ output = '''
 ============================
 
 request done at "/permissions"
-| username="alice"
-| password="wonderland"
+| username={username}
+| password={password}
 
 expected result = 200
 actual restult = {status_code}
@@ -43,7 +47,7 @@ if status_code == 200:
     test_status = 'SUCCESS'
 else:
     test_status = 'FAILURE'
-print(output.format(status_code=status_code, test_status=test_status))
+print(output.format(username=sys.argv[1],password=sys.argv[2],status_code=status_code, test_status=test_status))
 
 # Write to log file
 if os.environ.get('LOG') == 1:
