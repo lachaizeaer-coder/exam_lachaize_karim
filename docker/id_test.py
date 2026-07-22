@@ -44,9 +44,9 @@ if status_code == 200:
 else:
     test_status = 'FAILURE'
 print(output.format(status_code=status_code, test_status=test_status))
-'''
-# To log file
+
+# Write to log file
 if os.environ.get('LOG') == 1:
     with open('api_test.log', 'a') as file:
         file.write(output)
-'''
+
