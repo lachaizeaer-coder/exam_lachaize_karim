@@ -9,7 +9,7 @@ api_address = 'localhost'
 api_port = 8000
 
 #### Vars
-version = sys.argv[0]
+version = input("Choose a version:")
 username = "alice"
 password = "wonderland"
 sentences = ["life is beautiful", "that sucks"]
@@ -26,13 +26,12 @@ for s in sentences:
         }
     )
     score = r.json()["score"]
-    result = 1 if abs(score)==score else -1
+    result = 1 if score > 0 else -1
     results.append(result)
-
 
 output = '''
 ============================
-   Sentiment Analysis test
+  Sentiment Analysis test
 ============================
 
 request done at "/v{version}/sentiment"
@@ -42,29 +41,33 @@ request done at "/v{version}/sentiment"
 | sentence = {sentence}
 
 
-sentiment analysis restult = {status_code}
+sentiment analysis restult:
+
+result sentence A = {test_status[0]}
+result sentence B = {test_status[1]}
+
 
 ==>  {test_result}
 
 '''
 
-
-
 #### Request result
 test_status = []
-test_result = 
+test_result = str()
 i=0
-while i<len(score):
-    if score[i] == 1:
+while i<len(results):
+    if results[i] == 1:
         status = 'POSITIVE'
     else:
         status = 'NEGATIVE'
     test_status.append(status)
     i+=1
-if test_status[0]== 1 and test_status[1]==-1:
+if results[0]==1 and results[1]==-1:
     test_result = 'TEST SUCCESSFUL'
+else:
+    test_result = 'TEST FAILED'
 
-print(output.format(username=username, password=password,sentence=sentences, status_code=status_code, test_status=test_status, version=version, test_result=test_result))
+print(output.format(username=username, password=password, sentence=sentences, test_status=test_status, version=version, test_result=test_result))
 
 #### Write to log file
 if os.environ.get('LOG') == 1:
