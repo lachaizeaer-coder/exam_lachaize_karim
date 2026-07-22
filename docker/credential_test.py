@@ -40,10 +40,10 @@ output = '''
 ============================
 
 request done at "/permissions"
-| username={username}
-| password={password}
+| username = {username}
+| password = {password}
 |
-| sentence={sentence}
+| sentence = {sentence}
 
 expected result = 200
 
