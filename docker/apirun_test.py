@@ -4,32 +4,38 @@ import sys
 
 
 #### API adress
-api_address = '0.0.0.0'
+api_address = 'localhost'
 #### API port
 api_port = 8000
 
-#### Runtime vars
+#### Vars
+version = sys.argv[0]
 username = "alice"
 password = "wonderland"
-sentence = sys.argv[1]
+sentences = ["life is beautiful", "that sucks"]
+results = []
 
-#### Request
-r = requests.get(
-    url='http://{address}:{port}/permissions'.format(address=api_address, port=api_port),
-    params= {
-        'username': username,
-        'password': password,
-	'sentence': sentence
-    }
-)
+#### Requests
+for s in sentences:
+    r = requests.get(
+        url='http://{address}:{port}/v{version}/sentiment'.format(address=api_address, port=api_port, version=version),
+        params= {
+            'username': username,
+            'password': password,
+            'sentence': s
+        }
+    )
+    score = r.json()["score"]
+    result = 1 if abs(score)==score else -1
+    results.append(result)
 
 
 output = '''
 ============================
-    Authentication test
+   Sentiment Analysis test
 ============================
 
-request done at "/permissions"
+request done at "/v{version}/sentiment"
 | username = {username}
 | password = {password}
 |
@@ -38,22 +44,29 @@ request done at "/permissions"
 
 sentiment analysis restult = {status_code}
 
-==>  {test_status}
+==>  {test_result}
 
 '''
 
 
-# Request status
-status_code = r.status_code
 
-# Request result
-if status_code == 200:
-    test_status = 'POSITIVE'
-else:
-    test_status = 'NEGATIVE'
-print(output.format(username=username, password=password,sentence=sentence, status_code=status_code, test_status=test_status))
+#### Request result
+test_status = []
+test_result = 
+i=0
+while i<len(score):
+    if score[i] == 1:
+        status = 'POSITIVE'
+    else:
+        status = 'NEGATIVE'
+    test_status.append(status)
+    i+=1
+if test_status[0]== 1 and test_status[1]==-1:
+    test_result = 'TEST SUCCESSFUL'
 
-# Write to log file
+print(output.format(username=username, password=password,sentence=sentences, status_code=status_code, test_status=test_status, version=version, test_result=test_result))
+
+#### Write to log file
 if os.environ.get('LOG') == 1:
     with open('api_test.log', 'a') as file:
         file.write(output)
