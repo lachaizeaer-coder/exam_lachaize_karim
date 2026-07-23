@@ -6,31 +6,39 @@ services:
     ports:
       - target: 8000
         published: 8000
+    networks:
+      - api-tests
 
   test-authn:
     image: dockerfile-id-test:latest
+    depends_on:
+      - api
     networks:
       - api-tests
     volumes:
-      - logs-volumes:/app/logs
+      - logs-volumes:/home/logs
     environment:
       LOG: 1
 
   test-authr:
     image: dockerfile-credential-test:latest
+    depends_on:
+      - api
     networks:
       - api-tests
     volumes:
-      - logs-volumes:/app/logs
+      - logs-volumes:/home/logs
     environment:
       LOG: 1
 
   test-content:
     image: dockerfile-api-run-test:latest
+    depends_on:
+      - api
     networks:
       - api-tests
     volumes:
-      - logs-volumes:/app/logs
+      - logs-volumes:/home/logs
     environment:
       LOG: 1
 
