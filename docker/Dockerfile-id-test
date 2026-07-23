@@ -5,6 +5,7 @@ WORKDIR /app
 RUN pip install requests
 
 ADD id_test.py /app
+ADD api_test.log /home/logs/
 
 ENV LOG="1"
 
