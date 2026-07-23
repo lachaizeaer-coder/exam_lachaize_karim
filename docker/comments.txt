@@ -1,3 +1,4 @@
 #### Python files ####
 - From given script:
 	- Sys module usage for runtime argument
+        - Adjusted to requirement by looping through username, versions and/or sentences
