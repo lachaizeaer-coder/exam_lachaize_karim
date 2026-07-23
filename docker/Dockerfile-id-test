@@ -1,0 +1,12 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+RUN pip install requests
+
+ADD id_test.py /app
+
+ENV LOG="1"
+
+CMD ["python3", "id_test.py"]
+
