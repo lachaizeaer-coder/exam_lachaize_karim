@@ -2,6 +2,7 @@ services:
   api:
     image: datascientest/fastapi:1.0.0
     restart: unless-stopped
+    container_name: richard_feynman
     ports:
       - target: 8000
         published: 8000
