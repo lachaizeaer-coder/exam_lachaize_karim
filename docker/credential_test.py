@@ -1,10 +1,8 @@
 import os
 import requests
-import sys
-
 
 #### API adress
-api_address = 'reverent_hodgkin'
+api_address = 'richard_feynman'
 #### API port
 api_port = 8000
 
@@ -84,7 +82,7 @@ for u in username:
         test_status_v2=test_status_v2))
 
     #### Write to log file
-    if os.environ.get('LOG') == 1:
-        with open('api_test.log', 'a') as file:
-            file.write(output)
+    if os.environ.get('LOG') == '1':
+        with open('/home/logs/api_test.log', 'a') as file:
+            file.write(output+"\n")
 
