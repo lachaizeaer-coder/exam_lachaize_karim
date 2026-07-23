@@ -9,68 +9,69 @@ api_address = 'localhost'
 api_port = 8000
 
 #### Vars
-version = input("Choose a version:")
+version = [1,2]
 username = "alice"
 password = "wonderland"
 sentences = ["life is beautiful", "that sucks"]
 results = []
 
 #### Requests
-for s in sentences:
-    r = requests.get(
-        url='http://{address}:{port}/v{version}/sentiment'.format(address=api_address, port=api_port, version=version),
-        params= {
-            'username': username,
-            'password': password,
-            'sentence': s
-        }
-    )
-    score = r.json()["score"]
-    result = 1 if score > 0 else -1
-    results.append(result)
+for v in version:
+    for s in sentences:
+        r = requests.get(
+            url='http://{address}:{port}/v{version}/sentiment'.format(address=api_address, port=api_port, version=v),
+            params= {
+                'username': username,
+                'password': password,
+                'sentence': s
+            }
+        )
+        score = r.json()["score"]
+        result = 1 if score > 0 else -1
+        results.append(result)
 
-output = '''
-============================
-  Sentiment Analysis Test
-============================
+    output = '''
+    ============================
+      Sentiment Analysis Test
+    ============================
 
-request done at "/v{version}/sentiment"
-| username = {username}
-| password = {password}
-|
-| sentence A = {sentence[0]}
-| sentence B = {sentence[1]}
-
-
-sentiment analysis restult:
-
-result sentence A = {test_status[0]}
-result sentence B = {test_status[1]}
+    request done at "/v{version}/sentiment"
+    | username = {username}
+    | password = {password}
+    |
+    | sentence A = {sentence[0]}
+    | sentence B = {sentence[1]}
 
 
-==>  {test_result}
+    sentiment analysis restult:
 
-'''
+    result sentence A = {test_status[0]}
+    result sentence B = {test_status[1]}
 
-#### Request result
-test_status = []
-test_result = str()
-i=0
-while i<len(results):
-    if results[i] == 1:
-        status = 'POSITIVE'
+
+    ==>  {test_result}
+
+    '''
+
+    #### Request result
+    test_status = []
+    test_result = str()
+    i=0
+    while i<len(results):
+        if results[i] == 1:
+            status = 'POSITIVE'
+        else:
+            status = 'NEGATIVE'
+        test_status.append(status)
+        i+=1
+    if results[0]==1 and results[1]==-1:
+        test_result = 'TEST SUCCESSFUL'
     else:
-        status = 'NEGATIVE'
-    test_status.append(status)
-    i+=1
-if results[0]==1 and results[1]==-1:
-    test_result = 'TEST SUCCESSFUL'
-else:
-    test_result = 'TEST FAILED'
+        test_result = 'TEST FAILED'
 
-print(output.format(username=username, password=password, sentence=sentences, test_status=test_status, version=version, test_result=test_result))
+    print(output.format(username=username, password=password, sentence=sentences, test_status=test_status, version=v, test_result=test_result))
 
-#### Write to log file
-if os.environ.get('LOG') == 1:
-    with open('api_test.log', 'a') as file:
-        file.write(output)
+    #### Write to log file
+    if os.environ.get('LOG') == 1:
+        with open('/home/logs/api_test.log', 'a') as file:
+            file.write(output)
