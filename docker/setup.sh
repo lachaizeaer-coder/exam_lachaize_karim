@@ -10,4 +10,8 @@ docker network connect api-tests reverent_hodgkin
 
 # FIRST TEST
 docker image build . -f Dockerfile-id-test -t dockerfile-id-test:latest
-docker container run --mount type=volume, dst=/home/logs --network api-tests dockerfile-id-test:latest
+docker container run --mount type=volume,src=logs-volume,dst=/home/logs --network api-tests dockerfile-id-test:latest
+
+# SECOND TEST
+docker image build . -f Dockerfile-credential-test -t dockerfile-credential-test:latest
+docker container run --mount type=volume,src=logs-volume,dst=/home/logs --network api-tests dockerfile-credential-test:latest
