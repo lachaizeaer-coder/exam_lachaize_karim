@@ -1,0 +1,39 @@
+services:
+  api:
+    image: datascientest/fastapi:1.0.0
+    restart: unless-stopped
+    ports:
+      - target: 8000
+        published: 8000
+
+  test-authn:
+    image: dockerfile-id-test:latest
+    networks:
+      - api-tests
+    volumes:
+      - logs-volumes:/app/logs
+    environment:
+      LOG: 1
+
+  test-authr:
+    image: dockerfile-credential-test:latest
+    networks:
+      - api-tests
+    volumes:
+      - logs-volumes:/app/logs
+    environment:
+      LOG: 1
+
+  test-content:
+    image: dockerfile-api-run-test:latest
+    networks:
+      - api-tests
+    volumes:
+      - logs-volumes:/app/logs
+    environment:
+      LOG: 1
+
+networks:
+  api-tests:
+volumes:
+  logs-volumes:
