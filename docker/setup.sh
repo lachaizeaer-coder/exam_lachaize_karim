@@ -15,3 +15,7 @@ docker container run --mount type=volume,src=logs-volume,dst=/home/logs --networ
 # SECOND TEST
 docker image build . -f Dockerfile-credential-test -t dockerfile-credential-test:latest
 docker container run --mount type=volume,src=logs-volume,dst=/home/logs --network api-tests dockerfile-credential-test:latest
+
+# THIRD TEST
+docker image build . -f Dockerfile-API-run-test -t dockerfile-api-run-test:latest
+docker container run --mount type=volume,src=logs-volume,dst=/home/logs --network api-tests dockerfile-api-run-test:latest
