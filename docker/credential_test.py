@@ -4,7 +4,7 @@ import sys
 
 
 #### API adress
-api_address = '0.0.0.0'
+api_address = 'localhost'
 #### API port
 api_port = 8000
 
