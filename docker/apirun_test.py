@@ -31,14 +31,15 @@ for s in sentences:
 
 output = '''
 ============================
-  Sentiment Analysis test
+  Sentiment Analysis Test
 ============================
 
 request done at "/v{version}/sentiment"
 | username = {username}
 | password = {password}
 |
-| sentence = {sentence}
+| sentence A = {sentence[0]}
+| sentence B = {sentence[1]}
 
 
 sentiment analysis restult:
