@@ -57,5 +57,5 @@ for u in username:
     
     #### Write to log file
     if os.environ.get('LOG') == 1:
-        with open('api_test.log', 'a') as file:
+        with open('/home/logs/api_test.log', 'a') as file:
             file.write(output)
