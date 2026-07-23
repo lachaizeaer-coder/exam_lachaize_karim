@@ -4,7 +4,7 @@ import sys
 
 
 #### API adress
-api_address = 'localhost'
+api_address = 'reverent_hodgkin'
 #### API port
 api_port = 8000
 
