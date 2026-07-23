@@ -2,7 +2,7 @@ import os
 import requests
 
 #### API adress
-api_address = 'richard_feynman'
+api_address = 'api'
 #### API port
 api_port = 8000
 
@@ -73,3 +73,4 @@ for v in version:
     if os.environ.get('LOG') == '1':
         with open('/home/logs/api_test.log', 'a') as file:
             file.write(output + "\n")
+            file.flush()
