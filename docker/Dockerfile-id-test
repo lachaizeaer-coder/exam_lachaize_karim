@@ -3,6 +3,7 @@ FROM python:3.10-slim
 WORKDIR /app
 
 RUN pip install requests
+RUN mkdir -p /home/logs
 
 ADD id_test.py /app
 ADD api_test.log /home/logs/

@@ -57,4 +57,4 @@ for u in username:
     if os.environ.get('LOG') == '1':
         with open('/home/logs/api_test.log', 'a') as file:
             file.write(output + "\n")
-            file.flush()
+
