@@ -1,0 +1,2 @@
+#cron process command
+*/1 7-21 * 3,6,11 1-5 exam.ssh
