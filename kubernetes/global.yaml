@@ -11,7 +11,7 @@ metadata:
   name: db-data
   namespace: standard
 spec:
-  storageClassName: default
+  storageClassName: nfs-rwx
   accessModes:
     - ReadWriteMany
   resources:
