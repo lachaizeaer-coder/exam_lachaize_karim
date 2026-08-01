@@ -1,4 +1,4 @@
-################# Docker Exan - TO DO LIST: #################
+################# Docker Exam - TO DO LIST: #################
 
 premier test: vérifier que la logique d'identification fonctionne bien
 --
@@ -31,8 +31,37 @@ Livrables:
 **CONNECT CONTAINER TO NETWORK AND VOLUME
 
 
-
-
-
 _________________________________________________________________
 ################# Kubernetes Exam - TO DO LIST: #################
+
+#Déployer les nouveaux micro services qui permettront l'enregistrement et le décompte des utilisateurs présents sur cette plateforme: 2 micro-services à déployer.
+->  FastAPI     (only this one can connect to ingress)
+->  PostgreSQL
+
+
+--- Define relevant K8S object (choice open)
+
+--- Write DockerFile for the FastAPI micro-service
+
+--- Start from file "docker-compose.yaml" - get the architecture right
+      (https://github.com/DataScientest/kubernetes-devops-project)
+
+- Create Subdomain													- * OK
+- Create record for the website							(fastapi-k3s.app2.abrdns.com)		- * OK
+
+--- User default Rancher storage class (StorageClass) = 10Gi / ReadWriteMany
+
+--- Define 3 replicas at deployment stage
+
+--- Connection URL between Fastapi PostgreSQL database: postgresql://admin:password@db:5432/storedb.
+
+### Service name for FastAPI to connect with the PostgreSQL database: db
+### Déployment using Kubernetes YAML files
+### Namespace = standard
+
+##################### DELIVERY #####################
+
+- Zip Format containing:
+- Folder:  YAML-STANTARD
+- Micro-services log files (FastAPI, PostgreSQL)
+- Backup file for database ETCD (once everything is in place)
