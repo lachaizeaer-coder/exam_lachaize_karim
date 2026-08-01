@@ -34,6 +34,13 @@ Livrables:
 _________________________________________________________________
 ################# Kubernetes Exam - TO DO LIST: #################
 
+- storageClassName to define in fastapi.yaml
+- SECRETS to create and fill
+- CONFIGMAP to create and fill
+- Ingress to setup
+- Backup to setup
+- Check Delivery
+
 #Déployer les nouveaux micro services qui permettront l'enregistrement et le décompte des utilisateurs présents sur cette plateforme: 2 micro-services à déployer.
 ->  FastAPI     (only this one can connect to ingress)
 ->  PostgreSQL
