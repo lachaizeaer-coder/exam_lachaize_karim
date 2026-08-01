@@ -2,7 +2,7 @@ FROM python:3.8.10
 
 WORKDIR /app
 COPY ./app.py /app
-COPY ./requirements.txt
+COPY ./requirements.txt /app
 
 RUN python -m pip install pip==20.0.2
 RUN pip install -r /app/requirements.txt
