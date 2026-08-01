@@ -39,9 +39,9 @@ _________________________________________________________________
 ->  PostgreSQL
 
 
---- Define relevant K8S object (choice open)
+--- Define relevant K8S object (choice open)										- * OK
 
---- Write DockerFile for the FastAPI micro-service
+--- Write DockerFile for the FastAPI micro-service									- * OK
 
 --- Start from file "docker-compose.yaml" - get the architecture right
       (https://github.com/DataScientest/kubernetes-devops-project)
@@ -49,15 +49,15 @@ _________________________________________________________________
 - Create Subdomain													- * OK
 - Create record for the website							(fastapi-k3s.app2.abrdns.com)		- * OK
 
---- User default Rancher storage class (StorageClass) = 10Gi / ReadWriteMany
+--- User default Rancher storage class (StorageClass) = 10Gi / ReadWriteMany						- * OK
 
---- Define 3 replicas at deployment stage
+--- Define 3 replicas at deployment stage										- * OK
 
 --- Connection URL between Fastapi PostgreSQL database: postgresql://admin:password@db:5432/storedb.
 
-### Service name for FastAPI to connect with the PostgreSQL database: db
-### Déployment using Kubernetes YAML files
-### Namespace = standard
+### Service name for FastAPI to connect with the PostgreSQL database: db						- * OK
+### Deployment using Kubernetes YAML files										- * OK
+### Namespace = standard												- * OK
 
 ##################### DELIVERY #####################
 
