@@ -1,6 +1,7 @@
 _______________________________________________________________
 ################# Kubernetes Exam - TO DO LIST: #################
 
+- Dont forget to build image from docker
 - storageClassName to define in fastapi.yaml                ??????????????
 - Verify correct use of configmap and secrets
 - Ingress to setup
