@@ -5,12 +5,13 @@ metadata:
   name: fastapi-pvc
   namespace: standard
 spec:
-  storageClassName: 
+  storageClassName: local-storage
+  volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 10Gi
+      storage: 5Gi
 ---
 # Deployment (fastAPI)
 apiVersion: apps/v1
@@ -29,16 +30,16 @@ spec:
         app: fastapi
     spec:
       containers:
-      - name: fastapi
-        image: fastapi-app:latest
-        ports:
+        - name: fastapi
+          image: fastapi-app:latest
+          ports:
         - containerPort: 8000
-        env:
+          env:
         - name: DATABASE_URL
           value: "postgresql://admin:password@db:5432/storedb"
-        volumeMounts:
-        - name: fastapi-storage
-          mountPath: /app/data
+          volumeMounts:
+          - name: fastapi-storage
+            mountPath: /app/data
       volumes:
       - name: fastapi-storage
         persistentVolumeClaim:

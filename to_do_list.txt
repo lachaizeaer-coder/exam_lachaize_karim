@@ -1,42 +1,8 @@
-################# Docker Exam - TO DO LIST: #################
-
-premier test: vérifier que la logique d'identification fonctionne bien
---
-deuxième test: vérifier que la logique de gestion des droits de nos utilisateurs fonctionne correctement
---
-dernier test: vérifions que l'API fonctionne comme elle doit fonctionner
-(sentiment analysis)
-
-chacun des tests -> créer un container séparé qui effectuera ces tests
-si var d'env LOG=1 -> imprimer une trace dans api_test.log.
-créer un fichier docker-compose.yml qui organise ce pipeline
-//////////////////////////
-4 containers : API + 3 test containers
-/////////////////////////
-
-Livrables:
-- docker-compose.yml                      *  ok
-- Python files/docker image               * 3 ok 
-- Dockerfile/image                        * 3 ok
-- setup.sh                                * ok
----- log.txt                              * empty
-
----- remarks or justification txt file         * to fill (optional)
-
------------------> tar or zip archive for delivery
-
-**FORCER LE NOM DU CONTAINER DE L'API EN : richard_feynman
-**CREATE NETWORK api-tests
-**CREATE VOLUME FOR LOGS logs-volume
-**CONNECT CONTAINER TO NETWORK AND VOLUME
-
-
-_________________________________________________________________
+_______________________________________________________________
 ################# Kubernetes Exam - TO DO LIST: #################
 
-- storageClassName to define in fastapi.yaml
-- SECRETS to create and fill
-- CONFIGMAP to create and fill
+- storageClassName to define in fastapi.yaml                ??????????????
+- Verify correct use of configmap and secrets
 - Ingress to setup
 - Backup to setup
 - Check Delivery
