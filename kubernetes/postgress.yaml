@@ -1,23 +1,23 @@
-# Storage
 apiVersion: v1
-kind: PersistentVolumeClaim
+kind: Service
 metadata:
-  name: data-pvc
+  name: db
   namespace: standard
 spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 5Gi
+  type: ClusterIP
+  selector:
+    app: postgres
+  ports:
+    - port: 5432
+      targetPort: 5432
 ---
-# Deployment (Postgres)
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: postgres-statefulset
   namespace: standard
 spec:
+  serviceName: db
   replicas: 1
   selector:
     matchLabels:
@@ -28,51 +28,36 @@ spec:
         app: postgres
     spec:
       containers:
-      - name: postgres
-        image: postgres:15
-        env:
-          - name: POSTGRES_USER
-            valueFrom:
-              configMapKeyRef:
-                name: postgres-config
-                key: user
-          - name: POSTGRES_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: postgres-rootpass
-                key: .password
-          - name: POSTGRES_DB
-            valueFrom:
-              configMapKeyRef:
-                name: postgres-config
-                key: db
-        ports:
-          - containerPort: 5432
-        volumeMounts:
-          - name: postgres-data
-            mountPath: /var/lib/postgresql/data
-      volumes:
-        - name: postgres-data
-          persistentVolumeClaim:
-            claimName: data-pvc
-volumes:
-  - name: config
-    configMap:
-      name: postgres-config
-      items:
-        - key: user
-        - key: db
----
-# Service
-apiVersion: v1
-kind: Service
-metadata:
-  name: db
-  namespace: standard
-spec:
-  type: ClusterIP
-  ports:
-  - port: 5432
-    targetPort: 5432
-  selector:
-    app: postgres
+        - name: postgres
+          image: postgres:15
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config
+                  key: user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-db
+                  key: .password
+            - name: POSTGRES_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config
+                  key: db
+          ports:
+            - containerPort: 5432
+              name: postgres
+          volumeMounts:
+            - name: postgres-data
+              mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
+    - metadata:
+        name: postgres-data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 5Gi
