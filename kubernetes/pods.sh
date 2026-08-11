@@ -11,3 +11,5 @@ kubectl apply -f configmap-postgre.yaml
 
 kubectl apply -f postgre.yaml
 kubectl apply -f fastapi.yaml
+
+kubectl apply -f ingress.yaml

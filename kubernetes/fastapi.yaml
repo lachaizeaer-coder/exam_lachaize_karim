@@ -19,7 +19,7 @@ spec:
           image: myrepo/fastapi-app:exam
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8000
+            - containerPort: 5000
           env:
             - name: DATABASE_URL
               valueFrom:
@@ -37,6 +37,6 @@ spec:
   type: ClusterIP
   ports:
   - port: 8000
-    targetPort: 8000
+    targetPort: 5000
   selector:
     app: fastapi
