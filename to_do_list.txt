@@ -1,7 +1,10 @@
 _______________________________________________________________
 ################# Kubernetes Exam - TO DO LIST: #################
 
-- Backup to setup
+- Install certificate
+- Backup to redo (check backup.sh)
+- Gather logs for both services
+- Put everything in a repository called 'YAML-STANDARD'
 - Check Delivery
 
 #Déployer les nouveaux micro services qui permettront l'enregistrement et le décompte des utilisateurs présents sur cette plateforme: 2 micro-services à déployer.
