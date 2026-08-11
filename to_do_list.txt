@@ -1,10 +1,6 @@
 _______________________________________________________________
 ################# Kubernetes Exam - TO DO LIST: #################
 
-- Dont forget to build image from docker
-- storageClassName to define in fastapi.yaml                ??????????????
-- Verify correct use of configmap and secrets
-- Ingress to setup
 - Backup to setup
 - Check Delivery
 
@@ -17,7 +13,7 @@ _______________________________________________________________
 
 --- Write DockerFile for the FastAPI micro-service									- * OK
 
---- Start from file "docker-compose.yaml" - get the architecture right
+--- Start from file "docker-compose.yaml" - get the architecture right							- * OK
       (https://github.com/DataScientest/kubernetes-devops-project)
 
 - Create Subdomain													- * OK
@@ -27,7 +23,7 @@ _______________________________________________________________
 
 --- Define 3 replicas at deployment stage										- * OK
 
---- Connection URL between Fastapi PostgreSQL database: postgresql://admin:password@db:5432/storedb.
+--- Connection URL between Fastapi PostgreSQL database: postgresql://admin:password@db:5432/storedb.                    - * OK
 
 ### Service name for FastAPI to connect with the PostgreSQL database: db						- * OK
 ### Deployment using Kubernetes YAML files										- * OK
