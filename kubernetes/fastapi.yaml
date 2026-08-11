@@ -1,18 +1,3 @@
-## Storage
-#apiVersion: v1
-#kind: PersistentVolumeClaim
-#metadata:
-#  name: fastapi-pvc
-#  namespace: standard
-#spec:
-#  storageClassName: local-storage
-#  volumeMode: Filesystem
-#  accessModes:
-#    - ReadWriteOnce
-#  resources:
-#    requests:
-#      storage: 5Gi
----
 # Deployment (fastAPI)
 apiVersion: apps/v1
 kind: Deployment
@@ -31,7 +16,8 @@ spec:
     spec:
       containers:
         - name: fastapi
-          image: fastapi-app:latest
+          image: myrepo/fastapi-app:exam
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
           env:
@@ -40,13 +26,6 @@ spec:
                 secretKeyRef:
                   name: postgres-db
                   key: .db-url
-          volumeMounts:
-            - name: fastapi-storage
-              mountPath: /app/data
-      volumes:
-      - name: fastapi-storage
-        persistentVolumeClaim:
-          claimName: fastapi-pvc
 ---
 # Service
 apiVersion: v1
