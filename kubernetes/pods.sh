@@ -6,8 +6,8 @@ sudo chmod 777 /etc/rancher/k3s/k3s.yaml
 
 kubectl apply -f namespace.yaml
 
-kubectl apply -f secret-postgress.yaml 
-kubectl apply -f configmap-postgress.yaml
+kubectl apply -f secret-postgre.yaml 
+kubectl apply -f configmap-postgre.yaml
 
-kubectl apply -f postgress.yaml
+kubectl apply -f postgre.yaml
 kubectl apply -f fastapi.yaml
