@@ -3,8 +3,14 @@ kind: Ingress
 metadata:
   name: fastapi-ingress
   namespace: standard
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: traefik
+  tls:
+    - hosts:
+        - "fastapi-k3s.app2.abrdns.com"
+      secretName: fastapi-secret
   rules:
     - host: "fastapi-k3s.app2.abrdns.com"
       http:
