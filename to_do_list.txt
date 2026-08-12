@@ -1,7 +1,6 @@
 _______________________________________________________________
 ################# Kubernetes Exam - TO DO LIST: #################
 
-- Gather logs for both services
 - Put everything in a repository called 'YAML-STANDARD'
 - Check Delivery
 
@@ -33,6 +32,6 @@ _______________________________________________________________
 ##################### DELIVERY #####################
 
 - Zip Format containing:
-- Folder:  YAML-STANTARD
+- Folder: YAML-STANTARD
 - Micro-services log files (FastAPI, PostgreSQL)
 - Backup file for database ETCD (once everything is in place)
