@@ -1,5 +1,7 @@
 DEVOPS TRAINING 2026 Third sprint : Kubernetes x Helm x Ingress 
 
+-> Delivery files are in the YAML-STANDARD folder
+
 ############### Exam Statement ###############
 #
 #Exercice : Déploiement d'une application avec base de données
