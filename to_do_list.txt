@@ -1,8 +1,6 @@
 _______________________________________________________________
 ################# Kubernetes Exam - TO DO LIST: #################
 
-- Install certificate
-- Backup to redo (check backup.sh)
 - Gather logs for both services
 - Put everything in a repository called 'YAML-STANDARD'
 - Check Delivery
