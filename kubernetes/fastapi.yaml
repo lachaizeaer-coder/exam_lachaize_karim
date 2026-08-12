@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: fastapi
-          image: myrepo/fastapi-app:exam
+          image: lachaizecode/fastapi-app:fastapi-k3s-exam
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
