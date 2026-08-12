@@ -1,0 +1,42 @@
+# Deployment (fastAPI)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-deployment
+  namespace: standard
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+        - name: fastapi
+          image: lachaizecode/fastapi-app:fastapi-k3s-exam
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-db
+                  key: .db-url
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-service
+  namespace: standard
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8000
+    targetPort: 5000
+  selector:
+    app: fastapi

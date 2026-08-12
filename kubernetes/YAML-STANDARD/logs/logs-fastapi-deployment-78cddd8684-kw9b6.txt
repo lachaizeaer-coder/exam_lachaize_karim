@@ -1,0 +1,52 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+INFO:     10.42.0.207:53626 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:36074 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:53310 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:37654 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:55026 - "GET /.well-known/acme-challenge/BdKaEVJ3QJPGs2L1hpuO6_yxo0oEFvFPTrXTEhBt8G8 HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:43368 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:43308 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:43308 - "GET /server HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:43318 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     10.42.0.207:43318 - "GET /___proxy_subdomain_whm/login HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:43318 - "GET /v2/_catalog HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:53374 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:53374 - "POST /api HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:53374 - "POST /graphql/api HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:53374 - "GET /info.php HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:53374 - "GET /actuator/env HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:53374 - "GET /%40vite/env HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:53374 - "GET /docs HTTP/1.1" 200 OK
+INFO:     10.42.0.207:44078 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:57838 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:54874 - "GET /.env.local HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:54874 - "GET /.env.example HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:54874 - "GET /api/env HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:33550 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:33550 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:34836 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:55316 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:34688 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:55558 - "GET /docs HTTP/1.1" 200 OK
+INFO:     10.42.0.207:54894 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:42346 - "POST /mcp HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:42346 - "POST / HTTP/1.1" 422 Unprocessable Entity
+INFO:     10.42.0.207:34528 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:34528 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:44916 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:57936 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:57936 - "GET /backend/.env HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:57936 - "GET /.env.swp HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:57936 - "GET /.env HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:57936 - "GET /.env HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:58724 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:43444 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:45606 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:36996 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:44388 - "POST / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:48252 - "POST / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:39216 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:47716 - "GET /docs HTTP/1.1" 200 OK

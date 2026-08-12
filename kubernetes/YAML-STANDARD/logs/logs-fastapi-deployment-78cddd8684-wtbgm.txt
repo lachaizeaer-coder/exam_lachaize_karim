@@ -1,0 +1,53 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+INFO:     10.42.0.207:52308 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:47144 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:58944 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:40728 - "GET /users HTTP/1.1" 200 OK
+INFO:     10.42.0.207:40730 - "GET /docs HTTP/1.1" 200 OK
+INFO:     10.42.0.207:47392 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:47392 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:46594 - "GET /about HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:46594 - "GET /docs HTTP/1.1" 200 OK
+INFO:     10.42.0.207:46594 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:46594 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:46594 - "GET /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:46594 - "POST /graphql HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:46594 - "GET /s/732313e2233323e2335323e233/_/%3B/META-INF/maven/com.atlassian.jira/jira-webapp-dist/pom.properties HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:46594 - "GET /telescope/requests HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:46594 - "GET /.well-known/security.txt HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:53172 - "OPTIONS / HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:53172 - "GET /debug/default/view?panel=config HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:53172 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     10.42.0.207:34888 - "GET /config.js HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:34888 - "GET /.env HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:34888 - "GET /.env.production HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:34888 - "GET /js/env.js HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:44416 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:44416 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:48564 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:48564 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:33664 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:53664 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:48920 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:43174 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:39052 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:39116 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:50150 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:44052 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:46796 - "GET /.DS_Store HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:46796 - "GET /config.env HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:46796 - "GET /.git/HEAD HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:46798 - "GET /.env.bak HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:46798 - "GET /.aws/credentials HTTP/1.1" 404 Not Found
+INFO:     10.42.0.207:51898 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:58680 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:47608 - "GET / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:51942 - "GET /robots.txt HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:55892 - "POST / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:58476 - "POST / HTTP/1.1" 200 OK
+INFO:     10.42.0.207:40024 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:48818 - "GET /favicon.ico HTTP/1.1" 405 Method Not Allowed
+INFO:     10.42.0.207:42274 - "GET /openapi.json HTTP/1.1" 200 OK
