@@ -1,6 +1,6 @@
-#### Vous êtes recruté en tant qu'ingénieur DevOps junior chez un client.
+## Vous êtes recruté en tant qu'ingénieur DevOps junior chez un client.
 
-# Parce qu'il combine deux fonctions, le métier de DevOps regroupe les missions du développeur et de l'administrateur système. En tant qu'Ingénieur DevOps junior, vous garantissez le déploiement automatisé et le bon fonctionnement des solutions, une fois lancées et tout au long de leur cycle de vie.
+Parce qu'il combine deux fonctions, le métier de DevOps regroupe les missions du développeur et de l'administrateur système. En tant qu'Ingénieur DevOps junior, vous garantissez le déploiement automatisé et le bon fonctionnement des solutions, une fois lancées et tout au long de leur cycle de vie.
 
 -> À ce titre, vous serez chargé(e) de :
 
@@ -22,7 +22,7 @@
 | - Garantir que le déploiement en production soit manuel et uniquement déclenché à partir de la branche Master.
 | - Mettre en œuvre l'automatisation complète grâce à Jenkins.
 
-#  Les livrables attendus :
+### Les livrables attendus :
 | - Un fichier ZIP nommé selon le format : nom_prenom_promo_année.
 | - Ce fichier contiendra :
   | - un fichier texte avec le lien vers votre dépôt GitHub,
