@@ -3,11 +3,11 @@
 - Install deployment env (Kubernetes) with 4 envs:
 |->							 dev  //  QA // staging // prod
 
----- Fork the project (-> https://github.com/DataScientest/Jenkins_devops_exams)							~ OK
+---- Fork the project (-> https://github.com/DataScientest/Jenkins_devops_exams)									~ OK
 
----- Set a DockerHub account														~ OK
+---- Set a DockerHub account																~ OK
 
------ Install Jenkins															~ OK
+----- Install Jenkins																	~ OK
 
 - Make a Jenkinsfile to orchestrate the automation
 
@@ -17,10 +17,16 @@
 
 - Set the entire automation with Jenkins
 
+
+
 ##################### DELIVERY #####################
 
+
 # Zip Format containing:                  							 (name: lachaize_karim_devops_2026)
-| - a txt file with my GitHub repository
+
+| - a txt file with my GitHub repository														~ OK
+|													
 | - a PDF with screengrab with Jenkins results
-| - a txt file with DockerHub repository (to check existing images linked to the exam project)
+|
+| - a txt file with DockerHub repository (to check existing images linked to the exam project)								~ OK
 
