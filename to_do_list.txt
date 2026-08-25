@@ -3,7 +3,7 @@
 - Install deployment env (Kubernetes) with 4 envs:
 |->							 dev  //  QA // staging // prod
 
----- Fork the project (-> https://github.com/DataScientest/Jenkins_devops_exams)									~ OK
+---- Fork & copy the app files to exam repo the project (-> https://github.com/DataScientest/Jenkins_devops_exams)									~ OK
 
 ---- Set a DockerHub account																~ OK
 
