@@ -9,13 +9,13 @@
 
 ----- Install Jenkins																	~ OK
 
-- Make a Jenkinsfile to orchestrate the automation
+- Make a Jenkinsfile to orchestrate the automation													~ OK
 
-- Use given files - docker-compose + Helm charts - to deploy the app
+- Use given files - docker-compose + Helm charts - to deploy the app											~ TO CHECK CAREFULLY
 
-- The deployment must be manually triggered (user input validation) and triggered only from 'Master' branch
+- The deployment must be manually triggered (user input validation) and triggered only from 'Master' branch						~ OK
 
-- Set the entire automation with Jenkins
+- Set the entire automation with Jenkins														~ TO TEST
 
 
 
