@@ -22,7 +22,7 @@ Parce qu'il combine deux fonctions, le métier de DevOps regroupe les missions d
 | - Garantir que le déploiement en production soit manuel et uniquement déclenché à partir de la branche Master.
 | - Mettre en œuvre l'automatisation complète grâce à Jenkins.
 
-#  Les livrables attendus :
+### Les livrables attendus :
 | - Un fichier ZIP nommé selon le format : nom_prenom_promo_année.
 | - Ce fichier contiendra :
   | - un fichier texte avec le lien vers votre dépôt GitHub,
