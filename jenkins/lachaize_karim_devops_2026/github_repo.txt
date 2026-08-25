@@ -1,0 +1,6 @@
+# App file:
+https://github.com/lachaizeaer-coder/Jenkins_devops_exams
+
+
+# Pipeline files:
+http://github.com/lachaizeaer-coder/exam_lachaize_karim/tree/main/jenkins
