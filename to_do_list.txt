@@ -1,37 +1,26 @@
-_______________________________________________________________
-################# Kubernetes Exam - TO DO LIST: #################
+################# Jenkins Exam - TO DO LIST: #################
 
-- Put everything in a repository called 'YAML-STANDARD'
-- Check Delivery
+- Install deployment env (Kubernetes) with 4 envs:
+|->							 dev  //  QA // staging // prod
 
-#Déployer les nouveaux micro services qui permettront l'enregistrement et le décompte des utilisateurs présents sur cette plateforme: 2 micro-services à déployer.
-->  FastAPI     (only this one can connect to ingress)
-->  PostgreSQL
+---- Fork the project (-> https://github.com/DataScientest/Jenkins_devops_exams)							~ OK
 
+---- Set a DockerHub account														~ OK
 
---- Define relevant K8S object (choice open)										- * OK
+----- Install Jenkins															~ OK
 
---- Write DockerFile for the FastAPI micro-service									- * OK
+- Make a Jenkinsfile to orchestrate the automation
 
---- Start from file "docker-compose.yaml" - get the architecture right							- * OK
-      (https://github.com/DataScientest/kubernetes-devops-project)
+- Use given files - docker-compose + Helm charts - to deploy the app
 
-- Create Subdomain													- * OK
-- Create record for the website							(fastapi-k3s.app2.abrdns.com)		- * OK
+- The deployment must be manually triggered (user input validation) and triggered only from 'Master' branch
 
---- User default Rancher storage class (StorageClass) = 10Gi / ReadWriteMany						- * OK
-
---- Define 3 replicas at deployment stage										- * OK
-
---- Connection URL between Fastapi PostgreSQL database: postgresql://admin:password@db:5432/storedb.                    - * OK
-
-### Service name for FastAPI to connect with the PostgreSQL database: db						- * OK
-### Deployment using Kubernetes YAML files										- * OK
-### Namespace = standard												- * OK
+- Set the entire automation with Jenkins
 
 ##################### DELIVERY #####################
 
-- Zip Format containing:
-- Folder: YAML-STANTARD
-- Micro-services log files (FastAPI, PostgreSQL)
-- Backup file for database ETCD (once everything is in place)
+# Zip Format containing:                  							 (name: lachaize_karim_devops_2026)
+| - a txt file with my GitHub repository
+| - a PDF with screengrab with Jenkins results
+| - a txt file with DockerHub repository (to check existing images linked to the exam project)
+
