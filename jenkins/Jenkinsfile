@@ -64,7 +64,7 @@ stages {
       ls
 
       cat $KUBECONFIG > ~/.kube/config
-      cp /home/ubuntu/exam_lachaize_karim/jenkins/charts/values.yaml values.yml
+      cp jenkins/charts/values.yaml values.yml
       cat values.yml
 
       sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
@@ -86,7 +86,7 @@ stages {
       ls
       
       cat $KUBECONFIG > ~/.kube/config
-      cp /home/ubuntu/exam_lachaize_karim/jenkins/charts/values.yaml values.yml
+      cp jenkins/charts/values.yaml values.yml
       cat values.yml
 
       sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
@@ -107,7 +107,7 @@ stages {
       mkdir ~/.kube/
       ls
       cat $KUBECONFIG > ~/.kube/config
-      cp /home/ubuntu/exam_lachaize_karim/jenkins/charts/values.yaml values.yml
+      cp jenkins/charts/values.yaml values.yml
       cat values.yml
 
       sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
@@ -132,7 +132,7 @@ stages {
           mkdir ~/.kube/
           ls
           cat $KUBECONFIG > ~/.kube/config
-          cp /home/ubuntu/exam_lachaize_karim/jenkins/charts/values.yaml values.yml
+          cp jenkins/charts/values.yaml values.yml
           cat values.yml
 
           sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
