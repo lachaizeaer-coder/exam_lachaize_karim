@@ -15,7 +15,7 @@
 
 - The deployment must be manually triggered (user input validation) and triggered only from 'Master' branch						~ OK
 
-- Set the entire automation with Jenkins														~ TO TEST
+- Set the entire automation with Jenkins														~ OK
 
 
 
