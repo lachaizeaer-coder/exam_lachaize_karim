@@ -11,16 +11,19 @@ replicaCount: 3
 
 
 movieService:
-  repository: lachaizecode/fastapi-movie
-  tag: "latest"
+  image:
+    repository: lachaizecode/fastapi-movie
+    pullPolicy: IfNotPresent
+    tag: "latest"
 
 castService:
-  repository: lachaizecode/fastapi-cast
-  tag: "latest"
+  image:
+    repository: lachaizecode/fastapi-cast
+    pullPolicy: IfNotPresent
+    tag: "latest"
 
 
-
-imagePullSecrets: 
+imagePullSecrets:
   - name: "regcred"
 nameOverride: ""
 fullnameOverride: ""
