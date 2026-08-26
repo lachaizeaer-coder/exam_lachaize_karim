@@ -69,7 +69,8 @@ stages {
 
       sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
       
-      helm upgrade --install app fastapi --values=values.yml --namespace dev
+      helm upgrade --install app jenkins/movie-service --values=values.yml --namespace dev
+      helm upgrade --install app jenkins/cast-service --values=values.yml --namespace dev
       '''
       }
     }
@@ -91,7 +92,8 @@ stages {
 
       sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
 
-      helm upgrade --install app fastapi --values=values.yml --namespace qa
+      helm upgrade --install app jenkins/movie-service --values=values.yml --namespace qa
+      helm upgrade --install app jenkins/cast-service --values=values.yml --namespace qa
       '''
       }
     }
@@ -112,7 +114,8 @@ stages {
 
       sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
 
-      helm upgrade --install app fastapi --values=values.yml --namespace staging
+      helm upgrade --install app jenkins/movie-service --values=values.yml --namespace staging
+      helm upgrade --install app jenkins/cast-service --values=values.yml --namespace staging
       '''
       }
     }
@@ -137,7 +140,8 @@ stages {
 
           sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
 
-          helm upgrade --install app fastapi --values=values.yml --namespace prod
+          helm upgrade --install app jenkins/movie-service --values=values.yml --namespace prod
+          helm upgrade --install app jenkins/cast-service --values=values.yml --namespace prod
           '''
         }
       }
