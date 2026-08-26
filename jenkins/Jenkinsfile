@@ -2,8 +2,11 @@ pipeline {
 environment { 
 DOCKER_ID = "lachaizecode"
 DOCKER_TAG = "v.${BUILD_ID}.0"
+
 DOCKER_IMAGE_MOVIE = "fastapi-movie"
 DOCKER_IMAGE_CAST = "fastapi-cast"
+
+DATABASE_URI = "postgresql://user:pass@localhost/db"
 }
 agent any
 
@@ -25,8 +28,10 @@ stages {
       script {
       sh '''
       docker rm -f jenkins-movie jenkins-cast || true
-      docker run -d -p 8001:8000 --name jenkins-movie $DOCKER_ID/$DOCKER_IMAGE_MOVIE:$DOCKER_TAG
-      docker run -d -p 8002:8000 --name jenkins-cast $DOCKER_ID/$DOCKER_IMAGE_CAST:$DOCKER_TAG
+
+      docker run -d -p 8001:8000 --name jenkins-movie -e DATABASE_URI=$DATABASE_URI $DOCKER_ID/$DOCKER_IMAGE_MOVIE:$DOCKER_TAG
+      docker run -d -p 8002:8000 --name jenkins-cast -e DATABASE_URI=$DATABASE_URI $DOCKER_ID/$DOCKER_IMAGE_CAST:$DOCKER_TAG
+
       sleep 10
       '''
       }
@@ -62,8 +67,7 @@ stages {
       cp fastapi/values.yaml values.yml
       cat values.yml
 
-      sed -i "s+movieTag.*+movieTag: ${DOCKER_TAG}+g" values.yml
-      sed -i "s+castTag.*+castTag: ${DOCKER_TAG}+g" values.yml
+      sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
       
       helm upgrade --install app fastapi --values=values.yml --namespace dev
       '''
@@ -84,8 +88,7 @@ stages {
       cp fastapi/values.yaml values.yml
       cat values.yml
 
-      sed -i "s+movieTag.*+movieTag: ${DOCKER_TAG}+g" values.yml
-      sed -i "s+castTag.*+castTag: ${DOCKER_TAG}+g" values.yml
+      sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
 
       helm upgrade --install app fastapi --values=values.yml --namespace qa
       '''
@@ -106,8 +109,7 @@ stages {
       cp fastapi/values.yaml values.yml
       cat values.yml
 
-      sed -i "s+movieTag.*+movieTag: ${DOCKER_TAG}+g" values.yml
-      sed -i "s+castTag.*+castTag: ${DOCKER_TAG}+g" values.yml
+      sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
 
       helm upgrade --install app fastapi --values=values.yml --namespace staging
       '''
@@ -132,8 +134,7 @@ stages {
           cp fastapi/values.yaml values.yml
           cat values.yml
 
-          sed -i "s+movieTag.*+movieTag: ${DOCKER_TAG}+g" values.yml
-          sed -i "s+castTag.*+castTag: ${DOCKER_TAG}+g" values.yml
+          sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
 
           helm upgrade --install app fastapi --values=values.yml --namespace prod
           '''
