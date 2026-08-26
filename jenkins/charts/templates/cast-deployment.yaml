@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "fastapiapp.fullname" . }}-cast
+  labels:
+    app: cast-service
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -15,5 +17,6 @@ spec:
       containers:
         - name: cast-service
           image: "{{ .Values.castService.repository }}:{{ .Values.castService.tag }}"
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000

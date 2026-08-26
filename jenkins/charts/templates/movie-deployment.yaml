@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "fastapiapp.fullname" . }}-movie
+  labels:
+    app: movie-service
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -15,5 +17,6 @@ spec:
       containers:
         - name: movie-service
           image: "{{ .Values.movieService.repository }}:{{ .Values.movieService.tag }}"
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000

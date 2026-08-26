@@ -64,10 +64,10 @@ stages {
       ls
 
       cat $KUBECONFIG > ~/.kube/config
+
       cp jenkins/charts/values.yaml values.yml
       cat values.yml
-
-      sed -i "s/tag:.*/tag: \"${DOCKER_TAG}\"/g" values.yml
+      sed -i "s/tag:.*/tag: \\"${DOCKER_TAG}\\"/g" values.yml
       cat values.yml      
 
       helm upgrade --install app jenkins/charts --values=values.yml --namespace dev
@@ -87,10 +87,10 @@ stages {
       ls
       
       cat $KUBECONFIG > ~/.kube/config
+
       cp jenkins/charts/values.yaml values.yml
       cat values.yml
-
-      sed -i "s/tag:.*/tag: \"${DOCKER_TAG}\"/g" values.yml
+      sed -i "s/tag:.*/tag: \\"${DOCKER_TAG}\\"/g" values.yml
       cat values.yml
 
       helm upgrade --install app jenkins/charts --values=values.yml --namespace qa
@@ -109,10 +109,10 @@ stages {
       mkdir ~/.kube/
       ls
       cat $KUBECONFIG > ~/.kube/config
+
       cp jenkins/charts/values.yaml values.yml
       cat values.yml
-
-      sed -i "s/tag:.*/tag: \"${DOCKER_TAG}\"/g" values.yml
+      sed -i "s/tag:.*/tag: \\"${DOCKER_TAG}\\"/g" values.yml
       cat values.yml
 
       helm upgrade --install app jenkins/charts --values=values.yml --namespace staging
@@ -135,10 +135,10 @@ stages {
           mkdir ~/.kube/
           ls
           cat $KUBECONFIG > ~/.kube/config
+
           cp jenkins/charts/values.yaml values.yml
           cat values.yml
-
-          sed -i "s/tag:.*/tag: \"${DOCKER_TAG}\"/g" values.yml
+          sed -i "s/tag:.*/tag: \\"${DOCKER_TAG}\\"/g" values.yml
           cat values.yml
 
           helm upgrade --install app jenkins/charts --values=values.yml --namespace prod
