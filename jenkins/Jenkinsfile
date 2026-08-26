@@ -67,8 +67,9 @@ stages {
       cp jenkins/charts/values.yaml values.yml
       cat values.yml
 
-      sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
-      
+      sed -i "s/tag:.*/tag: \"${DOCKER_TAG}\"/g" values.yml
+      cat values.yml      
+
       helm upgrade --install app jenkins/charts --values=values.yml --namespace dev
       '''
       }
@@ -89,7 +90,8 @@ stages {
       cp jenkins/charts/values.yaml values.yml
       cat values.yml
 
-      sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
+      sed -i "s/tag:.*/tag: \"${DOCKER_TAG}\"/g" values.yml
+      cat values.yml
 
       helm upgrade --install app jenkins/charts --values=values.yml --namespace qa
       '''
@@ -110,7 +112,8 @@ stages {
       cp jenkins/charts/values.yaml values.yml
       cat values.yml
 
-      sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
+      sed -i "s/tag:.*/tag: \"${DOCKER_TAG}\"/g" values.yml
+      cat values.yml
 
       helm upgrade --install app jenkins/charts --values=values.yml --namespace staging
       '''
@@ -135,7 +138,8 @@ stages {
           cp jenkins/charts/values.yaml values.yml
           cat values.yml
 
-          sed -i "s+tag:.*+tag: \"${DOCKER_TAG}\"+g" values.yml
+          sed -i "s/tag:.*/tag: \"${DOCKER_TAG}\"/g" values.yml
+          cat values.yml
 
           helm upgrade --install app jenkins/charts --values=values.yml --namespace prod
           '''
