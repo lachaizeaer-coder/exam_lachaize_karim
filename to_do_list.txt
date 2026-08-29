@@ -1,7 +1,7 @@
 ################# Gitlab Exam - TO DO LIST: #################
 
 - Install deployment env (Kubernetes) with 4 envs:
-|->                                                      dev  //  QA // staging // prod
+|->                                                      dev  //  QA // staging // prod									~ NAMESPACE CREATED
 
 - Copy the app files to exam repo GITLAB the project (-> https://github.com/DataScientest/gitlab_devops_exams)
 
