@@ -1,7 +1,7 @@
 ################# Gitlab Exam - TO DO LIST: #################
 
 - Install deployment env (Kubernetes) with 4 envs:
-|->                                                      dev  //  QA // staging // prod									~ NAMESPACE CREATED
+|->                                                      dev  //  QA // staging // prod									~ OK / TO CHECK
 
 - Copy the app files to exam repo GITLAB the project (-> https://github.com/DataScientest/gitlab_devops_exams)                                          ~ OK
 
@@ -9,11 +9,11 @@
 
 ----- Install worker                                                                                                                                    ~ OK
 
-- Make a .gitlab-ci.yml to orchestrate the automation                                                                                                   ~ STAGES CREATED
+- Make a .gitlab-ci.yml to orchestrate the automation                                                                                                   ~ TEST TO DO
 
-- Use given files - docker-compose + Helm charts - to deploy the app                                                                                    ~ OK
+- Use given files - docker-compose + Helm charts - to deploy the app                                                                                    ~ OK // NEED A DEPLOYMENT FILE BY APP PART
 
-- The deployment must be manually triggered (user input validation) and triggered only from 'Main' branch                                               ~ OK - TO CHECK // MAIN BRANCH ?
+- The deployment must be manually triggered (user input validation) and triggered only from 'Main' branch                                               ~ OK
 
 - Set the entire automation with Gitlab CI
 
