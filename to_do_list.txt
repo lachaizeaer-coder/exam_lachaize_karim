@@ -1,9 +1,41 @@
+################# Gitlab Exam - TO DO LIST: #################
+
+- Install deployment env (Kubernetes) with 4 envs:
+|->                                                      dev  //  QA // staging // prod
+
+- Copy the app files to exam repo GITLAB the project (-> https://github.com/DataScientest/gitlab_devops_exams)
+
+---- Set a DockerHub account                                                                                                                            ~ OK
+
+----- Install worker                                                                                                                                    ~ OK
+
+- Make a gitlab-ci.yml to orchestrate the automation                                                                                                    
+
+- Use given files - docker-compose + Helm charts - to deploy the app                                                                                    
+
+- The deployment must be manually triggered (user input validation) and triggered only from 'Master' branch                                             
+
+- Set the entire automation with Gitlab CI
+
+
+##################### DELIVERY #####################
+
+# Zip Format containing:                                             (name: lachaize_karim_devops_2026)
+
+| - a txt file with my GitHub repository                                           
+|                                                                                  
+| - a PDF with screengrab with Gitlab results
+|
+| - a txt file with DockerHub repository
+
+
+##############################################################
 ################# Jenkins Exam - TO DO LIST: #################
 
 - Install deployment env (Kubernetes) with 4 envs:
-|->							 dev  //  QA // staging // prod
+|->							 dev  //  QA // staging // prod									~ OK
 
----- Fork & copy the app files to exam repo the project (-> https://github.com/DataScientest/Jenkins_devops_exams)									~ OK
+- Copy the app files to exam repo the project (-> https://github.com/DataScientest/jenkins_devops_exams)						~ OK			
 
 ---- Set a DockerHub account																~ OK
 
@@ -15,7 +47,7 @@
 
 - The deployment must be manually triggered (user input validation) and triggered only from 'Master' branch						~ OK
 
-- Set the entire automation with Jenkins														~ TO TEST
+- Set the entire automation with Jenkins														~ OK
 
 
 
