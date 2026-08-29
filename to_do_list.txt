@@ -3,17 +3,17 @@
 - Install deployment env (Kubernetes) with 4 envs:
 |->                                                      dev  //  QA // staging // prod									~ NAMESPACE CREATED
 
-- Copy the app files to exam repo GITLAB the project (-> https://github.com/DataScientest/gitlab_devops_exams)
+- Copy the app files to exam repo GITLAB the project (-> https://github.com/DataScientest/gitlab_devops_exams)                                          ~ OK
 
 ---- Set a DockerHub account                                                                                                                            ~ OK
 
 ----- Install worker                                                                                                                                    ~ OK
 
-- Make a gitlab-ci.yml to orchestrate the automation                                                                                                    
+- Make a .gitlab-ci.yml to orchestrate the automation                                                                                                   ~ FILE CREATED
 
-- Use given files - docker-compose + Helm charts - to deploy the app                                                                                    
+- Use given files - docker-compose + Helm charts - to deploy the app                                                                                    ~ OK
 
-- The deployment must be manually triggered (user input validation) and triggered only from 'Master' branch                                             
+- The deployment must be manually triggered (user input validation) and triggered only from 'Main' branch                                               ~ 'when: manual'
 
 - Set the entire automation with Gitlab CI
 
@@ -22,11 +22,11 @@
 
 # Zip Format containing:                                             (name: lachaize_karim_devops_2026)
 
-| - a txt file with my GitHub repository                                           
+| - a txt file with my GitHub repository														~ OK
 |                                                                                  
 | - a PDF with screengrab with Gitlab results
 |
-| - a txt file with DockerHub repository
+| - a txt file with DockerHub repository														~ OK
 
 
 ##############################################################
