@@ -9,11 +9,11 @@
 
 ----- Install worker                                                                                                                                    ~ OK
 
-- Make a .gitlab-ci.yml to orchestrate the automation                                                                                                   ~ FILE CREATED
+- Make a .gitlab-ci.yml to orchestrate the automation                                                                                                   ~ STAGES CREATED
 
 - Use given files - docker-compose + Helm charts - to deploy the app                                                                                    ~ OK
 
-- The deployment must be manually triggered (user input validation) and triggered only from 'Main' branch                                               ~ 'when: manual'
+- The deployment must be manually triggered (user input validation) and triggered only from 'Main' branch                                               ~ OK - TO CHECK // MAIN BRANCH ?
 
 - Set the entire automation with Gitlab CI
 
