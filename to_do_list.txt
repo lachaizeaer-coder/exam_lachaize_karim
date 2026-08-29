@@ -9,9 +9,9 @@
 
 ----- Install worker                                                                                                                                    ~ OK
 
-- Make a .gitlab-ci.yml to orchestrate the automation                                                                                                   ~ TEST TO DO
+- Make a .gitlab-ci.yml to orchestrate the automation                                                                                                   ~ TEST STAGE TO DO
 
-- Use given files - docker-compose + Helm charts - to deploy the app                                                                                    ~ OK // NEED A DEPLOYMENT FILE BY APP PART
+- Use given files - docker-compose + Helm charts - to deploy the app                                                                                    ~ OK // 3 DEPLOYMENT FILES MADE WITH AI
 
 - The deployment must be manually triggered (user input validation) and triggered only from 'Main' branch                                               ~ OK
 
