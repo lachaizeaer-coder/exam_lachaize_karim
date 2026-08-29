@@ -1,7 +1,7 @@
 ################# Gitlab Exam - TO DO LIST: #################
 
 - Install deployment env (Kubernetes) with 4 envs:
-|->                                                      dev  //  QA // staging // prod									~ OK / TO CHECK
+|->                                                      dev  //  QA // staging // prod									~ OK
 
 - Copy the app files to exam repo GITLAB the project (-> https://github.com/DataScientest/gitlab_devops_exams)                                          ~ OK
 
@@ -9,7 +9,7 @@
 
 ----- Install worker                                                                                                                                    ~ OK
 
-- Make a .gitlab-ci.yml to orchestrate the automation                                                                                                   ~ TEST STAGE TO DO
+- Make a .gitlab-ci.yml to orchestrate the automation                                                                                                   ~ TEST STAGE TO DO (REALLY DO IT)
 
 - Use given files - docker-compose + Helm charts - to deploy the app                                                                                    ~ OK // 3 DEPLOYMENT FILES MADE WITH AI
 
