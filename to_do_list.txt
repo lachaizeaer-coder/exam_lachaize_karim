@@ -9,7 +9,7 @@
 
 ----- Install worker                                                                                                                                    ~ OK
 
-- Make a .gitlab-ci.yml to orchestrate the automation                                                                                                   ~ TEST STAGE TO DO (REALLY DO IT)
+- Make a .gitlab-ci.yml to orchestrate the automation                                                                                                   ~ TEST STAGE TO DO (REALLY DO IT) // CHECK AND DELETE NETWORK IN BUILD (IT FAIL BECAUSE NETWORK EXISTS)
 
 - Use given files - docker-compose + Helm charts - to deploy the app                                                                                    ~ OK
 
