@@ -1,0 +1,1 @@
+https://gitlab.com/liora-group2/devops-gitlab-exam/container_registry
