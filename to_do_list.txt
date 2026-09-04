@@ -1,33 +1,62 @@
-################# Gitlab Exam - TO DO LIST: #################
+################# Terraform Exam - TO DO LIST: #################
 
-- Install deployment env (Kubernetes) with 4 envs:
-|->                                                      dev  //  QA // staging // prod									~ OK
 
-- Copy the app files to exam repo GITLAB the project (-> https://github.com/DataScientest/gitlab_devops_exams)                                          ~ OK
+- Use Paris region : eu-west-3									
 
----- Set a DockerHub account                                                                                                                            ~ OK
+- Use 't3.micro' -> web server  w/ Wordpress
 
------ Install worker                                                                                                                                    ~ OK
+- Use available AMI ( automate AMI_ID )                                                                                                                                    
 
-- Make a .gitlab-ci.yml to orchestrate the automation                                                                                                   ~ TEST STAGE TO DO (REALLY DO IT) // CHECK AND DELETE NETWORK IN BUILD (IT FAIL BECAUSE NETWORK EXISTS)
+- Deploy the database on instances ( resource: aws_db_instance  //  type: db.t3.micro )
 
-- Use given files - docker-compose + Helm charts - to deploy the app                                                                                    ~ OK
+- Database deployed in 2 different Availability Zones -> see doc
 
-- The deployment must be manually triggered (user input validation) and triggered only from 'Main' branch                                               ~ OK
+- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be onthe same Av. Zone ) -> see doc
 
-- Set the entire automation with Gitlab CI
+- Web server access on HTTP port: 80
+
+- Configure a secure access via HTTPS ( port: 443, TLS )
+
 
 
 ##################### DELIVERY #####################
 
+# Structure
+├── modules
+│    └── networking
+│           ├── main.tf													~ created
+│           ├── outputs.tf												~ created
+│           └── variables.tf												~ created
+│    └── ec2
+│           ├── main.tf													~ created
+│           ├── outputs.tf												~ created
+│           └── variables.tf												~ created
+│    └── rds
+│           ├── main.tf													~ created
+│           ├── outputs.tf												~ created
+│           └── variables.tf												~ created
+│    └── ebs
+│           ├── main.tf													~ created
+│           ├── outputs.tf												~ created
+│           └── variables.tf												~ created
+├── variables.tf													~ created
+├── main.tf														~ created
+└── install_wordpress.sh												~ created
+
+
+
 # Zip Format containing:                                             (name: lachaize_karim_devops_2026)
 
-| - a txt file with my GitHub repository														~ OK
-|                                                                                  
-| - a PDF with screengrab with Gitlab results
-|
-| - a txt file with DockerHub repository														~ OK
+| - Modules necessary to build the architecture														
 
+
+### MUST DO:
+
+- Architecture must match given needs
+- No visible password (use variables)
+- Use modules
+- Apply good practices from the courses
+- Use HCL
 
 ##############################################################
 ################# Jenkins Exam - TO DO LIST: #################
