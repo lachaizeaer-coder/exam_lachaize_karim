@@ -11,7 +11,7 @@
 
 - Database deployed in 2 different Availability Zones -> see doc						-> TBD
 
-- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be onthe same Av. Zone ) -> see doc
+- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be on the same Av. Zone ) -> see doc
 
 - Web server access on HTTP port: 80
 
@@ -24,24 +24,24 @@
 # Structure
 ├── modules
 │    └── networking
-│           ├── main.tf													~ created
-│           ├── outputs.tf												~ created
-│           └── variables.tf												~ created
+│           ├── main.tf													~ init
+│           ├── outputs.tf												~ init
+│           └── variables.tf												~ init
 │    └── ec2
-│           ├── main.tf													~ created
-│           ├── outputs.tf												~ created
+│           ├── main.tf													~ init
+│           ├── outputs.tf												~ init
 │           └── variables.tf												~ WIP
 │    └── rds
-│           ├── main.tf													~ created
-│           ├── outputs.tf												~ created
+│           ├── main.tf													~ init
+│           ├── outputs.tf												~ init
 │           └── variables.tf												~ WIP
 │    └── ebs
-│           ├── main.tf													~ created
-│           ├── outputs.tf												~ created
-│           └── variables.tf												~ created
+│           ├── main.tf													~ init
+│           ├── outputs.tf												~ init
+│           └── variables.tf												~ init
 ├── variables.tf													~ WIP
-├── main.tf														~ created
-└── install_wordpress.sh												~ created
+├── main.tf														~ init
+└── install_wordpress.sh												~ WIP (https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database)
 
 
 
