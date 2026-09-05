@@ -34,7 +34,7 @@
 │    └── rds
 │           ├── main.tf													~ created
 │           ├── outputs.tf												~ created
-│           └── variables.tf												~ created
+│           └── variables.tf												~ WIP
 │    └── ebs
 │           ├── main.tf													~ created
 │           ├── outputs.tf												~ created
