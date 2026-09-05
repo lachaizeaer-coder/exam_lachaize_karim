@@ -1,10 +1,11 @@
-variable "volume size" {
+variable "volume_size" {
   description = "The EBS volume capacity (GiB)"
   type        = number
   default     = 10
 }
 
-variable "availability zone" {
-  description = "The availability zone in which to create the EBS volume"
-  type        = list(string)
+
+variable "availability_zone" {
+  type        = string
+  description = "Subnet IDs passed from the VPC module"
 }

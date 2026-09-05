@@ -4,6 +4,12 @@ variable "database_engine" {
     default     = "mysql"
 }
 
+variable "database_engine_version" {
+    description = "The database engine"
+    type        = string
+    default     = "8.0"
+}
+
 variable "database_name" {
     description = "The databse name"
     type        = string
@@ -19,7 +25,7 @@ variable "is_multi_az" {
 variable "storage_capacity" {
     description = "Allocated storage"
     type        = number
-    default     = 5
+    default     = 10
 }
 
 variable "instance_type" {

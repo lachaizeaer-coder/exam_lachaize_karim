@@ -4,6 +4,7 @@ variable "aws_region" {
     default     = "eu-west-3"
 }
 
+
 variable "aws_access_key" {
     description = "AWS access key"
     type        = string
