@@ -1,15 +1,15 @@
 ################# Terraform Exam - TO DO LIST: #################
 
 
-- Use Paris region : eu-west-3									
+- Use Paris region : eu-west-3											-> Set in EC2 variables
 
-- Use 't3.micro' -> web server  w/ Wordpress
+- Use 't3.micro' -> web server  w/ Wordpress									-> Type set in EC2 variables
 
-- Use available AMI ( automate AMI_ID )                                                                                                                                    
+- Use available AMI ( automate AMI_ID )                                                                         -> Set in EC2/data.tf                               
 
-- Deploy the database on instances ( resource: aws_db_instance  //  type: db.t3.micro )
+- Deploy the database on instances ( resource: aws_db_instance  //  type: db.t3.micro )				-> TBD
 
-- Database deployed in 2 different Availability Zones -> see doc
+- Database deployed in 2 different Availability Zones -> see doc						-> TBD
 
 - 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be onthe same Av. Zone ) -> see doc
 
@@ -30,7 +30,7 @@
 │    └── ec2
 │           ├── main.tf													~ created
 │           ├── outputs.tf												~ created
-│           └── variables.tf												~ created
+│           └── variables.tf												~ WIP
 │    └── rds
 │           ├── main.tf													~ created
 │           ├── outputs.tf												~ created
@@ -39,7 +39,7 @@
 │           ├── main.tf													~ created
 │           ├── outputs.tf												~ created
 │           └── variables.tf												~ created
-├── variables.tf													~ created
+├── variables.tf													~ WIP
 ├── main.tf														~ created
 └── install_wordpress.sh												~ created
 
