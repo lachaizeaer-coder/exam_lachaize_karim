@@ -1,21 +1,21 @@
 ################# Terraform Exam - TO DO LIST: #################
 
 
-- Use Paris region : eu-west-3											-> Set in EC2 variables
+- Use Paris region : eu-west-3											-> to be set in Root
 
-- Use 't3.micro' -> web server  w/ Wordpress									-> Type set in EC2 variables
+- Use 't3.micro' -> web server  w/ Wordpress									~ OK
 
 - Use available AMI ( automate AMI_ID )                                                                         -> Set in EC2/data.tf                               
 
 - Deploy the database on instances ( resource: aws_db_instance  //  type: db.t3.micro )				-> Set in main.tf
 
-- Database deployed in 2 different Availability Zones -> see doc						-> FOUND HOW TO CENTRALIZE
+- Database deployed in 2 different Availability Zones -> see doc						-> To be connected to the subnet
 
-- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be on the same Av. Zone ) -> see doc        -> variables set, connection to be made in parent main.tf
+- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be on the same Av. Zone ) -> see doc        -> Connection to be made in parent main.tf
 
-- Web server access on HTTP port: 80										-> set in install.sh / see for Terraform
+- Web server access on HTTP port: 80										-> set in install.sh / see for Terraform in Root
 
-- Configure a secure access via HTTPS ( port: 443, TLS ) BONUS
+- Configure a secure access via HTTPS ( port: 443, TLS ) BONUS							-> TBD
 
 
 
@@ -24,9 +24,9 @@
 # Structure
 ├── modules
 │    └── networking
-│           ├── main.tf													~ init
-│           ├── outputs.tf												~ init
-│           └── variables.tf												~ init
+│           ├── main.tf													~ TBT
+│           ├── outputs.tf												~ TBT
+│           └── variables.tf												~ TBT
 │    └── ec2
 │           ├── main.tf													~ TBT
 │           ├── outputs.tf												~ TBT
@@ -41,7 +41,7 @@
 │           └── variables.tf												~ TBT
 ├── variables.tf													~ WIP
 ├── main.tf														~ init
-└── install_wordpress.sh												~ WIP (https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database)
+└── install_wordpress.sh												~ TBF (https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database)
 
 
 
@@ -52,11 +52,11 @@
 
 ### MUST DO:
 
-- Architecture must match given needs
-- No visible password (use variables)
-- Use modules
-- Apply good practices from the courses
-- Use HCL
+- Architecture must match given needs					~ DOUBLE CHECK ++
+- No visible password (use variables, ephemeral, choose...)		~ TO BE THOUGH OF
+- Use modules								~ OK
+- Apply good practices from the courses					~ OK
+- Use HCL								~ OK
 
 ##############################################################
 ################# Jenkins Exam - TO DO LIST: #################
