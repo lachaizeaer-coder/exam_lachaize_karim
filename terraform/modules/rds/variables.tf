@@ -22,7 +22,7 @@ variable "storage_capacity" {
     default     = 5
 }
 
-vatiable "instance_type" {
+variable "instance_type" {
     description = "Class of instance in use"
     type        = string
     default     = "db.t3.micro"
