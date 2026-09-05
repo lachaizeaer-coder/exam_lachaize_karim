@@ -7,15 +7,15 @@
 
 - Use available AMI ( automate AMI_ID )                                                                         -> Set in EC2/data.tf                               
 
-- Deploy the database on instances ( resource: aws_db_instance  //  type: db.t3.micro )				-> TBD
+- Deploy the database on instances ( resource: aws_db_instance  //  type: db.t3.micro )				-> Set in main.tf
 
-- Database deployed in 2 different Availability Zones -> see doc						-> TBD
+- Database deployed in 2 different Availability Zones -> see doc						-> FOUND HOW TO CENTRALIZE
 
-- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be on the same Av. Zone ) -> see doc        -> variables set, ebs/main.tf to fill / connection to be made in parent main.tf
+- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be on the same Av. Zone ) -> see doc        -> variables set, connection to be made in parent main.tf
 
-- Web server access on HTTP port: 80
+- Web server access on HTTP port: 80										-> set in install.sh / see for Terraform
 
-- Configure a secure access via HTTPS ( port: 443, TLS )
+- Configure a secure access via HTTPS ( port: 443, TLS ) BONUS
 
 
 
@@ -28,17 +28,17 @@
 │           ├── outputs.tf												~ init
 │           └── variables.tf												~ init
 │    └── ec2
-│           ├── main.tf													~ init
+│           ├── main.tf													~ TBT
+│           ├── outputs.tf												~ TBT
+│           └── variables.tf												~ TBT
+│    └── rds
+│           ├── main.tf													~ WIP
 │           ├── outputs.tf												~ WIP
 │           └── variables.tf												~ WIP
-│    └── rds
-│           ├── main.tf													~ init
-│           ├── outputs.tf												~ init
-│           └── variables.tf												~ WIP
 │    └── ebs
-│           ├── main.tf													~ init
-│           ├── outputs.tf												~ init
-│           └── variables.tf												~ init
+│           ├── main.tf													~ TBT
+│           ├── outputs.tf												~ TBT
+│           └── variables.tf												~ TBT
 ├── variables.tf													~ WIP
 ├── main.tf														~ init
 └── install_wordpress.sh												~ WIP (https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database)
