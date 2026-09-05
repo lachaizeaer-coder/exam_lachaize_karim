@@ -11,7 +11,7 @@
 
 - Database deployed in 2 different Availability Zones -> see doc						-> TBD
 
-- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be on the same Av. Zone ) -> see doc
+- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be on the same Av. Zone ) -> see doc        -> variables set, ebs/main.tf to fill / connection to be made in parent main.tf
 
 - Web server access on HTTP port: 80
 
@@ -29,7 +29,7 @@
 │           └── variables.tf												~ init
 │    └── ec2
 │           ├── main.tf													~ init
-│           ├── outputs.tf												~ init
+│           ├── outputs.tf												~ WIP
 │           └── variables.tf												~ WIP
 │    └── rds
 │           ├── main.tf													~ init
