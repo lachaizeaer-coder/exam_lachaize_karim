@@ -1,4 +1,4 @@
-data "aws_ami_ids" "ubuntu" {
+data "aws_ami" "available_ami" {
     most_recent = true
     owners      = ["amazon"]
 
