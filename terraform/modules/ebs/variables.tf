@@ -3,9 +3,3 @@ variable "volume_size" {
   type        = number
   default     = 10
 }
-
-
-variable "availability_zone" {
-  type        = string
-  description = "Subnet IDs passed from the VPC module"
-}

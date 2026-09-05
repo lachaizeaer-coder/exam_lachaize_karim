@@ -7,3 +7,8 @@ data "aws_ami" "available_ami" {
         values = [var.instance_type]
     }
 }
+
+data "aws_availability_zones" "available" {
+  state = "available"
+}
+

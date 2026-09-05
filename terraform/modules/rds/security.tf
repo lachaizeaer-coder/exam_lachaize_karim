@@ -8,5 +8,6 @@ variable "username" {
 variable "password" {
     description = "The password for the database"
     type        = string
+    default     = "admin123"
     sensitive   = true
 }
