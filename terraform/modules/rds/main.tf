@@ -11,8 +11,8 @@ resource "aws_db_instance" "rds" {
   availability_zone    = data.aws_availability_zones.available.names[0]
 
   db_name              = var.database_name
-  username             = security.username
-  password             = security.password
+  username             = var.username
+  password             = var.password
 
   parameter_group_name = "default.mysql8.0"
 
@@ -43,7 +43,7 @@ resource "aws_db_instance" "rds_relica" {
 resource "aws_security_group" "rds_sg" {
   name        = "rds-sg"
   description = "Security group for RDS"
-  vpc_id      = aws_vpc.vpc.id
+  vpc_id      = var.vpc_id
 }
 
 
@@ -54,7 +54,7 @@ resource "aws_security_group_rule" "rds_sg_inbound_rule" {
   to_port           = 3306
   protocol          = "tcp"
   security_group_id = aws_security_group.rds_sg.id
-  source_security_group_id = aws_security_group.ec2_sg.id
+  source_security_group_id = var.ec2_security_group_id
 }
 
 resource "aws_security_group_rule" "rds_sg_outbound_rule" {

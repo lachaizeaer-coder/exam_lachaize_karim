@@ -4,10 +4,10 @@ resource "aws_instance" "ec2" {
   subnet_id     = var.subnet_id
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
-  user_data = templatefile("${path.module}/install_wordpress.sh", {
-    db_endpoint = var.db_endpoint
+  user_data = templatefile("${path.root}/install_wordpress.sh", {
+    db_host     = var.db_endpoint
     db_name     = var.db_name
-    db_username = var.db_username
+    db_user     = var.db_username
     db_password = var.db_password
   })
 
@@ -21,7 +21,7 @@ resource "aws_instance" "ec2" {
 resource "aws_security_group" "ec2_sg" {
   name        = "ec2-sg"
   description = "Security group for EC2"
-  vpc_id      = aws_vpc.vpc.id
+  vpc_id      = var.vpc_id
 
   ingress {
     description = "Allow SSH access"
