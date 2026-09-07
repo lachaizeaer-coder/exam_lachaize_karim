@@ -1,7 +1,7 @@
 ################# Terraform Exam - TO DO LIST: #################
 
 
-- Use Paris region : eu-west-3											-> to be set in Root
+- Use Paris region : eu-west-3											-> OK
 
 - Use 't3.micro' -> web server  w/ Wordpress									~ OK
 
@@ -9,11 +9,11 @@
 
 - Deploy the database on instances ( resource: aws_db_instance  //  type: db.t3.micro )				-> Set in main.tf
 
-- Database deployed in 2 different Availability Zones -> see doc						-> To be connected to the subnets
+- Database deployed in 2 different Availability Zones -> see doc						-> OK
 
-- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be on the same Av. Zone ) -> see doc        -> Connection to the EC2 to be made in parent main.tf
+- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be on the same Av. Zone ) -> see doc        -> OK
 
-- Web server access on HTTP port: 80										-> set in install.sh / see for Terraform in Root
+- Web server access on HTTP port: 80										-> OK
 
 - Configure a secure access via HTTPS ( port: 443, TLS ) BONUS							-> TO DO: private security group + ingress
 
@@ -39,9 +39,9 @@
 │           ├── main.tf													~ TBT
 │           ├── outputs.tf												~ TBT
 │           └── variables.tf												~ TBT
-├── variables.tf													~ WIP
-├── main.tf														~ init
-└── install_wordpress.sh												~ TBT(https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database)
+├── variables.tf													~ TBT
+├── main.tf														~ TBT
+└── install_wordpress.sh												~ TBT (https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database)
 
 
 
