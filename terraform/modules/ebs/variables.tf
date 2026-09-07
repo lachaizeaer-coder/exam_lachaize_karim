@@ -9,3 +9,13 @@ variable "prevent_destroy" {
   type        = bool
   default     = false #For the resources management in the exam context, otherwise set to true
 }
+
+variable "device_name" {
+  description = "The device name"
+  type        = string
+}
+
+variable "instance_id" {
+  description = "The ID of the EC2 instance to attach the EBS volume to"
+  type        = string
+}
