@@ -1,13 +1,14 @@
 resource "aws_instance" "ec2" {
   ami           = data.aws_ami.available_ami.id
   instance_type = var.instance_type
-  availability_zone = data.aws_availability_zones.available.names[0]
+  subnet_id     = var.subnet_id
+  vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
   user_data = templatefile("${path.module}/install_wordpress.sh", {
-    db_endpoint = module.rds.db_endpoint
-    db_name     = module.rds.db_name
-    db_username = module.rds.db_username
-    db_password = module.rds.db_password
+    db_endpoint = var.db_endpoint
+    db_name     = var.db_name
+    db_username = var.db_username
+    db_password = var.db_password
   })
 
   tags = {

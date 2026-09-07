@@ -4,7 +4,7 @@ resource "aws_ebs_volume" "db_pv" {
   size              = var.volume_size
 
   lifecycle {
-    prevent_destroy    = var.prevent_destroy
+    prevent_destroy    = false #kept false for the purpose of this exam, but in production it should be set to true
   }
   tags = {
     Name = "PersistentVolume"

@@ -4,8 +4,14 @@ output "vpc_id" {
   value       = aws_vpc.main.id
 }
 
-output "subnet_ids" {
-  description = "The IDs of the subnets"
+output "public_subnets" {
+  description = "The IDs of the public subnets"
   type        = list(string)
-  value       = aws_subnet.main[*].id
+  value       = aws_subnet.public[*].id
+}
+
+output "private_subnets" {
+  description = "The IDs of the private subnets"
+  type        = list(string)
+  value       = aws_subnet.private[*].id
 }

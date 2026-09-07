@@ -1,13 +1,6 @@
 variable "volume_size" {
   description = "The EBS volume capacity (GiB)"
   type        = number
-  default     = 10
-}
-
-variable "prevent_destroy" {
-  description = "Whether to prevent the EBS volume from being destroyed"
-  type        = bool
-  default     = false #For the resources management in the exam context, otherwise set to true
 }
 
 variable "device_name" {
@@ -17,5 +10,10 @@ variable "device_name" {
 
 variable "instance_id" {
   description = "The ID of the EC2 instance to attach the EBS volume to"
+  type        = string
+}
+
+variable "availability_zone" {
+  description = "The availability zone where the EBS volume will be created"
   type        = string
 }

@@ -18,7 +18,7 @@ variable "database_name" {
 
 variable "is_multi_az" {
     description = "Set if the db can run in multiple Availability Zone"
-    type        = boolean
+    type        = bool
     default     = true
 }
 
@@ -32,4 +32,19 @@ variable "instance_type" {
     description = "Class of instance in use"
     type        = string
     default     = "db.t3.micro"
+}
+
+variable "ec2_security_group_id" {
+    description = "The security group ID for the EC2 instance"
+    type        = string
+}
+
+variable "vpc_id" {
+    description = "The VPC ID"
+    type        = string
+}
+
+variable "database_subnet_ids" {
+    description = "The subnet IDs for the RDS instance"
+    type        = list(string)
 }

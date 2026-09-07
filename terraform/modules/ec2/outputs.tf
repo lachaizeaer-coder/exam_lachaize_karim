@@ -1,14 +1,19 @@
-output "ec2_az_set" {
+output "availability_zones" {
     description = "The availability zones of the EC2 instances"
-    value       = toset(aws_instance.ec2.*.availability_zone)
+    value       = aws_instance.web.availability_zone
 }
 
-output "ec2_security_group_id" {
+output "security_group_id" {
     description = "The security group IDs of the EC2 instances"
-    value       = aws_instance.ec2.*.security_groups
+    value       = aws_security_group.ec2.id
 }
 
 output "instance_id" {
   description = "The ID of the EC2 instance"
   value       = aws_instance.ec2.id
+}
+
+output "ami_id" {
+  description = "The AMI ID of the EC2 instance"
+  value       = aws_instance.ec2.ami
 }
