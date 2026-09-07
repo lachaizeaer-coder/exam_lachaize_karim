@@ -5,13 +5,13 @@
 
 - Use 't3.micro' -> web server  w/ Wordpress									~ OK
 
-- Use available AMI ( automate AMI_ID )                                                                         -> Set in EC2/data.tf                               
+- Use available AMI ( automate AMI_ID )                                                                         -> OK                               
 
 - Deploy the database on instances ( resource: aws_db_instance  //  type: db.t3.micro )				-> Set in main.tf
 
-- Database deployed in 2 different Availability Zones -> see doc						-> To be connected to the subnet
+- Database deployed in 2 different Availability Zones -> see doc						-> To be connected to the subnets
 
-- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be on the same Av. Zone ) -> see doc        -> Connection to be made in parent main.tf
+- 10 Go EBS for persistance ( be careful, EC2 instance and EBS must be on the same Av. Zone ) -> see doc        -> Connection to the EC2 to be made in parent main.tf
 
 - Web server access on HTTP port: 80										-> set in install.sh / see for Terraform in Root
 
@@ -32,16 +32,16 @@
 │           ├── outputs.tf												~ TBT
 │           └── variables.tf												~ TBT
 │    └── rds
-│           ├── main.tf													~ WIP
-│           ├── outputs.tf												~ WIP
-│           └── variables.tf												~ WIP
+│           ├── main.tf													~ TBT
+│           ├── outputs.tf												~ TBT
+│           └── variables.tf												~ TBT
 │    └── ebs
 │           ├── main.tf													~ TBT
 │           ├── outputs.tf												~ TBT
 │           └── variables.tf												~ TBT
 ├── variables.tf													~ WIP
 ├── main.tf														~ init
-└── install_wordpress.sh												~ TBF (https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database)
+└── install_wordpress.sh												~ TBT(https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database)
 
 
 
@@ -53,7 +53,7 @@
 ### MUST DO:
 
 - Architecture must match given needs					~ DOUBLE CHECK ++
-- No visible password (use variables, ephemeral, choose...)		~ TO BE THOUGH OF
+- No visible password (use variables, ephemeral, choose...)		~ OK
 - Use modules								~ OK
 - Apply good practices from the courses					~ OK
 - Use HCL								~ OK
