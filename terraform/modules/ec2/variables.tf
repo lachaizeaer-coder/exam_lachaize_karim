@@ -13,3 +13,9 @@ variable "subnet_id" {
   description = "ID du subnet public pour l'instance EC2"
   type        = string
 }
+
+variable "cidr_block" {
+  description = "CIDR block for the VPC"
+  type        = list(string)
+  default = ["0.0.0.0/0"]
+}

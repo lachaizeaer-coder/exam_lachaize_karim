@@ -69,3 +69,41 @@ sudo -u www-data wp config create \
   --dbpass="$DB_PASS" \
   --dbhost="$DB_HOST" \
   --path='/srv/www/wordpress'
+
+
+### Configure SSL
+echo "Configuring SSL..."
+### SSL Activation
+sudo a2enmod ssl
+
+### Certificate generation using OpenSSL (365 days validity)
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+  -keyout /etc/ssl/private/apache-selfsigned.key \
+  -out /etc/ssl/certs/apache-selfsigned.crt \
+  -subj "/CN=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)"
+
+### WordPress SSL VirtualHost configuration
+cat <<EOF | sudo tee /etc/apache2/sites-available/wordpress-ssl.conf
+<IfModule mod_ssl.c>
+  <VirtualHost _default_:443>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /srv/www/wordpress
+
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
+    SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
+
+    <Directory /srv/www/wordpress>
+      Options FollowSymLinks
+      AllowOverride All
+      Require all granted
+    </Directory>
+  </VirtualHost>
+</IfModule>
+EOF
+
+### Enable SSL site and restart Apache
+sudo a2ensite wordpress-ssl
+sudo systemctl restart apache2
+
+echo "SSL configured."
