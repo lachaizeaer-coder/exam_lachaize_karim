@@ -1,14 +1,23 @@
+resource "aws_db_subnet_group" "rds_subnet_group" {
+  name       = "wordpress-db-subnet-group"
+  subnet_ids = var.subnet_ids
+
+  tags = {
+    Name = "wordpress-db-subnetgroup"
+  }
+}
+
 resource "aws_db_instance" "rds" {
   identifier           = "primary-db"
+  db_subnet_group_name = aws_db_subnet_group.rds_subnet_group.name
 
   engine               = var.database_engine
   engine_version       = var.database_engine_version
-
   instance_class       = var.instance_type
 
   allocated_storage    = var.storage_capacity
 
-  availability_zone    = data.aws_availability_zones.available.names[0]
+  #availability_zone    = data.aws_availability_zones.available.names[0]
 
   db_name              = var.database_name
   username             = var.username
@@ -20,6 +29,7 @@ resource "aws_db_instance" "rds" {
   backup_retention_period = 7
 
   multi_az             = var.is_multi_az
+
   tags = {
     Name = "wordpress-db"
   }
@@ -28,7 +38,7 @@ resource "aws_db_instance" "rds" {
 resource "aws_db_instance" "rds_relica" {
   identifier           = "replica-db"
 
-  replicate_source_db   = aws_db_instance.rds.id
+  replicate_source_db   = aws_db_instance.rds.identifier
 
   instance_class        = var.instance_type
 

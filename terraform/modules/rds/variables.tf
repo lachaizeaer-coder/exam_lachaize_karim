@@ -13,7 +13,7 @@ variable "database_engine_version" {
 variable "database_name" {
     description = "The databse name"
     type        = string
-    default     = "wordpress-db"
+    default     = "wordpress_db"
 }
 
 variable "is_multi_az" {
@@ -44,7 +44,7 @@ variable "vpc_id" {
     type        = string
 }
 
-variable "database_subnet_ids" {
+variable "subnet_ids" {
     description = "The subnet IDs for the RDS instance"
     type        = list(string)
 }

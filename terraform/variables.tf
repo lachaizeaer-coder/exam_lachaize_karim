@@ -17,4 +17,3 @@ variable "aws_secret_key" {
     default     = ""
     sensitive   = true
 }
-

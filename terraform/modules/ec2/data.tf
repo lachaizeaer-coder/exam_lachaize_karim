@@ -3,8 +3,13 @@ data "aws_ami" "available_ami" {
     owners      = ["amazon"]
 
     filter {
-        name   = "instance-type-specification.supported-instance-type"
-        values = [var.instance_type]
+        name   = "name"
+        values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+    }
+
+    filter {
+        name   = "virtualization-type"
+        values = ["hvm"]
     }
 }
 

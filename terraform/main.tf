@@ -1,9 +1,10 @@
 module "networking" {
-  source = "./modules/networking"
+  source            = "./modules/networking"
+  
 }
 
 module "ec2" {
-  source = "./modules/ec2"
+  source            = "./modules/ec2"
 
   vpc_id            = module.networking.vpc_id
   subnet_id         = module.networking.public_subnets[0]
@@ -15,19 +16,20 @@ module "ec2" {
 }
 
 module "ebs" {
-  source = "./modules/ebs"
+  source            = "./modules/ebs"
 
   availability_zone = module.ec2.availability_zone
   volume_size       = 10
-  device_name     = "/dev/sdh"
-  instance_id     = module.ec2.instance_id
+  device_name       = "/dev/sdh"
+  instance_id       = module.ec2.instance_id
 }
 
 module "rds" {
-  source = "./modules/rds"
+  source                = "./modules/rds"
+
+  subnet_ids            = module.networking.private_subnets
 
   vpc_id                = module.networking.vpc_id
-  database_subnet_ids   = module.networking.private_subnets
   ec2_security_group_id = module.ec2.security_group_id
 }
 
