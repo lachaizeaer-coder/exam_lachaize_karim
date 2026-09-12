@@ -1,0 +1,9 @@
+all:
+  children:
+    webserver:
+      hosts:
+          ansible_host: #
+
+    database:
+      hosts:
+          ansible_host: #
