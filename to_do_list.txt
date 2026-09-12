@@ -1,14 +1,28 @@
 ################# Ansible Exam - TO DO LIST: #################
 ##############################################################
 
-- Choose between Pretashop or Magento
+- Choose between Pretashop or Magento                                                       ~ OK
 
-- Create role accordingly to the previous choice
+- Create role accordingly to the previous choice                                            ~ OK
 
-- Create role: database MySQL
+- Create role: database MySQL                                                               ~ OK
+
+- Setup roles:
+ | - Pretashop:
+    || - vars
+    || - install
+    || - setup
+ | - Database:
+    || - vars
+    || - install
+    || - setup
+
+
 
 - Ensure connectivity from the web server to the database
 
+
+## FILL THE CORRECT IPS FROM AWS EC2s
 
 ##################### DELIVERY #####################
 
