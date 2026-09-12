@@ -1,5 +1,24 @@
-################# Terraform Exam - TO DO LIST: #################
+################# Ansible Exam - TO DO LIST: #################
+##############################################################
 
+- Choose between Pretashop or Magento
+
+- Create role accordingly to the previous choice
+
+- Create role: database MySQL
+
+- Ensure connectivity from the web server to the database
+
+
+##################### DELIVERY #####################
+
+- Two roles corresponding to the exercice requisite
+- The orchestration playbook
+- Logs for the results
+- The scripts should work no matter the environment
+
+################# Terraform Exam - TO DO LIST: #################
+################################################################
 
 - Use Paris region : eu-west-3											-> OK
 
@@ -24,24 +43,24 @@
 # Structure
 ├── modules
 │    └── networking
-│           ├── main.tf													~ TBT
-│           ├── outputs.tf												~ TBT
-│           └── variables.tf												~ TBT
+│           ├── main.tf													~ OK
+│           ├── outputs.tf												~ OK
+│           └── variables.tf												~ OK
 │    └── ec2
-│           ├── main.tf													~ TBT
-│           ├── outputs.tf												~ TBT
-│           └── variables.tf												~ TBT
+│           ├── main.tf													~ OK
+│           ├── outputs.tf												~ OK
+│           └── variables.tf												~ OK
 │    └── rds
-│           ├── main.tf													~ TBT
-│           ├── outputs.tf												~ TBT
-│           └── variables.tf												~ TBT
+│           ├── main.tf													~ OK
+│           ├── outputs.tf												~ OK
+│           └── variables.tf												~ OK
 │    └── ebs
-│           ├── main.tf													~ TBT
-│           ├── outputs.tf												~ TBT
-│           └── variables.tf												~ TBT
-├── variables.tf													~ TBT
-├── main.tf														~ TBT
-└── install_wordpress.sh												~ TBT (https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database)
+│           ├── main.tf													~ OK
+│           ├── outputs.tf												~ OK
+│           └── variables.tf												~ OK
+├── variables.tf													~ OK
+├── main.tf														~ OK
+└── install_wordpress.sh												~ OK (https://ubuntu.com/tutorials/install-and-configure-wordpress#5-configure-database)
 
 
 
@@ -52,42 +71,8 @@
 
 ### MUST DO:
 
-- Architecture must match given needs					~ DOUBLE CHECK ++
+- Architecture must match given needs					~ OK
 - No visible password (use variables, ephemeral, choose...)		~ OK
 - Use modules								~ OK
 - Apply good practices from the courses					~ OK
 - Use HCL								~ OK
-
-##############################################################
-################# Jenkins Exam - TO DO LIST: #################
-
-- Install deployment env (Kubernetes) with 4 envs:
-|->							 dev  //  QA // staging // prod									~ OK
-
-- Copy the app files to exam repo the project (-> https://github.com/DataScientest/jenkins_devops_exams)						~ OK			
-
----- Set a DockerHub account																~ OK
-
------ Install Jenkins																	~ OK
-
-- Make a Jenkinsfile to orchestrate the automation													~ OK
-
-- Use given files - docker-compose + Helm charts - to deploy the app											~ OK
-
-- The deployment must be manually triggered (user input validation) and triggered only from 'Master' branch						~ OK
-
-- Set the entire automation with Jenkins														~ OK
-
-
-
-##################### DELIVERY #####################
-
-
-# Zip Format containing:                  							 (name: lachaize_karim_devops_2026)
-
-| - a txt file with my GitHub repository														~ OK
-|													
-| - a PDF with screengrab with Jenkins results
-|
-| - a txt file with DockerHub repository (to check existing images linked to the exam project)								~ OK
-
