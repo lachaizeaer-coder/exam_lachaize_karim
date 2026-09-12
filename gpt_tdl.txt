@@ -1,13 +1,8 @@
 ################## gpt TO-DO-LIST ##################
 
-- Create Ansible inventory.yaml with 2 roles
+- Create Ansible inventory.yaml with 2 roles                                        ~ OK
 
-- Check connectivity between web server and database
-| - necessary ports:
-|| - HTTP : 80
-|| - MySQL : 3306
-
-- Create MySQL role
+- Create MySQL role                                                                 ~ OK
 | - Install and configure MySQL
 | - Create Pretashop (or Magento) database
 | - Create MySQL user for Prestashop
@@ -15,7 +10,7 @@
 | - Configure MySQL to be accessed by the web server
 | - Test connexion from Prestashop server
 
-- Create Pretashop role
+- Create Pretashop role                                                             ~ OK
 | - Install dependencies
 || - web server / php / [...]
 | - Dowload Prestashop
@@ -49,6 +44,10 @@
 | - Check connection Prestashop ↔ MySQL.
 | - Check Idempotency
 | - Write logs to logs.txt
+| /// necessary ports \\\
+|| - HTTP : 80
+|| - MySQL : 3306
+
 
 - Prepare delivery files
 | - roles/mysql/
