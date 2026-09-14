@@ -1,3 +1,71 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # tasks file for mysql
+tasks:
+  - name: Print OS family
+    ansible.builtin.debug:
+      msg: "OS Family: {{ ansible_facts['os_family'] }}"
+
+  - name: Install MySQL server on Debian-based or Ubuntu-based systems
+    ansible.builtin.apt:
+      name: mysql-server
+      state: present
+    become: true
+    when: ansible_facts['os_family'] == "Debian"
+
+  - name: Install MySQL server on RedHat-based or CentOS-based systems
+    ansible.builtin.yum:
+      name: mysql-server
+      state: present
+    become: true
+    when: ansible_facts['os_family'] == "RedHat"
+
+  - name: Start and enable MySQL service
+    ansible.builtin.service:
+      name: mysqld
+      state: started
+      enabled: true
+    become: true
+
+  - name: Set MySQL root password
+    ansible.builtin.mysql_user:
+      login_user: "{{ mysql_root_login }}"
+      login_password: "{{ mysql_root_password }}"
+      name: "{{ mysql_root_name }}"
+      password: "{{ mysql_root_password }}"
+      host: "{{ mysql_host }}"
+      state: present
+    become: true
+
+  - name: Remove anonymous MySQL users (to prevent access without password)
+    ansible.builtin.mysql_user:
+      login_user: "{{ mysql_root_login }}"
+      login_password: "{{ mysql_root_password }}"
+      name: ''
+      host_all: true
+      state: absent
+    become: true
+
+  - name: Remove test database
+    ansible.builtin.mysql_db:
+      login_user: "{{ mysql_root_login }}"
+      login_password: "{{ mysql_root_password }}"
+      name: test
+      state: absent
+    become: true
+
+  - name: Create MySQL Prestashop database
+    ansible.builtin.mysql_db:
+      login_user: "{{ mysql_root_login }}"
+      login_password: "{{ mysql_root_password }}"
+      name: "{{ mysql_db_name }}"
+      state: present
+    become: true
+
+  - name: Create MySQL Prestashop user
+    ansible.builtin.mysql_user:
+      name: "{{ mysql_web_user_name }}"
+      password: "{{ mysql_web_user_password }}"
+      priv: "{{ mysql_db_name }}.*:ALL"
+      state: present
+    become: true
