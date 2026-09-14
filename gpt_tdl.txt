@@ -3,12 +3,11 @@
 - Create Ansible inventory.yaml with 2 roles                                        ~ OK
 
 - Create MySQL role                                                                 ~ OK
-| - Install and configure MySQL
-| - Create Pretashop (or Magento) database
-| - Create MySQL user for Prestashop
-| - Grant necessary permission to the Prestashop user
-| - Configure MySQL to be accessed by the web server
-| - Test connexion from Prestashop server
+| - Install and configure MySQL                                                     ~ OK
+| - Create Pretashop (or Magento) database                                          ~ OK
+| - Create MySQL user for Prestashop                                                ~ OK
+| - Grant necessary permission to the Prestashop user                               ~ OK
+| - Configure MySQL to be accessed by the web server                                
 
 - Create Pretashop role                                                             ~ OK
 | - Install dependencies

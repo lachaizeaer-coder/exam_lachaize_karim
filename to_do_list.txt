@@ -13,9 +13,9 @@
     || - install
     || - setup
  | - Database:
-    || - vars
-    || - install
-    || - setup
+    || - vars                                                                               ~ OK                                                                           
+    || - install                                                                            ~ OK
+    || - setup                                                                              ~ OK
 
 
 
