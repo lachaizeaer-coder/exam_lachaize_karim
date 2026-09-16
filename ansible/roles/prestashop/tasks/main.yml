@@ -71,3 +71,84 @@ tasks:
         - --strip-components=1
     become: true
     when: ansible_facts['os_family'] == "RedHat"
+
+  - name: Configure PrestaShop permissions
+    ansible.builtin.file:
+      path: "/var/www/html/"
+      state: directory
+      mode: '0755'
+    become: true
+
+  - name: Configure apache virtual host for PrestaShop
+    ansible.builtin.template:
+      src: "prestashop.conf.j2"
+      dest: "/etc/apache2/sites-available/prestashop.conf"
+    become: true
+
+  - name: Enable PrestaShop site on Debian-based or Ubuntu-based systems
+    ansible.builtin.command: "a2ensite prestashop.conf"
+    become: true
+    when: ansible_facts['os_family'] == "Debian"
+
+  - name: Enable PrestaShop site on RedHat-based or CentOS-based systems
+    ansible.builtin.command: "ln -s /etc/httpd/sites-available/prestashop.conf /etc/httpd/sites-enabled/prestashop.conf"
+    become: true
+    when: ansible_facts['os_family'] == "RedHat" 
+
+  - name: Enable Apache rewrite module on Debian-based or Ubuntu-based systems
+    ansible.builtin.command: "a2enmod rewrite"
+    become: true
+    when: ansible_facts['os_family'] == "Debian"
+
+  - name: Enable Apache rewrite module on RedHat-based or CentOS-based systems  
+    ansible.builtin.command: "sed -i 's/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf"
+    become: true
+    when: ansible_facts['os_family'] == "RedHat"
+
+  - name: Apply prestashop configuration and restart Apache on Debian-based or Ubuntu-based systems
+    ansible.builtin.command: "a2ensite prestashop.conf && systemctl restart apache2"
+    become: true
+    when: ansible_facts['os_family'] == "Debian"
+
+  - name: Apply prestashop configuration and restart Apache on RedHat-based or CentOS-based systems
+    ansible.builtin.command: "systemctl restart httpd"
+    become: true
+    when: ansible_facts['os_family'] == "RedHat"
+
+  - name: restart apache service on Debian-based or Ubuntu-based systems
+    ansible.builtin.service:
+      name: apache2
+      state: restarted
+    become: true
+    when: ansible_facts['os_family'] == "Debian"
+
+  - name: restart apache service on RedHat-based or CentOS-based systems
+    ansible.builtin.service:
+      name: httpd
+      state: restarted
+    become: true
+    when: ansible_facts['os_family'] == "RedHat"
+
+  - name: Allow web traffic for http and https on Debian-based or Ubuntu-based systems
+    community.general.ufw:
+      rule: allow
+      name: 'Apache Full'
+    become: true
+    when: ansible_facts['os_family'] == "Debian"
+
+  - name: Configure firewall to allow HTTP traffic on RedHat-based or CentOS-based systems
+    ansible.posix.firewalld:
+      service: http
+      permanent: true
+      state: enabled
+    become: true
+    when: ansible_facts['os_family'] == "RedHat"
+
+  - name: Configure firewall to allow HTTPS traffic on RedHat-based or CentOS-based systems
+    ansible.posix.firewalld:
+      service: https
+      permanent: true
+      state: enabled
+    become: true
+    when: ansible_facts['os_family'] == "RedHat"  
+    
