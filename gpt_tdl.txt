@@ -1,5 +1,12 @@
 ################## gpt TO-DO-LIST ##################
 
+
+//// CHECK THE PRESTASHOP YAML LINE BY LINE + CREATE THE JINJA TEMPLATE + CONNECT TO DATABASE
+
+
+
+
+
 - Create Ansible inventory.yaml with 2 roles                                        ~ OK
 
 - Create MySQL role                                                                 ~ OK
