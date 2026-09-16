@@ -1,4 +1,4 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # vars file for prestashop
-prestashop_download_url: "https://download.prestashop.com/download/releases/prestashop_1.7.8.8.zip"
+PRESTASHOP_DOWNLOAD_URL: "https://download.prestashop.com/download/releases/prestashop_1.7.8.8.zip"

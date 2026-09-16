@@ -29,18 +29,18 @@ tasks:
 
   - name: Set MySQL root password
     ansible.builtin.mysql_user:
-      login_user: "{{ mysql_root_login }}"
-      login_password: "{{ mysql_root_password }}"
-      name: "{{ mysql_root_name }}"
-      password: "{{ mysql_root_password }}"
-      host: "{{ mysql_host }}"
+      login_user: "{{ MYSQL_ROOT_LOGIN }}"
+      login_password: "{{ MYSQL_ROOT_PASSWORD }}"
+      name: "{{ MYSQL_ROOT_NAME }}"
+      password: "{{ MYSQL_ROOT_PASSWORD }}"
+      host: "{{ MYSQL_HOST }}"
       state: present
     become: true
 
   - name: Remove anonymous MySQL users (to prevent access without password)
     ansible.builtin.mysql_user:
-      login_user: "{{ mysql_root_login }}"
-      login_password: "{{ mysql_root_password }}"
+      login_user: "{{ MYSQL_ROOT_LOGIN }}"
+      login_password: "{{ MYSQL_ROOT_PASSWORD }}"
       name: ''
       host_all: true
       state: absent
@@ -48,24 +48,24 @@ tasks:
 
   - name: Remove test database
     ansible.builtin.mysql_db:
-      login_user: "{{ mysql_root_login }}"
-      login_password: "{{ mysql_root_password }}"
+      login_user: "{{ MYSQL_ROOT_LOGIN }}"
+      login_password: "{{ MYSQL_ROOT_PASSWORD }}"
       name: test
       state: absent
     become: true
 
   - name: Create MySQL Prestashop database
     ansible.builtin.mysql_db:
-      login_user: "{{ mysql_root_login }}"
-      login_password: "{{ mysql_root_password }}"
-      name: "{{ mysql_db_name }}"
+      login_user: "{{ MYSQL_ROOT_LOGIN }}"
+      login_password: "{{ MYSQL_ROOT_PASSWORD }}"
+      name: "{{ MYSQL_DB_NAME }}"
       state: present
     become: true
 
   - name: Create MySQL Prestashop user
     ansible.builtin.mysql_user:
-      name: "{{ mysql_web_user_name }}"
-      password: "{{ mysql_web_user_password }}"
-      priv: "{{ mysql_db_name }}.*:ALL"
+      name: "{{ MYSQL_WEB_USER_NAME }}"
+      password: "{{ MYSQL_WEB_USER_PASSWORD }}"
+      priv: "{{ MYSQL_DB_NAME }}.*:ALL"
       state: present
     become: true

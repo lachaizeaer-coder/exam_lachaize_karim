@@ -7,12 +7,3 @@ MYSQL_HOST: "localhost"
 MYSQL_ROOT_NAME: "root"
 MYSQL_ROOT_LOGIN: "root"
 MYSQL_ROOT_PASSWORD: "Liora2026!"
-
-#PRESTASHOP DB
-MYSQL_DB_NAME: "prestashop-db"
-
-
-#PRESTASHOP USER
-MYSQL_WEB_USER_NAME: "prestashop"
-MYSQL_WEB_USER_LOGIN: "prestashop"
-MYSQL_WEB_USER_PASSWORD: "LioraPrestashop2026!"
