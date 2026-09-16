@@ -10,12 +10,12 @@
 | - Configure MySQL to be accessed by the web server                                
 
 - Create Pretashop role                                                             ~ OK
-| - Install dependencies
-|| - web server / php / [...]
-| - Dowload Prestashop
-| - Install Prestashop
-| - Configure the web server
-| - Configure Pretashop for:
+| - Install dependencies                                                            ~ OK
+|| - web server / php / [...]                                                       ~ OK
+| - Dowload Prestashop                                                              ~ OK
+| - Install Prestashop                                                              ~ OK
+| - Configure the web server                                                        ~ OK
+| - Configure Pretashop for:                                                        
 || - use MySQL server address
 || - use database
 || - user
@@ -49,11 +49,11 @@
 
 
 - Prepare delivery files
-| - roles/mysql/
-| -  roles/prestashop/
-| -  site.yml
-| -  inventory.yaml
-| -  logs.txt
+| - roles/mysql/                                                                    ~ OK
+| -  roles/prestashop/                                                              ~ OK
+| -  site.yml                                                                       ~ OK
+| -  inventory.yaml                                                                 ~ OK - A remplir pour les tests
+| -  logs.txt                                                                       HOW TO GET LOGS ?
 
 Regrouper le tout dans un seul .zip.
 

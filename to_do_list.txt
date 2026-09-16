@@ -9,8 +9,8 @@
 
 - Setup roles:
  | - Pretashop:
-    || - vars
-    || - install
+    || - vars                                                                               ~ OK
+    || - install                                                                            ~ OK
     || - setup
  | - Database:
     || - vars                                                                               ~ OK                                                                           
