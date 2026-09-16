@@ -1,3 +1,73 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # tasks file for prestashop
+tasks:
+  - name: Print OS family
+    ansible.builtin.debug:
+      msg: "OS Family: {{ ansible_facts['os_family'] }}"
+
+  - name: Install PrestaShop dependencies on Debian-based or Ubuntu-based systems
+    ansible.builtin.apt:
+      name:
+        - apache2
+        - php
+        - php-mysql
+        - libapache2-mod-php
+        - unzip
+      state: present
+    become: true
+    when: ansible_facts['os_family'] == "Debian"
+
+  - name: Install PrestaShop dependencies on RedHat-based or CentOS-based systems
+    ansible.builtin.yum:
+      name:
+        - httpd
+        - php
+        - php-mysqlnd
+        - unzip
+      state: present
+    become: true
+    when: ansible_facts['os_family'] == "RedHat"
+
+  - name: Start and enable Apache service on Debian-based or Ubuntu-based systems
+    ansible.builtin.service:
+      name: apache2
+      state: started
+      enabled: true
+    become: true
+    when: ansible_facts['os_family'] == "Debian"
+
+  - name: Start and enable Apache service on RedHat-based or CentOS-based systems
+    ansible.builtin.service:
+      name: httpd
+      state: started
+      enabled: true
+    become: true
+    when: ansible_facts['os_family'] == "RedHat"
+
+  - name: Download PrestaShop archive if not already downloaded
+    ansible.builtin.get_url:
+      url: "{{ prestashop_download_url }}"
+      dest: "/tmp/prestashop.zip"
+      mode: '0644'
+    become: true
+
+  - name: Unzip PrestaShop archive to web root directory on Debian-based or Ubuntu-based systems
+    ansible.builtin.unarchive:
+      src: "/tmp/prestashop.zip"
+      dest: "/var/www/html/"
+      remote_src: yes
+      extra_opts:
+        - --strip-components=1
+    become: true
+    when: ansible_facts['os_family'] == "Debian"
+
+  - name: Unzip PrestaShop archive to web root directory on RedHat-based or CentOS-based systems
+    ansible.builtin.unarchive:
+      src: "/tmp/prestashop.zip"
+      dest: "/var/www/html/"
+      remote_src: yes
+      extra_opts:
+        - --strip-components=1
+    become: true
+    when: ansible_facts['os_family'] == "RedHat"
