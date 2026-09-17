@@ -1,0 +1,12 @@
+<?php
+return [
+    'parameters' => [
+        'database_host' => '{{ groups["database"][0] }}',
+        'database_port' => '3306',
+        'database_name' => '{{ MYSQL_WEB_USER_NAME | default("prestashop") }}',
+        'database_user' => '{{ MYSQL_WEB_USER_LOGIN | default("prestashop_user") }}',
+        'database_password' => '{{ MYSQL_WEB_USER_PASSWORD }}',
+        'database_prefix' => '',
+        'secret' => '{{ prestashop_secret | default("some_random_secret_string") }}',
+    ],
+];

@@ -121,18 +121,28 @@ tasks:
       permanent: true
       state: enabled
     become: true
-    when: ansible_facts['os_family'] == "RedHat"  
+    when: ansible_facts['os_family'] == "RedHat"
+
+  - name: Deploy PrestaShop database configuration
+    ansible.builtin.template:
+      src: "parameters.php.j2"
+      dest: "/var/www/html/app/config/parameters.php"
+      owner: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
+      group: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
+      mode: '0640'
+    become: true
+    notify: Restart Apache
     
 
 handlers:
-  - name: Restart apache service on Debian-based or Ubuntu-based systems
+  - name: Restart Apache Debian
     ansible.builtin.service:
       name: apache2
       state: restarted
     become: true
     when: ansible_facts['os_family'] == "Debian"
 
-  - name: Restart apache service on RedHat-based or CentOS-based systems
+  - name: Restart Apache RedHat
     ansible.builtin.service:
       name: httpd
       state: restarted

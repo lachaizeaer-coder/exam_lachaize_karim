@@ -3,3 +3,5 @@
 # vars file for prestashop
 PRESTASHOP_DOWNLOAD_URL: "https://download.prestashop.com/download/releases/prestashop_1.7.8.8.zip"
 PRESTASHOP_DOMAIN: "shop.my-ecommerce.com"
+DB_SERVER: "{{ groups['database'][0] }}"
+
