@@ -56,9 +56,9 @@ tasks:
     ansible.builtin.unarchive:
       src: "/tmp/prestashop.zip"
       dest: "/var/www/html/"
+      owner: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
+      group: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
       remote_src: yes
-      extra_opts:
-        - --strip-components=1
     become: true
     when: ansible_facts['os_family'] == "Debian"
 
@@ -67,59 +67,38 @@ tasks:
       path: "/var/www/html/"
       state: directory
       mode: '0755'
+      recurse: true
     become: true
 
   - name: Configure apache virtual host for PrestaShop
     ansible.builtin.template:
       src: "prestashop.conf.j2"
-      dest: "/etc/apache2/sites-available/prestashop.conf"
+      dest: {{'/etc/apache2/sites-available/prestashop.conf' if ansible_facts['os_family']=='Debian' else '/etc/httpd/conf.d/prestashop.conf'}}
     become: true
-
-######### CHECK EVERYTHING FROM THERE AND CREATE THE JINJA2 file
 
   - name: Enable PrestaShop site on Debian-based or Ubuntu-based systems
     ansible.builtin.command: "a2ensite prestashop.conf"
     become: true
     when: ansible_facts['os_family'] == "Debian"
+    notify: Restart Apache Debian/Ubuntu
 
   - name: Enable PrestaShop site on RedHat-based or CentOS-based systems
     ansible.builtin.command: "ln -s /etc/httpd/sites-available/prestashop.conf /etc/httpd/sites-enabled/prestashop.conf"
     become: true
     when: ansible_facts['os_family'] == "RedHat" 
+    notify: Restart Apache RedHat/CentOS
 
   - name: Enable Apache rewrite module on Debian-based or Ubuntu-based systems
     ansible.builtin.command: "a2enmod rewrite"
     become: true
     when: ansible_facts['os_family'] == "Debian"
+    notify: Restart Apache Debian/Ubuntu
 
   - name: Enable Apache rewrite module on RedHat-based or CentOS-based systems  
     ansible.builtin.command: "sed -i 's/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf"
     become: true
     when: ansible_facts['os_family'] == "RedHat"
-
-  - name: Apply prestashop configuration and restart Apache on Debian-based or Ubuntu-based systems
-    ansible.builtin.command: "a2ensite prestashop.conf && systemctl restart apache2"
-    become: true
-    when: ansible_facts['os_family'] == "Debian"
-
-  - name: Apply prestashop configuration and restart Apache on RedHat-based or CentOS-based systems
-    ansible.builtin.command: "systemctl restart httpd"
-    become: true
-    when: ansible_facts['os_family'] == "RedHat"
-
-  - name: restart apache service on Debian-based or Ubuntu-based systems
-    ansible.builtin.service:
-      name: apache2
-      state: restarted
-    become: true
-    when: ansible_facts['os_family'] == "Debian"
-
-  - name: restart apache service on RedHat-based or CentOS-based systems
-    ansible.builtin.service:
-      name: httpd
-      state: restarted
-    become: true
-    when: ansible_facts['os_family'] == "RedHat"
+    notify: Restart Apache RedHat/CentOS
 
   - name: Allow web traffic for http and https on Debian-based or Ubuntu-based systems
     community.general.ufw:
@@ -144,3 +123,18 @@ tasks:
     become: true
     when: ansible_facts['os_family'] == "RedHat"  
     
+
+handlers:
+  - name: Restart apache service on Debian-based or Ubuntu-based systems
+    ansible.builtin.service:
+      name: apache2
+      state: restarted
+    become: true
+    when: ansible_facts['os_family'] == "Debian"
+
+  - name: Restart apache service on RedHat-based or CentOS-based systems
+    ansible.builtin.service:
+      name: httpd
+      state: restarted
+    become: true
+    when: ansible_facts['os_family'] == "RedHat"

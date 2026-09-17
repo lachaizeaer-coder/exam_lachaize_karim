@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+    ServerName {{ PRESTASHOP_DOMAIN | default(ansible_fqdn) }}
+    DocumentRoot /var/www/html
+
+    <Directory /var/www/html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog logs/prestashop_error.log
+    CustomLog logs/prestashop_access.log combined
+</VirtualHost>
