@@ -2,8 +2,10 @@ all:
   children:
     webserver:
       hosts:
+        web:
           ansible_host: #
 
     database:
       hosts:
+        db:
           ansible_host: #
