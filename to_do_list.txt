@@ -11,7 +11,7 @@
  | - Pretashop:
     || - vars                                                                               ~ OK
     || - install                                                                            ~ OK
-    || - setup
+    || - setup                                                                              ~ OK
  | - Database:
     || - vars                                                                               ~ OK                                                                           
     || - install                                                                            ~ OK

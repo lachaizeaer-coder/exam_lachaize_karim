@@ -23,10 +23,10 @@
 | - Install Prestashop                                                              ~ OK
 | - Configure the web server                                                        ~ OK
 | - Configure Pretashop for:                                                        
-|| - use MySQL server address
-|| - use database
-|| - user
-|| - password
+|| - use MySQL server address                                                       ~ OK
+|| - use database                                                                   ~ OK
+|| - user                                                                           ~ OK
+|| - password                                                                       ~ OK
 
 - Check HTTP connexion
 
