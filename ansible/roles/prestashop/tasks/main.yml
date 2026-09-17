@@ -1,150 +1,133 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # tasks file for prestashop
-tasks:
-  - name: Print OS family
-    ansible.builtin.debug:
-      msg: "OS Family: {{ ansible_facts['os_family'] }}"
+- name: Print OS family
+  ansible.builtin.debug:
+    msg: "OS Family: {{ ansible_facts['os_family'] }}"
 
-  - name: Install PrestaShop dependencies on Debian-based or Ubuntu-based systems
-    ansible.builtin.apt:
-      name:
-        - apache2
-        - php
-        - php-mysql
-        - libapache2-mod-php
-        - unzip
-      state: present
-    become: true
-    when: ansible_facts['os_family'] == "Debian"
+- name: Install PrestaShop dependencies on Debian-based or Ubuntu-based systems
+  ansible.builtin.apt:
+    name:
+      - apache2
+      - php
+      - php-mysql
+      - libapache2-mod-php
+      - unzip
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
-  - name: Install PrestaShop dependencies on RedHat-based or CentOS-based systems
-    ansible.builtin.yum:
-      name:
-        - httpd
-        - php
-        - php-mysqlnd
-        - unzip
-      state: present
-    become: true
-    when: ansible_facts['os_family'] == "RedHat"
+- name: Install PrestaShop dependencies on RedHat-based or CentOS-based systems
+  ansible.builtin.yum:
+    name:
+      - httpd
+      - php
+      - php-mysqlnd
+      - unzip
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == "RedHat"
 
-  - name: Start and enable Apache service on Debian-based or Ubuntu-based systems
-    ansible.builtin.service:
-      name: apache2
-      state: started
-      enabled: true
-    become: true
-    when: ansible_facts['os_family'] == "Debian"
+- name: Start and enable Apache service on Debian-based or Ubuntu-based systems
+  ansible.builtin.service:
+    name: apache2
+    state: started
+    enabled: true
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
-  - name: Start and enable Apache service on RedHat-based or CentOS-based systems
-    ansible.builtin.service:
-      name: httpd
-      state: started
-      enabled: true
-    become: true
-    when: ansible_facts['os_family'] == "RedHat"
+- name: Start and enable Apache service on RedHat-based or CentOS-based systems
+  ansible.builtin.service:
+    name: httpd
+    state: started
+    enabled: true
+  become: true
+  when: ansible_facts['os_family'] == "RedHat"
 
-  - name: Download PrestaShop archive if not already downloaded
-    ansible.builtin.get_url:
-      url: "{{ PRESTASHOP_DOWNLOAD_URL }}"
-      dest: "/tmp/prestashop.zip"
-      mode: '0644'
-    become: true
+- name: Download PrestaShop archive if not already downloaded
+  ansible.builtin.get_url:
+    url: "{{ PRESTASHOP_DOWNLOAD_URL }}"
+    dest: "/tmp/prestashop.zip"
+    mode: '0644'
+  become: true
 
-  - name: Unzip PrestaShop archive to web root directory
-    ansible.builtin.unarchive:
-      src: "/tmp/prestashop.zip"
-      dest: "/var/www/html/"
-      owner: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
-      group: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
-      remote_src: yes
-    become: true
-    when: ansible_facts['os_family'] == "Debian"
+- name: Unzip PrestaShop archive to web root directory
+  ansible.builtin.unarchive:
+    src: "/tmp/prestashop.zip"
+    dest: "/var/www/html/"
+    owner: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
+    group: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
+    remote_src: yes
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
-  - name: Configure PrestaShop permissions
-    ansible.builtin.file:
-      path: "/var/www/html/"
-      state: directory
-      mode: '0755'
-      recurse: true
-    become: true
+- name: Configure PrestaShop permissions
+  ansible.builtin.file:
+    path: "/var/www/html/"
+    state: directory
+    mode: '0755'
+    recurse: true
+  become: true
 
-  - name: Configure apache virtual host for PrestaShop
-    ansible.builtin.template:
-      src: "prestashop.conf.j2"
-      dest: {{'/etc/apache2/sites-available/prestashop.conf' if ansible_facts['os_family']=='Debian' else '/etc/httpd/conf.d/prestashop.conf'}}
-    become: true
+- name: Configure apache virtual host for PrestaShop
+  ansible.builtin.template:
+    src: "prestashop.conf.j2"
+    dest: "{{'/etc/apache2/sites-available/prestashop.conf' if ansible_facts['os_family']=='Debian' else '/etc/httpd/conf.d/prestashop.conf'}}"
+  become: true
 
-  - name: Enable PrestaShop site on Debian-based or Ubuntu-based systems
-    ansible.builtin.command: "a2ensite prestashop.conf"
-    become: true
-    when: ansible_facts['os_family'] == "Debian"
-    notify: Restart Apache Debian/Ubuntu
+- name: Enable PrestaShop site on Debian-based or Ubuntu-based systems
+  ansible.builtin.command: "a2ensite prestashop.conf"
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+  notify: Restart Apache Debian/Ubuntu
 
-  - name: Enable PrestaShop site on RedHat-based or CentOS-based systems
-    ansible.builtin.command: "ln -s /etc/httpd/sites-available/prestashop.conf /etc/httpd/sites-enabled/prestashop.conf"
-    become: true
-    when: ansible_facts['os_family'] == "RedHat" 
-    notify: Restart Apache RedHat/CentOS
+- name: Enable PrestaShop site on RedHat-based or CentOS-based systems
+  ansible.builtin.command: "ln -s /etc/httpd/sites-available/prestashop.conf /etc/httpd/sites-enabled/prestashop.conf"
+  become: true
+  when: ansible_facts['os_family'] == "RedHat" 
+  notify: Restart Apache RedHat/CentOS
 
-  - name: Enable Apache rewrite module on Debian-based or Ubuntu-based systems
-    ansible.builtin.command: "a2enmod rewrite"
-    become: true
-    when: ansible_facts['os_family'] == "Debian"
-    notify: Restart Apache Debian/Ubuntu
+- name: Enable Apache rewrite module on Debian-based or Ubuntu-based systems
+  ansible.builtin.command: "a2enmod rewrite"
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+  notify: Restart Apache Debian/Ubuntu
 
-  - name: Enable Apache rewrite module on RedHat-based or CentOS-based systems  
-    ansible.builtin.command: "sed -i 's/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf"
-    become: true
-    when: ansible_facts['os_family'] == "RedHat"
-    notify: Restart Apache RedHat/CentOS
+- name: Enable Apache rewrite module on RedHat-based or CentOS-based systems  
+  ansible.builtin.command: "sed -i 's/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf"
+  become: true
+  when: ansible_facts['os_family'] == "RedHat"
+  notify: Restart Apache RedHat/CentOS
 
-  - name: Allow web traffic for http and https on Debian-based or Ubuntu-based systems
-    community.general.ufw:
-      rule: allow
-      name: 'Apache Full'
-    become: true
-    when: ansible_facts['os_family'] == "Debian"
+- name: Allow web traffic for http and https on Debian-based or Ubuntu-based systems
+  community.general.ufw:
+    rule: allow
+    name: 'Apache Full'
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
 
-  - name: Configure firewall to allow HTTP traffic on RedHat-based or CentOS-based systems
-    ansible.posix.firewalld:
-      service: http
-      permanent: true
-      state: enabled
-    become: true
-    when: ansible_facts['os_family'] == "RedHat"
+- name: Configure firewall to allow HTTP traffic on RedHat-based or CentOS-based systems
+  ansible.posix.firewalld:
+    service: http
+    permanent: true
+    state: enabled
+  become: true
+  when: ansible_facts['os_family'] == "RedHat"
 
-  - name: Configure firewall to allow HTTPS traffic on RedHat-based or CentOS-based systems
-    ansible.posix.firewalld:
-      service: https
-      permanent: true
-      state: enabled
-    become: true
-    when: ansible_facts['os_family'] == "RedHat"
+- name: Configure firewall to allow HTTPS traffic on RedHat-based or CentOS-based systems
+  ansible.posix.firewalld:
+    service: https
+    permanent: true
+    state: enabled
+  become: true
+  when: ansible_facts['os_family'] == "RedHat"
 
-  - name: Deploy PrestaShop database configuration
-    ansible.builtin.template:
-      src: "parameters.php.j2"
-      dest: "/var/www/html/app/config/parameters.php"
-      owner: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
-      group: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
-      mode: '0640'
-    become: true
-    notify: Restart Apache
-    
-
-handlers:
-  - name: Restart Apache Debian
-    ansible.builtin.service:
-      name: apache2
-      state: restarted
-    become: true
-    when: ansible_facts['os_family'] == "Debian"
-
-  - name: Restart Apache RedHat
-    ansible.builtin.service:
-      name: httpd
-      state: restarted
-    become: true
-    when: ansible_facts['os_family'] == "RedHat"
+- name: Deploy PrestaShop database configuration
+  ansible.builtin.template:
+    src: "parameters.php.j2"
+    dest: "/var/www/html/app/config/parameters.php"
+    owner: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
+    group: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
+    mode: '0640'
+  become: true
+  notify: Restart Apache

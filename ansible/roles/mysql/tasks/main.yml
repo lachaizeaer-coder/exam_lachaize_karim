@@ -1,7 +1,6 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # tasks file for mysql
-tasks:
   - name: Print OS family
     ansible.builtin.debug:
       msg: "OS Family: {{ ansible_facts['os_family'] }}"
