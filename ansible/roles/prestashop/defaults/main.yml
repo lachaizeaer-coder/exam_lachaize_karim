@@ -1,9 +1,9 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # defaults file for prestashop (can be overridden in group_vars)
-PRESTASHOP_VERSION: "9.2.1"
-PRESTASHOP_DOWNLOAD_URL: "https://github.com/PrestaShop/PrestaShop/releases/download/{{ PRESTASHOP_VERSION }}/prestashop_{{ PRESTASHOP_VERSION }}.zip"
-PRESTASHOP_ROOT: /var/www/prestashop
+PRESTASHOP_VERSION: "9.2.1-6.1"
+PRESTASHOP_EDITION: basic
+PRESTASHOP_DOWNLOAD_URL: "https://assets.prestashop3.com/dst/edition/corporate/{{ PRESTASHOP_VERSION }}/prestashop_edition_{{ PRESTASHOP_EDITION }}_version_{{ PRESTASHOP_VERSION }}.zip"PRESTASHOP_ROOT: /var/www/prestashop
 # URL of the shop: public IP of the web server (use an Elastic IP or a DNS name in production)
 PRESTASHOP_DOMAIN: "{{ ansible_host }}"
 
