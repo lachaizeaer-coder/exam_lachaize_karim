@@ -47,10 +47,12 @@
     login_user: "{{ MYSQL_ROOT_LOGIN }}"
     login_password: "{{ MYSQL_ROOT_PASSWORD }}"
     login_unix_socket: "{{ mysql_socket }}"
-    check_implicit_admin: true   # 1st run: root has no password yet -> passwordless login
+    check_implicit_admin: true   # 1st run with no root password -> socket login
     name: "{{ MYSQL_ROOT_NAME }}"
-    password: "{{ MYSQL_ROOT_PASSWORD }}"
     host: "{{ MYSQL_HOST }}"
+    plugin: caching_sha2_password           # mysql_native_password disabled
+    plugin_auth_string: "{{ MYSQL_ROOT_PASSWORD }}"
+    column_case_sensitive: true
     state: present
   become: true
 
@@ -91,9 +93,12 @@
     login_password: "{{ MYSQL_ROOT_PASSWORD }}"
     login_unix_socket: "{{ mysql_socket }}"
     name: "{{ MYSQL_WEB_USER_LOGIN }}"
-    password: "{{ MYSQL_WEB_USER_PASSWORD }}"
     host: "{{ MYSQL_WEB_HOST }}"
+    plugin: caching_sha2_password
+    plugin_auth_string: "{{ MYSQL_WEB_USER_PASSWORD }}"
     priv: "{{ MYSQL_DB_NAME }}.*:ALL"
+    column_case_sensitive: true
+    update_password: on_create
     state: present
   become: true
 
