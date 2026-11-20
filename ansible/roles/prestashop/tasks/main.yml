@@ -3,131 +3,245 @@
 # tasks file for prestashop
 - name: Print OS family
   ansible.builtin.debug:
-    msg: "OS Family: {{ ansible_facts['os_family'] }}"
+    msg: "OS Family: {{ ansible_facts['os_family'] }} - {{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}"
 
-- name: Install PrestaShop dependencies on Debian-based or Ubuntu-based systems
+- name: Load OS specific variables
+  ansible.builtin.include_vars: "{{ ansible_facts['os_family'] }}.yml"
+
+# ---------- Installation of Apache + PHP ----------
+- name: Enable PHP 8.2 module stream on RHEL 8/9 (default PHP is too old)
+  ansible.builtin.command: dnf -y module enable php:8.2
+  register: php_stream
+  changed_when: "'Nothing to do' not in php_stream.stdout"
+  become: true
+  when:
+    - ansible_facts['os_family'] == "RedHat"
+    - ansible_facts['distribution_major_version'] in ['8', '9']
+
+- name: Install Apache, PHP and extensions on Debian-based or Ubuntu-based systems
   ansible.builtin.apt:
-    name:
-      - apache2
-      - php
-      - php-mysql
-      - libapache2-mod-php
-      - unzip
+    name: "{{ prestashop_packages }}"
     state: present
+    update_cache: true
+    cache_valid_time: 3600
   become: true
   when: ansible_facts['os_family'] == "Debian"
 
-- name: Install PrestaShop dependencies on RedHat-based or CentOS-based systems
-  ansible.builtin.yum:
-    name:
-      - httpd
-      - php
-      - php-mysqlnd
-      - unzip
+- name: Install Apache, PHP and extensions on RedHat-based systems
+  ansible.builtin.dnf:
+    name: "{{ prestashop_packages }}"
     state: present
   become: true
   when: ansible_facts['os_family'] == "RedHat"
 
-- name: Start and enable Apache service on Debian-based or Ubuntu-based systems
-  ansible.builtin.service:
-    name: apache2
-    state: started
-    enabled: true
-  become: true
+- name: Get PHP version (Debian-based or Ubuntu-based systems)
+  ansible.builtin.command: php -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;'
+  register: php_version
+  changed_when: false
   when: ansible_facts['os_family'] == "Debian"
 
-- name: Start and enable Apache service on RedHat-based or CentOS-based systems
+- name: Set PHP configuration directory (Debian-based or Ubuntu-based systems)
+  ansible.builtin.set_fact:
+    php_ini_dir: "/etc/php/{{ php_version.stdout }}/apache2/conf.d"
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: Apply PHP settings recommended by PrestaShop
+  ansible.builtin.template:
+    src: prestashop-php.ini.j2
+    dest: "{{ php_ini_dir }}/99-prestashop.ini"
+    mode: '0644'
+  become: true
+  notify: Restart Apache
+
+- name: Start and enable Apache service
   ansible.builtin.service:
-    name: httpd
+    name: "{{ apache_service }}"
     state: started
     enabled: true
   become: true
-  when: ansible_facts['os_family'] == "RedHat"
 
-- name: Download PrestaShop archive if not already downloaded
+# ---------- Web server -> database communication ----------
+- name: Allow Apache to connect to a remote database (SELinux)
+  ansible.posix.seboolean:
+    name: "{{ item }}"
+    state: true
+    persistent: true
+  loop:
+    - httpd_can_network_connect_db
+    - httpd_unified
+  become: true
+  when:
+    - ansible_facts['os_family'] == "RedHat"
+    - ansible_facts['selinux']['status'] | default('disabled') == 'enabled'
+
+- name: Check that the database server is reachable on port {{ DB_PORT }}
+  ansible.builtin.wait_for:
+    host: "{{ DB_SERVER }}"
+    port: "{{ DB_PORT }}"
+    timeout: 15
+    msg: "MySQL on {{ DB_SERVER }}:{{ DB_PORT }} is not reachable (check bind-address, firewall and AWS Security Group)"
+
+# ---------- Download and extract PrestaShop ----------
+- name: Create PrestaShop web root directory
+  ansible.builtin.file:
+    path: "{{ PRESTASHOP_ROOT }}"
+    state: directory
+    owner: "{{ apache_user }}"
+    group: "{{ apache_user }}"
+    mode: '0755'
+  become: true
+
+- name: Download PrestaShop archive
   ansible.builtin.get_url:
     url: "{{ PRESTASHOP_DOWNLOAD_URL }}"
-    dest: "/tmp/prestashop.zip"
+    dest: "/tmp/prestashop_{{ PRESTASHOP_VERSION }}.zip"
     mode: '0644'
   become: true
 
-- name: Unzip PrestaShop archive to web root directory
+- name: Extract PrestaShop archive
   ansible.builtin.unarchive:
-    src: "/tmp/prestashop.zip"
-    dest: "/var/www/html/"
-    owner: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
-    group: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
-    remote_src: yes
+    src: "/tmp/prestashop_{{ PRESTASHOP_VERSION }}.zip"
+    dest: "{{ PRESTASHOP_ROOT }}"
+    owner: "{{ apache_user }}"
+    group: "{{ apache_user }}"
+    remote_src: true
+    creates: "{{ PRESTASHOP_ROOT }}/index.php"
   become: true
-  when: ansible_facts['os_family'] == "Debian"
 
-- name: Configure PrestaShop permissions
+# The official archive contains another zip (prestashop.zip) with the real files
+- name: Check if the archive contains a nested prestashop.zip
+  ansible.builtin.stat:
+    path: "{{ PRESTASHOP_ROOT }}/prestashop.zip"
+  register: nested_zip
+
+- name: Extract nested prestashop.zip
+  ansible.builtin.unarchive:
+    src: "{{ PRESTASHOP_ROOT }}/prestashop.zip"
+    dest: "{{ PRESTASHOP_ROOT }}"
+    owner: "{{ apache_user }}"
+    group: "{{ apache_user }}"
+    remote_src: true
+  become: true
+  when: nested_zip.stat.exists
+
+- name: Remove installation leftovers
   ansible.builtin.file:
-    path: "/var/www/html/"
-    state: directory
-    mode: '0755'
-    recurse: true
+    path: "{{ PRESTASHOP_ROOT }}/{{ item }}"
+    state: absent
+  loop:
+    - prestashop.zip
+    - Install_PrestaShop.html
   become: true
 
-- name: Configure apache virtual host for PrestaShop
+# ---------- PrestaShop installation (CLI installer, creates the tables in MySQL) ----------
+- name: Install PrestaShop with the CLI installer
+  ansible.builtin.command:
+    argv:
+      - php
+      - "{{ PRESTASHOP_ROOT }}/install/index_cli.php"
+      - "--domain={{ PRESTASHOP_DOMAIN }}"
+      - "--db_server={{ DB_SERVER }}:{{ DB_PORT }}"
+      - "--db_name={{ MYSQL_DB_NAME }}"
+      - "--db_user={{ MYSQL_WEB_USER_LOGIN }}"
+      - "--db_password={{ MYSQL_WEB_USER_PASSWORD }}"
+      - "--prefix={{ PRESTASHOP_DB_PREFIX }}"
+      - "--name={{ PRESTASHOP_SHOP_NAME }}"
+      - "--language={{ PRESTASHOP_LANGUAGE }}"
+      - "--country={{ PRESTASHOP_COUNTRY }}"
+      - "--firstname={{ PRESTASHOP_ADMIN_FIRSTNAME }}"
+      - "--lastname={{ PRESTASHOP_ADMIN_LASTNAME }}"
+      - "--email={{ PRESTASHOP_ADMIN_EMAIL }}"
+      - "--password={{ PRESTASHOP_ADMIN_PASSWORD }}"
+      - "--ssl=0"
+    chdir: "{{ PRESTASHOP_ROOT }}/install"
+    creates: "{{ PRESTASHOP_ROOT }}/app/config/parameters.php"
+  become: true
+  become_user: "{{ apache_user }}"
+
+- name: Remove install directory (required by PrestaShop after installation)
+  ansible.builtin.file:
+    path: "{{ PRESTASHOP_ROOT }}/install"
+    state: absent
+  become: true
+
+# ---------- Apache virtual host ----------
+- name: Configure Apache virtual host for PrestaShop
   ansible.builtin.template:
-    src: "prestashop.conf.j2"
-    dest: "{{'/etc/apache2/sites-available/prestashop.conf' if ansible_facts['os_family']=='Debian' else '/etc/httpd/conf.d/prestashop.conf'}}"
+    src: prestashop.conf.j2
+    dest: "{{ apache_vhost_file }}"
+    mode: '0644'
   become: true
+  notify: Restart Apache
 
-- name: Enable PrestaShop site on Debian-based or Ubuntu-based systems
-  ansible.builtin.command: "a2ensite prestashop.conf"
-  become: true
-  when: ansible_facts['os_family'] == "Debian"
-  notify: Restart Apache Debian/Ubuntu
-
-- name: Enable PrestaShop site on RedHat-based or CentOS-based systems
-  ansible.builtin.command: "ln -s /etc/httpd/sites-available/prestashop.conf /etc/httpd/sites-enabled/prestashop.conf"
-  become: true
-  when: ansible_facts['os_family'] == "RedHat" 
-  notify: Restart Apache RedHat/CentOS
-
-- name: Enable Apache rewrite module on Debian-based or Ubuntu-based systems
-  ansible.builtin.command: "a2enmod rewrite"
+- name: Enable Apache rewrite module (Debian-based or Ubuntu-based systems)
+  community.general.apache2_module:
+    name: rewrite
+    state: present
   become: true
   when: ansible_facts['os_family'] == "Debian"
-  notify: Restart Apache Debian/Ubuntu
+  notify: Restart Apache
 
-- name: Enable Apache rewrite module on RedHat-based or CentOS-based systems  
-  ansible.builtin.command: "sed -i 's/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf"
+- name: Disable Apache default site (Debian-based or Ubuntu-based systems)
+  ansible.builtin.command: a2dissite 000-default.conf
+  args:
+    removes: /etc/apache2/sites-enabled/000-default.conf
   become: true
-  when: ansible_facts['os_family'] == "RedHat"
-  notify: Restart Apache RedHat/CentOS
+  when: ansible_facts['os_family'] == "Debian"
+  notify: Restart Apache
 
-- name: Allow web traffic for http and https on Debian-based or Ubuntu-based systems
+- name: Enable PrestaShop site (Debian-based or Ubuntu-based systems)
+  ansible.builtin.command: a2ensite prestashop.conf
+  args:
+    creates: /etc/apache2/sites-enabled/prestashop.conf
+  become: true
+  when: ansible_facts['os_family'] == "Debian"
+  notify: Restart Apache
+
+# ---------- Firewall ----------
+- name: Gather services facts
+  ansible.builtin.service_facts:
+
+- name: Allow HTTP traffic (ufw)
   community.general.ufw:
     rule: allow
-    name: 'Apache Full'
+    port: "80"
+    proto: tcp
   become: true
   when: ansible_facts['os_family'] == "Debian"
 
-- name: Configure firewall to allow HTTP traffic on RedHat-based or CentOS-based systems
+- name: Allow HTTP traffic (firewalld, only if it is running)
   ansible.posix.firewalld:
     service: http
     permanent: true
+    immediate: true
     state: enabled
   become: true
-  when: ansible_facts['os_family'] == "RedHat"
+  when:
+    - ansible_facts['os_family'] == "RedHat"
+    - ansible_facts.services['firewalld.service'] is defined
+    - ansible_facts.services['firewalld.service'].state == 'running'
 
-- name: Configure firewall to allow HTTPS traffic on RedHat-based or CentOS-based systems
-  ansible.posix.firewalld:
-    service: https
-    permanent: true
-    state: enabled
-  become: true
-  when: ansible_facts['os_family'] == "RedHat"
+# ---------- Checks ----------
+- name: Apply pending restarts before checking
+  ansible.builtin.meta: flush_handlers
 
-- name: Deploy PrestaShop database configuration
-  ansible.builtin.template:
-    src: "parameters.php.j2"
-    dest: "/var/www/html/app/config/parameters.php"
-    owner: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
-    group: "{{ 'www-data' if ansible_facts['os_family'] == 'Debian' else 'apache' }}"
-    mode: '0640'
-  become: true
-  notify: Restart Apache
+- name: Find back office directory
+  ansible.builtin.find:
+    paths: "{{ PRESTASHOP_ROOT }}"
+    patterns: "admin*"
+    file_type: directory
+  register: admin_dir
+
+- name: Check that the shop answers on http://{{ PRESTASHOP_DOMAIN }}/
+  ansible.builtin.uri:
+    url: "http://{{ PRESTASHOP_DOMAIN }}/"
+    status_code: 200
+  delegate_to: localhost
+  become: false
+
+- name: Print shop URLs
+  ansible.builtin.debug:
+    msg:
+      - "Front office: http://{{ PRESTASHOP_DOMAIN }}/"
+      - "Back office:  http://{{ PRESTASHOP_DOMAIN }}/{{ admin_dir.files[0].path | basename if admin_dir.files else 'admin' }}/"
+      - "Login: {{ PRESTASHOP_ADMIN_EMAIL }}"

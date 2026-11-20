@@ -1,0 +1,18 @@
+---
+# RHEL / Rocky / AlmaLinux specific values (PHP >= 8.1 needed: module stream php:8.2)
+prestashop_packages:
+  - httpd
+  - php
+  - php-mysqlnd
+  - php-gd
+  - php-intl
+  - php-mbstring
+  - php-xml
+  - php-bcmath
+  - php-pecl-zip
+  - unzip
+apache_service: httpd
+apache_user: apache
+apache_vhost_file: /etc/httpd/conf.d/prestashop.conf
+apache_log_dir: /var/log/httpd
+php_ini_dir: /etc/php.d
