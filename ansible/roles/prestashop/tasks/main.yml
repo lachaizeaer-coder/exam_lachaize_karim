@@ -127,6 +127,11 @@
   become: true
 
 # ---------- PrestaShop installation (CLI installer, creates the tables in MySQL) ----------
+- name: Check if PrestaShop is already installed
+  ansible.builtin.stat:
+    path: "{{ PRESTASHOP_ROOT }}/app/config/parameters.php"
+  register: ps_installed
+
 - name: Install PrestaShop with the CLI installer
   ansible.builtin.command:
     argv:
@@ -147,9 +152,23 @@
       - "--password={{ PRESTASHOP_ADMIN_PASSWORD }}"
       - "--ssl=0"
     chdir: "{{ PRESTASHOP_ROOT }}/install"
-    creates: "{{ PRESTASHOP_ROOT }}/app/config/parameters.php"
+  register: ps_install
+  # The CLI installer can exit with rc=0 on error: check its output instead
+  failed_when: ps_install.rc != 0
   become: true
   become_user: "{{ apache_user }}"
+  when: not ps_installed.stat.exists
+
+- name: Print installer output
+  ansible.builtin.debug:
+    var: ps_install.stdout_lines
+  when: ps_install is changed
+
+- name: Check that the installation created parameters.php
+  ansible.builtin.stat:
+    path: "{{ PRESTASHOP_ROOT }}/app/config/parameters.php"
+  register: ps_installed
+  failed_when: not ps_installed.stat.exists
 
 - name: Remove install directory (required by PrestaShop after installation)
   ansible.builtin.file:
