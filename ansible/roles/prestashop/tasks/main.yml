@@ -84,12 +84,21 @@
     mode: '0755'
   become: true
 
+- name: Copy PrestaShop archive from the control node (roles/prestashop/files/prestashop.zip)
+  ansible.builtin.copy:
+    src: prestashop.zip
+    dest: "/tmp/prestashop_{{ PRESTASHOP_VERSION }}.zip"
+    mode: '0644'
+  become: true
+  when: PRESTASHOP_LOCAL_ZIP | bool
+
 - name: Download PrestaShop archive
   ansible.builtin.get_url:
     url: "{{ PRESTASHOP_DOWNLOAD_URL }}"
     dest: "/tmp/prestashop_{{ PRESTASHOP_VERSION }}.zip"
     mode: '0644'
   become: true
+  when: not PRESTASHOP_LOCAL_ZIP | bool
 
 - name: Extract PrestaShop archive
   ansible.builtin.unarchive:
