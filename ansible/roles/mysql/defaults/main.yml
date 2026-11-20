@@ -1,3 +1,9 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # defaults file for mysql
+MYSQL_PORT: 3306
+MYSQL_BIND_ADDRESS: "0.0.0.0"
+
+# Host allowed to connect with the PrestaShop user:
+# private IP of the web server from the inventory, '%' (any host) as fallback
+MYSQL_WEB_HOST: "{{ hostvars[groups['webserver'][0]]['private_ip'] | default('%') }}"

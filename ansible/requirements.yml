@@ -1,0 +1,5 @@
+---
+collections:
+  - name: community.mysql    # mysql_db, mysql_user
+  - name: community.general  # ufw, apache2_module
+  - name: ansible.posix      # firewalld, seboolean

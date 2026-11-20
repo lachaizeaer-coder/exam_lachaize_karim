@@ -1,0 +1,117 @@
+2026-11-20 15:23:15,810 p=7021 u=ubuntu n=ansible | Starting galaxy collection install process
+2026-11-20 15:23:16,442 p=7021 u=ubuntu n=ansible | Nothing to do. All requested collections are already installed. If you want to reinstall them, consider using `--force`.
+2026-11-20 15:24:35,742 p=7210 u=ubuntu n=ansible | web | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-11-20 15:24:36,412 p=7210 u=ubuntu n=ansible | db | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-11-20 15:24:43,853 p=7268 u=ubuntu n=ansible | # /usr/lib/python3/dist-packages/ansible_collections
+Collection                               Version
+---------------------------------------- -------
+
+2026-11-20 15:24:43,853 p=7268 u=ubuntu n=ansible | amazon.aws                               7.2.0  
+2026-11-20 15:24:43,853 p=7268 u=ubuntu n=ansible | ansible.netcommon                        5.3.0  
+2026-11-20 15:24:43,854 p=7268 u=ubuntu n=ansible | ansible.posix                            1.5.4  
+2026-11-20 15:24:43,854 p=7268 u=ubuntu n=ansible | ansible.utils                            2.12.0 
+2026-11-20 15:24:43,854 p=7268 u=ubuntu n=ansible | ansible.windows                          2.2.0  
+2026-11-20 15:24:43,854 p=7268 u=ubuntu n=ansible | arista.eos                               6.2.2  
+2026-11-20 15:24:43,854 p=7268 u=ubuntu n=ansible | awx.awx                                  23.6.0 
+2026-11-20 15:24:43,855 p=7268 u=ubuntu n=ansible | azure.azcollection                       1.19.0 
+2026-11-20 15:24:43,855 p=7268 u=ubuntu n=ansible | check_point.mgmt                         5.2.2  
+2026-11-20 15:24:43,855 p=7268 u=ubuntu n=ansible | chocolatey.chocolatey                    1.5.1  
+2026-11-20 15:24:43,855 p=7268 u=ubuntu n=ansible | cisco.aci                                2.8.0  
+2026-11-20 15:24:43,856 p=7268 u=ubuntu n=ansible | cisco.asa                                4.0.3  
+2026-11-20 15:24:43,856 p=7268 u=ubuntu n=ansible | cisco.dnac                               6.10.2 
+2026-11-20 15:24:43,856 p=7268 u=ubuntu n=ansible | cisco.intersight                         2.0.7  
+2026-11-20 15:24:43,856 p=7268 u=ubuntu n=ansible | cisco.ios                                5.3.0  
+2026-11-20 15:24:43,857 p=7268 u=ubuntu n=ansible | cisco.iosxr                              6.1.1  
+2026-11-20 15:24:43,857 p=7268 u=ubuntu n=ansible | cisco.ise                                2.7.0  
+2026-11-20 15:24:43,857 p=7268 u=ubuntu n=ansible | cisco.meraki                             2.17.2 
+2026-11-20 15:24:43,857 p=7268 u=ubuntu n=ansible | cisco.mso                                2.5.0  
+2026-11-20 15:24:43,858 p=7268 u=ubuntu n=ansible | cisco.nxos                               5.3.0  
+2026-11-20 15:24:43,858 p=7268 u=ubuntu n=ansible | cisco.ucs                                1.10.0 
+2026-11-20 15:24:43,858 p=7268 u=ubuntu n=ansible | cloud.common                             2.1.4  
+2026-11-20 15:24:43,858 p=7268 u=ubuntu n=ansible | cloudscale_ch.cloud                      2.3.1  
+2026-11-20 15:24:43,859 p=7268 u=ubuntu n=ansible | community.aws                            7.1.0  
+2026-11-20 15:24:43,859 p=7268 u=ubuntu n=ansible | community.azure                          2.0.0  
+2026-11-20 15:24:43,859 p=7268 u=ubuntu n=ansible | community.ciscosmb                       1.0.7  
+2026-11-20 15:24:43,859 p=7268 u=ubuntu n=ansible | community.crypto                         2.17.1 
+2026-11-20 15:24:43,860 p=7268 u=ubuntu n=ansible | community.digitalocean                   1.26.0 
+2026-11-20 15:24:43,860 p=7268 u=ubuntu n=ansible | community.dns                            2.8.0  
+2026-11-20 15:24:43,860 p=7268 u=ubuntu n=ansible | community.docker                         3.7.0  
+2026-11-20 15:24:43,860 p=7268 u=ubuntu n=ansible | community.general                        8.3.0  
+2026-11-20 15:24:43,860 p=7268 u=ubuntu n=ansible | community.grafana                        1.7.0  
+2026-11-20 15:24:43,861 p=7268 u=ubuntu n=ansible | community.hashi_vault                    6.1.0  
+2026-11-20 15:24:43,861 p=7268 u=ubuntu n=ansible | community.hrobot                         1.9.0  
+2026-11-20 15:24:43,861 p=7268 u=ubuntu n=ansible | community.library_inventory_filtering_v1 1.0.0  
+2026-11-20 15:24:43,861 p=7268 u=ubuntu n=ansible | community.libvirt                        1.3.0  
+2026-11-20 15:24:43,862 p=7268 u=ubuntu n=ansible | community.mongodb                        1.6.3  
+2026-11-20 15:24:43,862 p=7268 u=ubuntu n=ansible | community.mysql                          3.8.0  
+2026-11-20 15:24:43,862 p=7268 u=ubuntu n=ansible | community.network                        5.0.2  
+2026-11-20 15:24:43,862 p=7268 u=ubuntu n=ansible | community.okd                            2.3.0  
+2026-11-20 15:24:43,863 p=7268 u=ubuntu n=ansible | community.postgresql                     3.3.0  
+2026-11-20 15:24:43,863 p=7268 u=ubuntu n=ansible | community.proxysql                       1.5.1  
+2026-11-20 15:24:43,863 p=7268 u=ubuntu n=ansible | community.rabbitmq                       1.2.3  
+2026-11-20 15:24:43,863 p=7268 u=ubuntu n=ansible | community.routeros                       2.12.0 
+2026-11-20 15:24:43,864 p=7268 u=ubuntu n=ansible | community.sap                            2.0.0  
+2026-11-20 15:24:43,864 p=7268 u=ubuntu n=ansible | community.sap_libs                       1.4.2  
+2026-11-20 15:24:43,864 p=7268 u=ubuntu n=ansible | community.sops                           1.6.7  
+2026-11-20 15:24:43,864 p=7268 u=ubuntu n=ansible | community.vmware                         4.1.0  
+2026-11-20 15:24:43,865 p=7268 u=ubuntu n=ansible | community.windows                        2.1.0  
+2026-11-20 15:24:43,865 p=7268 u=ubuntu n=ansible | community.zabbix                         2.3.1  
+2026-11-20 15:24:43,865 p=7268 u=ubuntu n=ansible | containers.podman                        1.11.0 
+2026-11-20 15:24:43,865 p=7268 u=ubuntu n=ansible | cyberark.conjur                          1.2.2  
+2026-11-20 15:24:43,865 p=7268 u=ubuntu n=ansible | cyberark.pas                             1.0.25 
+2026-11-20 15:24:43,866 p=7268 u=ubuntu n=ansible | dellemc.enterprise_sonic                 2.4.0  
+2026-11-20 15:24:43,866 p=7268 u=ubuntu n=ansible | dellemc.openmanage                       8.7.0  
+2026-11-20 15:24:43,866 p=7268 u=ubuntu n=ansible | dellemc.powerflex                        2.1.0  
+2026-11-20 15:24:43,866 p=7268 u=ubuntu n=ansible | dellemc.unity                            1.7.1  
+2026-11-20 15:24:43,867 p=7268 u=ubuntu n=ansible | f5networks.f5_modules                    1.27.1 
+2026-11-20 15:24:43,867 p=7268 u=ubuntu n=ansible | fortinet.fortimanager                    2.3.1  
+2026-11-20 15:24:43,867 p=7268 u=ubuntu n=ansible | fortinet.fortios                         2.3.4  
+2026-11-20 15:24:43,867 p=7268 u=ubuntu n=ansible | frr.frr                                  2.0.2  
+2026-11-20 15:24:43,868 p=7268 u=ubuntu n=ansible | gluster.gluster                          1.0.2  
+2026-11-20 15:24:43,868 p=7268 u=ubuntu n=ansible | google.cloud                             1.3.0  
+2026-11-20 15:24:43,868 p=7268 u=ubuntu n=ansible | grafana.grafana                          2.2.4  
+2026-11-20 15:24:43,868 p=7268 u=ubuntu n=ansible | hetzner.hcloud                           2.4.1  
+2026-11-20 15:24:43,869 p=7268 u=ubuntu n=ansible | hpe.nimble                               1.1.4  
+2026-11-20 15:24:43,869 p=7268 u=ubuntu n=ansible | ibm.qradar                               2.1.0  
+2026-11-20 15:24:43,869 p=7268 u=ubuntu n=ansible | ibm.spectrum_virtualize                  2.0.0  
+2026-11-20 15:24:43,869 p=7268 u=ubuntu n=ansible | ibm.storage_virtualize                   2.2.0  
+2026-11-20 15:24:43,869 p=7268 u=ubuntu n=ansible | infinidat.infinibox                      1.3.12 
+2026-11-20 15:24:43,870 p=7268 u=ubuntu n=ansible | infoblox.nios_modules                    1.6.1  
+2026-11-20 15:24:43,870 p=7268 u=ubuntu n=ansible | inspur.ispim                             2.2.0  
+2026-11-20 15:24:43,870 p=7268 u=ubuntu n=ansible | inspur.sm                                2.3.0  
+2026-11-20 15:24:43,870 p=7268 u=ubuntu n=ansible | junipernetworks.junos                    5.3.1  
+2026-11-20 15:24:43,871 p=7268 u=ubuntu n=ansible | kubernetes.core                          2.4.0  
+2026-11-20 15:24:43,871 p=7268 u=ubuntu n=ansible | lowlydba.sqlserver                       2.2.2  
+2026-11-20 15:24:43,871 p=7268 u=ubuntu n=ansible | microsoft.ad                             1.4.1  
+2026-11-20 15:24:43,871 p=7268 u=ubuntu n=ansible | netapp.aws                               21.7.1 
+2026-11-20 15:24:43,871 p=7268 u=ubuntu n=ansible | netapp.azure                             21.10.1
+2026-11-20 15:24:43,871 p=7268 u=ubuntu n=ansible | netapp.cloudmanager                      21.22.1
+2026-11-20 15:24:43,872 p=7268 u=ubuntu n=ansible | netapp.elementsw                         21.7.0 
+2026-11-20 15:24:43,872 p=7268 u=ubuntu n=ansible | netapp.ontap                             22.9.0 
+2026-11-20 15:24:43,872 p=7268 u=ubuntu n=ansible | netapp.storagegrid                       21.11.1
+2026-11-20 15:24:43,872 p=7268 u=ubuntu n=ansible | netapp.um_info                           21.8.1 
+2026-11-20 15:24:43,873 p=7268 u=ubuntu n=ansible | netapp_eseries.santricity                1.4.0  
+2026-11-20 15:24:43,873 p=7268 u=ubuntu n=ansible | netbox.netbox                            3.16.0 
+2026-11-20 15:24:43,873 p=7268 u=ubuntu n=ansible | ngine_io.cloudstack                      2.3.0  
+2026-11-20 15:24:43,873 p=7268 u=ubuntu n=ansible | ngine_io.exoscale                        1.1.0  
+2026-11-20 15:24:43,874 p=7268 u=ubuntu n=ansible | openstack.cloud                          2.2.0  
+2026-11-20 15:24:43,874 p=7268 u=ubuntu n=ansible | openvswitch.openvswitch                  2.1.1  
+2026-11-20 15:24:43,874 p=7268 u=ubuntu n=ansible | ovirt.ovirt                              3.2.0  
+2026-11-20 15:24:43,874 p=7268 u=ubuntu n=ansible | purestorage.flasharray                   1.26.0 
+2026-11-20 15:24:43,874 p=7268 u=ubuntu n=ansible | purestorage.flashblade                   1.15.0 
+2026-11-20 15:24:43,875 p=7268 u=ubuntu n=ansible | purestorage.fusion                       1.6.0  
+2026-11-20 15:24:43,875 p=7268 u=ubuntu n=ansible | sensu.sensu_go                           1.14.0 
+2026-11-20 15:24:43,875 p=7268 u=ubuntu n=ansible | splunk.es                                2.1.2  
+2026-11-20 15:24:43,875 p=7268 u=ubuntu n=ansible | t_systems_mms.icinga_director            2.0.1  
+2026-11-20 15:24:43,876 p=7268 u=ubuntu n=ansible | telekom_mms.icinga_director              1.35.0 
+2026-11-20 15:24:43,876 p=7268 u=ubuntu n=ansible | theforeman.foreman                       3.15.0 
+2026-11-20 15:24:43,876 p=7268 u=ubuntu n=ansible | vmware.vmware_rest                       2.3.1  
+2026-11-20 15:24:43,877 p=7268 u=ubuntu n=ansible | vultr.cloud                              1.12.1 
+2026-11-20 15:24:43,877 p=7268 u=ubuntu n=ansible | vyos.vyos                                4.1.0  
+2026-11-20 15:24:43,877 p=7268 u=ubuntu n=ansible | wti.remote                               1.0.5  

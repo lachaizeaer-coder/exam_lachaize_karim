@@ -1,6 +1,5 @@
 #PRESTASHOP DB
-MYSQL_DB_NAME: "prestashop-db"
-
+MYSQL_DB_NAME: "prestashop"
 
 #PRESTASHOP USER
 MYSQL_WEB_USER_NAME: "prestashop"

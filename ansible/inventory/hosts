@@ -1,11 +1,19 @@
+---
 all:
+  vars:
+    ansible_user: ubuntu
+    ansible_ssh_private_key_file: ~/.ssh/ansible-exam.pem
+    ansible_python_interpreter: /usr/bin/python3
+
   children:
     webserver:
       hosts:
         web:
-          ansible_host: #
+          ansible_host: 13.38.76.244      # IP PUBLIQUE de l'EC2 web (connexion SSH)
+          private_ip: 172.31.11.237        # IP PRIVÉE de l'EC2 web (autorisée dans MySQL)
 
     database:
       hosts:
         db:
-          ansible_host: #
+          ansible_host: 35.180.132.249      # IP PUBLIQUE de l'EC2 DB (connexion SSH)
+          private_ip: 172.31.15.6        # IP PRIVÉE de l'EC2 DB (utilisée par PrestaShop)

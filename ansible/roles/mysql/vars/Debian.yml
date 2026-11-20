@@ -1,0 +1,8 @@
+---
+# Debian / Ubuntu specific values
+mysql_packages:
+  - mysql-server
+  - python3-pymysql
+mysql_service: mysql
+mysql_socket: /var/run/mysqld/mysqld.sock
+mysql_config_file: /etc/mysql/mysql.conf.d/mysqld.cnf

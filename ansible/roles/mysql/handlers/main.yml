@@ -1,3 +1,7 @@
-#SPDX-License-Identifier: MIT-0
 ---
 # handlers file for mysql
+- name: Restart MySQL
+  ansible.builtin.service:
+    name: "{{ mysql_service }}"
+    state: restarted
+  become: true
