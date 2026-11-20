@@ -1,1015 +1,268 @@
-2026-11-20 15:23:15,810 p=7021 u=ubuntu n=ansible | Starting galaxy collection install process
-2026-11-20 15:23:16,442 p=7021 u=ubuntu n=ansible | Nothing to do. All requested collections are already installed. If you want to reinstall them, consider using `--force`.
-2026-11-20 15:24:35,742 p=7210 u=ubuntu n=ansible | web | SUCCESS => {
+2026-11-20 16:36:12,534 p=16458 u=ubuntu n=ansible | db | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
-2026-11-20 15:24:36,412 p=7210 u=ubuntu n=ansible | db | SUCCESS => {
+2026-11-20 16:36:13,274 p=16458 u=ubuntu n=ansible | web | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
-2026-11-20 15:24:43,853 p=7268 u=ubuntu n=ansible | # /usr/lib/python3/dist-packages/ansible_collections
-Collection                               Version
----------------------------------------- -------
-
-2026-11-20 15:24:43,853 p=7268 u=ubuntu n=ansible | amazon.aws                               7.2.0  
-2026-11-20 15:24:43,853 p=7268 u=ubuntu n=ansible | ansible.netcommon                        5.3.0  
-2026-11-20 15:24:43,854 p=7268 u=ubuntu n=ansible | ansible.posix                            1.5.4  
-2026-11-20 15:24:43,854 p=7268 u=ubuntu n=ansible | ansible.utils                            2.12.0 
-2026-11-20 15:24:43,854 p=7268 u=ubuntu n=ansible | ansible.windows                          2.2.0  
-2026-11-20 15:24:43,854 p=7268 u=ubuntu n=ansible | arista.eos                               6.2.2  
-2026-11-20 15:24:43,854 p=7268 u=ubuntu n=ansible | awx.awx                                  23.6.0 
-2026-11-20 15:24:43,855 p=7268 u=ubuntu n=ansible | azure.azcollection                       1.19.0 
-2026-11-20 15:24:43,855 p=7268 u=ubuntu n=ansible | check_point.mgmt                         5.2.2  
-2026-11-20 15:24:43,855 p=7268 u=ubuntu n=ansible | chocolatey.chocolatey                    1.5.1  
-2026-11-20 15:24:43,855 p=7268 u=ubuntu n=ansible | cisco.aci                                2.8.0  
-2026-11-20 15:24:43,856 p=7268 u=ubuntu n=ansible | cisco.asa                                4.0.3  
-2026-11-20 15:24:43,856 p=7268 u=ubuntu n=ansible | cisco.dnac                               6.10.2 
-2026-11-20 15:24:43,856 p=7268 u=ubuntu n=ansible | cisco.intersight                         2.0.7  
-2026-11-20 15:24:43,856 p=7268 u=ubuntu n=ansible | cisco.ios                                5.3.0  
-2026-11-20 15:24:43,857 p=7268 u=ubuntu n=ansible | cisco.iosxr                              6.1.1  
-2026-11-20 15:24:43,857 p=7268 u=ubuntu n=ansible | cisco.ise                                2.7.0  
-2026-11-20 15:24:43,857 p=7268 u=ubuntu n=ansible | cisco.meraki                             2.17.2 
-2026-11-20 15:24:43,857 p=7268 u=ubuntu n=ansible | cisco.mso                                2.5.0  
-2026-11-20 15:24:43,858 p=7268 u=ubuntu n=ansible | cisco.nxos                               5.3.0  
-2026-11-20 15:24:43,858 p=7268 u=ubuntu n=ansible | cisco.ucs                                1.10.0 
-2026-11-20 15:24:43,858 p=7268 u=ubuntu n=ansible | cloud.common                             2.1.4  
-2026-11-20 15:24:43,858 p=7268 u=ubuntu n=ansible | cloudscale_ch.cloud                      2.3.1  
-2026-11-20 15:24:43,859 p=7268 u=ubuntu n=ansible | community.aws                            7.1.0  
-2026-11-20 15:24:43,859 p=7268 u=ubuntu n=ansible | community.azure                          2.0.0  
-2026-11-20 15:24:43,859 p=7268 u=ubuntu n=ansible | community.ciscosmb                       1.0.7  
-2026-11-20 15:24:43,859 p=7268 u=ubuntu n=ansible | community.crypto                         2.17.1 
-2026-11-20 15:24:43,860 p=7268 u=ubuntu n=ansible | community.digitalocean                   1.26.0 
-2026-11-20 15:24:43,860 p=7268 u=ubuntu n=ansible | community.dns                            2.8.0  
-2026-11-20 15:24:43,860 p=7268 u=ubuntu n=ansible | community.docker                         3.7.0  
-2026-11-20 15:24:43,860 p=7268 u=ubuntu n=ansible | community.general                        8.3.0  
-2026-11-20 15:24:43,860 p=7268 u=ubuntu n=ansible | community.grafana                        1.7.0  
-2026-11-20 15:24:43,861 p=7268 u=ubuntu n=ansible | community.hashi_vault                    6.1.0  
-2026-11-20 15:24:43,861 p=7268 u=ubuntu n=ansible | community.hrobot                         1.9.0  
-2026-11-20 15:24:43,861 p=7268 u=ubuntu n=ansible | community.library_inventory_filtering_v1 1.0.0  
-2026-11-20 15:24:43,861 p=7268 u=ubuntu n=ansible | community.libvirt                        1.3.0  
-2026-11-20 15:24:43,862 p=7268 u=ubuntu n=ansible | community.mongodb                        1.6.3  
-2026-11-20 15:24:43,862 p=7268 u=ubuntu n=ansible | community.mysql                          3.8.0  
-2026-11-20 15:24:43,862 p=7268 u=ubuntu n=ansible | community.network                        5.0.2  
-2026-11-20 15:24:43,862 p=7268 u=ubuntu n=ansible | community.okd                            2.3.0  
-2026-11-20 15:24:43,863 p=7268 u=ubuntu n=ansible | community.postgresql                     3.3.0  
-2026-11-20 15:24:43,863 p=7268 u=ubuntu n=ansible | community.proxysql                       1.5.1  
-2026-11-20 15:24:43,863 p=7268 u=ubuntu n=ansible | community.rabbitmq                       1.2.3  
-2026-11-20 15:24:43,863 p=7268 u=ubuntu n=ansible | community.routeros                       2.12.0 
-2026-11-20 15:24:43,864 p=7268 u=ubuntu n=ansible | community.sap                            2.0.0  
-2026-11-20 15:24:43,864 p=7268 u=ubuntu n=ansible | community.sap_libs                       1.4.2  
-2026-11-20 15:24:43,864 p=7268 u=ubuntu n=ansible | community.sops                           1.6.7  
-2026-11-20 15:24:43,864 p=7268 u=ubuntu n=ansible | community.vmware                         4.1.0  
-2026-11-20 15:24:43,865 p=7268 u=ubuntu n=ansible | community.windows                        2.1.0  
-2026-11-20 15:24:43,865 p=7268 u=ubuntu n=ansible | community.zabbix                         2.3.1  
-2026-11-20 15:24:43,865 p=7268 u=ubuntu n=ansible | containers.podman                        1.11.0 
-2026-11-20 15:24:43,865 p=7268 u=ubuntu n=ansible | cyberark.conjur                          1.2.2  
-2026-11-20 15:24:43,865 p=7268 u=ubuntu n=ansible | cyberark.pas                             1.0.25 
-2026-11-20 15:24:43,866 p=7268 u=ubuntu n=ansible | dellemc.enterprise_sonic                 2.4.0  
-2026-11-20 15:24:43,866 p=7268 u=ubuntu n=ansible | dellemc.openmanage                       8.7.0  
-2026-11-20 15:24:43,866 p=7268 u=ubuntu n=ansible | dellemc.powerflex                        2.1.0  
-2026-11-20 15:24:43,866 p=7268 u=ubuntu n=ansible | dellemc.unity                            1.7.1  
-2026-11-20 15:24:43,867 p=7268 u=ubuntu n=ansible | f5networks.f5_modules                    1.27.1 
-2026-11-20 15:24:43,867 p=7268 u=ubuntu n=ansible | fortinet.fortimanager                    2.3.1  
-2026-11-20 15:24:43,867 p=7268 u=ubuntu n=ansible | fortinet.fortios                         2.3.4  
-2026-11-20 15:24:43,867 p=7268 u=ubuntu n=ansible | frr.frr                                  2.0.2  
-2026-11-20 15:24:43,868 p=7268 u=ubuntu n=ansible | gluster.gluster                          1.0.2  
-2026-11-20 15:24:43,868 p=7268 u=ubuntu n=ansible | google.cloud                             1.3.0  
-2026-11-20 15:24:43,868 p=7268 u=ubuntu n=ansible | grafana.grafana                          2.2.4  
-2026-11-20 15:24:43,868 p=7268 u=ubuntu n=ansible | hetzner.hcloud                           2.4.1  
-2026-11-20 15:24:43,869 p=7268 u=ubuntu n=ansible | hpe.nimble                               1.1.4  
-2026-11-20 15:24:43,869 p=7268 u=ubuntu n=ansible | ibm.qradar                               2.1.0  
-2026-11-20 15:24:43,869 p=7268 u=ubuntu n=ansible | ibm.spectrum_virtualize                  2.0.0  
-2026-11-20 15:24:43,869 p=7268 u=ubuntu n=ansible | ibm.storage_virtualize                   2.2.0  
-2026-11-20 15:24:43,869 p=7268 u=ubuntu n=ansible | infinidat.infinibox                      1.3.12 
-2026-11-20 15:24:43,870 p=7268 u=ubuntu n=ansible | infoblox.nios_modules                    1.6.1  
-2026-11-20 15:24:43,870 p=7268 u=ubuntu n=ansible | inspur.ispim                             2.2.0  
-2026-11-20 15:24:43,870 p=7268 u=ubuntu n=ansible | inspur.sm                                2.3.0  
-2026-11-20 15:24:43,870 p=7268 u=ubuntu n=ansible | junipernetworks.junos                    5.3.1  
-2026-11-20 15:24:43,871 p=7268 u=ubuntu n=ansible | kubernetes.core                          2.4.0  
-2026-11-20 15:24:43,871 p=7268 u=ubuntu n=ansible | lowlydba.sqlserver                       2.2.2  
-2026-11-20 15:24:43,871 p=7268 u=ubuntu n=ansible | microsoft.ad                             1.4.1  
-2026-11-20 15:24:43,871 p=7268 u=ubuntu n=ansible | netapp.aws                               21.7.1 
-2026-11-20 15:24:43,871 p=7268 u=ubuntu n=ansible | netapp.azure                             21.10.1
-2026-11-20 15:24:43,871 p=7268 u=ubuntu n=ansible | netapp.cloudmanager                      21.22.1
-2026-11-20 15:24:43,872 p=7268 u=ubuntu n=ansible | netapp.elementsw                         21.7.0 
-2026-11-20 15:24:43,872 p=7268 u=ubuntu n=ansible | netapp.ontap                             22.9.0 
-2026-11-20 15:24:43,872 p=7268 u=ubuntu n=ansible | netapp.storagegrid                       21.11.1
-2026-11-20 15:24:43,872 p=7268 u=ubuntu n=ansible | netapp.um_info                           21.8.1 
-2026-11-20 15:24:43,873 p=7268 u=ubuntu n=ansible | netapp_eseries.santricity                1.4.0  
-2026-11-20 15:24:43,873 p=7268 u=ubuntu n=ansible | netbox.netbox                            3.16.0 
-2026-11-20 15:24:43,873 p=7268 u=ubuntu n=ansible | ngine_io.cloudstack                      2.3.0  
-2026-11-20 15:24:43,873 p=7268 u=ubuntu n=ansible | ngine_io.exoscale                        1.1.0  
-2026-11-20 15:24:43,874 p=7268 u=ubuntu n=ansible | openstack.cloud                          2.2.0  
-2026-11-20 15:24:43,874 p=7268 u=ubuntu n=ansible | openvswitch.openvswitch                  2.1.1  
-2026-11-20 15:24:43,874 p=7268 u=ubuntu n=ansible | ovirt.ovirt                              3.2.0  
-2026-11-20 15:24:43,874 p=7268 u=ubuntu n=ansible | purestorage.flasharray                   1.26.0 
-2026-11-20 15:24:43,874 p=7268 u=ubuntu n=ansible | purestorage.flashblade                   1.15.0 
-2026-11-20 15:24:43,875 p=7268 u=ubuntu n=ansible | purestorage.fusion                       1.6.0  
-2026-11-20 15:24:43,875 p=7268 u=ubuntu n=ansible | sensu.sensu_go                           1.14.0 
-2026-11-20 15:24:43,875 p=7268 u=ubuntu n=ansible | splunk.es                                2.1.2  
-2026-11-20 15:24:43,875 p=7268 u=ubuntu n=ansible | t_systems_mms.icinga_director            2.0.1  
-2026-11-20 15:24:43,876 p=7268 u=ubuntu n=ansible | telekom_mms.icinga_director              1.35.0 
-2026-11-20 15:24:43,876 p=7268 u=ubuntu n=ansible | theforeman.foreman                       3.15.0 
-2026-11-20 15:24:43,876 p=7268 u=ubuntu n=ansible | vmware.vmware_rest                       2.3.1  
-2026-11-20 15:24:43,877 p=7268 u=ubuntu n=ansible | vultr.cloud                              1.12.1 
-2026-11-20 15:24:43,877 p=7268 u=ubuntu n=ansible | vyos.vyos                                4.1.0  
-2026-11-20 15:24:43,877 p=7268 u=ubuntu n=ansible | wti.remote                               1.0.5  
-2026-11-20 15:31:12,051 p=8161 u=ubuntu n=ansible | PLAY [database] ***************************************************************************************************************
-2026-11-20 15:31:12,070 p=8161 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************************************
-2026-11-20 15:31:14,574 p=8161 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:31:14,599 p=8161 u=ubuntu n=ansible | TASK [mysql : Print OS family] ************************************************************************************************
-2026-11-20 15:31:14,628 p=8161 u=ubuntu n=ansible | ok: [db] => 
+2026-11-20 16:36:14,379 p=16519 u=ubuntu n=ansible | PLAY [Deploy MySQL database server] **********************************************************************************************************************************
+2026-11-20 16:36:14,394 p=16519 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
+2026-11-20 16:36:15,937 p=16519 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:15,965 p=16519 u=ubuntu n=ansible | TASK [mysql : Print OS family] ***************************************************************************************************************************************
+2026-11-20 16:36:15,994 p=16519 u=ubuntu n=ansible | ok: [db] => 
   msg: 'OS Family: Debian - Ubuntu 26.04'
-2026-11-20 15:31:14,638 p=8161 u=ubuntu n=ansible | TASK [mysql : Load OS specific variables] *************************************************************************************
-2026-11-20 15:31:14,671 p=8161 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:31:14,680 p=8161 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on Debian-based or Ubuntu-based systems] ***************************************
-2026-11-20 15:31:49,185 p=8161 u=ubuntu n=ansible | changed: [db]
-2026-11-20 15:31:49,196 p=8161 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on RedHat-based systems] *******************************************************
-2026-11-20 15:31:49,217 p=8161 u=ubuntu n=ansible | skipping: [db]
-2026-11-20 15:31:49,228 p=8161 u=ubuntu n=ansible | TASK [mysql : Start and enable MySQL service] *********************************************************************************
-2026-11-20 15:31:50,444 p=8161 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:31:50,454 p=8161 u=ubuntu n=ansible | TASK [mysql : Configure MySQL bind-address] ***********************************************************************************
-2026-11-20 15:31:50,979 p=8161 u=ubuntu n=ansible | [WARNING]: Module remote_tmp /root/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when
-running as another user. To avoid this, create the remote_tmp dir with the correct permissions manually
-
-2026-11-20 15:31:50,979 p=8161 u=ubuntu n=ansible | changed: [db]
-2026-11-20 15:31:50,991 p=8161 u=ubuntu n=ansible | TASK [mysql : Set MySQL root password] ****************************************************************************************
-2026-11-20 15:31:51,860 p=8161 u=ubuntu n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased.
-The default will be changed to true in community.mysql 4.0.0.
-
-2026-11-20 15:31:51,861 p=8161 u=ubuntu n=ansible | fatal: [db]: FAILED! => changed=false 
-  msg: (1524, "Plugin 'mysql_native_password' is not loaded")
-2026-11-20 15:31:51,863 p=8161 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************************************
-2026-11-20 15:31:51,863 p=8161 u=ubuntu n=ansible | db                         : ok=6    changed=2    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
-2026-11-20 15:32:00,988 p=8282 u=ubuntu n=ansible | PLAY [database] ***************************************************************************************************************
-2026-11-20 15:32:01,003 p=8282 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************************************
-2026-11-20 15:32:03,837 p=8282 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:32:03,860 p=8282 u=ubuntu n=ansible | TASK [mysql : Print OS family] ************************************************************************************************
-2026-11-20 15:32:03,889 p=8282 u=ubuntu n=ansible | ok: [db] => 
-  msg: 'OS Family: Debian - Ubuntu 26.04'
-2026-11-20 15:32:03,903 p=8282 u=ubuntu n=ansible | TASK [mysql : Load OS specific variables] *************************************************************************************
-2026-11-20 15:32:03,934 p=8282 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:32:03,944 p=8282 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on Debian-based or Ubuntu-based systems] ***************************************
-2026-11-20 15:32:05,838 p=8282 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:32:05,850 p=8282 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on RedHat-based systems] *******************************************************
-2026-11-20 15:32:05,870 p=8282 u=ubuntu n=ansible | skipping: [db]
-2026-11-20 15:32:05,881 p=8282 u=ubuntu n=ansible | TASK [mysql : Start and enable MySQL service] *********************************************************************************
-2026-11-20 15:32:07,009 p=8282 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:32:07,019 p=8282 u=ubuntu n=ansible | TASK [mysql : Configure MySQL bind-address] ***********************************************************************************
-2026-11-20 15:32:07,482 p=8282 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:32:07,493 p=8282 u=ubuntu n=ansible | TASK [mysql : Set MySQL root password] ****************************************************************************************
-2026-11-20 15:32:08,275 p=8282 u=ubuntu n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased.
-The default will be changed to true in community.mysql 4.0.0.
-
-2026-11-20 15:32:08,277 p=8282 u=ubuntu n=ansible | fatal: [db]: FAILED! => changed=false 
-  msg: (1524, "Plugin 'mysql_native_password' is not loaded")
-2026-11-20 15:32:08,279 p=8282 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************************************
-2026-11-20 15:32:08,279 p=8282 u=ubuntu n=ansible | db                         : ok=6    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
-2026-11-20 15:34:58,922 p=8566 u=ubuntu n=ansible | PLAY [database] ***************************************************************************************************************
-2026-11-20 15:34:58,940 p=8566 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************************************
-2026-11-20 15:35:02,885 p=8566 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:35:02,911 p=8566 u=ubuntu n=ansible | TASK [mysql : Print OS family] ************************************************************************************************
-2026-11-20 15:35:02,947 p=8566 u=ubuntu n=ansible | ok: [db] => 
-  msg: 'OS Family: Debian - Ubuntu 26.04'
-2026-11-20 15:35:02,960 p=8566 u=ubuntu n=ansible | TASK [mysql : Load OS specific variables] *************************************************************************************
-2026-11-20 15:35:02,991 p=8566 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:35:03,001 p=8566 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on Debian-based or Ubuntu-based systems] ***************************************
-2026-11-20 15:35:05,219 p=8566 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:35:05,239 p=8566 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on RedHat-based systems] *******************************************************
-2026-11-20 15:35:05,266 p=8566 u=ubuntu n=ansible | skipping: [db]
-2026-11-20 15:35:05,281 p=8566 u=ubuntu n=ansible | TASK [mysql : Start and enable MySQL service] *********************************************************************************
-2026-11-20 15:35:06,517 p=8566 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:35:06,533 p=8566 u=ubuntu n=ansible | TASK [mysql : Configure MySQL bind-address] ***********************************************************************************
-2026-11-20 15:35:07,026 p=8566 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:35:07,039 p=8566 u=ubuntu n=ansible | TASK [mysql : Set MySQL root password] ****************************************************************************************
-2026-11-20 15:35:07,888 p=8566 u=ubuntu n=ansible | changed: [db]
-2026-11-20 15:35:07,899 p=8566 u=ubuntu n=ansible | TASK [mysql : Remove anonymous MySQL users (to prevent access without password)] **********************************************
-2026-11-20 15:35:08,275 p=8566 u=ubuntu n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased.
-The default will be changed to true in community.mysql 4.0.0.
-
-2026-11-20 15:35:08,276 p=8566 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:35:08,286 p=8566 u=ubuntu n=ansible | TASK [mysql : Remove test database] *******************************************************************************************
-2026-11-20 15:35:08,833 p=8566 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:35:08,844 p=8566 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop database] *******************************************************************************
-2026-11-20 15:35:09,208 p=8566 u=ubuntu n=ansible | changed: [db]
-2026-11-20 15:35:09,221 p=8566 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop user (allowed from the web server)] *****************************************************
-2026-11-20 15:35:09,668 p=8566 u=ubuntu n=ansible | changed: [db]
-2026-11-20 15:35:09,678 p=8566 u=ubuntu n=ansible | TASK [mysql : Gather services facts] ******************************************************************************************
-2026-11-20 15:35:13,601 p=8566 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:35:13,617 p=8566 u=ubuntu n=ansible | TASK [mysql : Allow MySQL from the web server (ufw)] **************************************************************************
-2026-11-20 15:35:14,631 p=8566 u=ubuntu n=ansible | changed: [db]
-2026-11-20 15:35:14,649 p=8566 u=ubuntu n=ansible | TASK [mysql : Allow MySQL port (firewalld, only if it is running)] ************************************************************
-2026-11-20 15:35:14,672 p=8566 u=ubuntu n=ansible | skipping: [db]
-2026-11-20 15:35:14,689 p=8566 u=ubuntu n=ansible | TASK [mysql : Apply pending restarts before checking] *************************************************************************
-2026-11-20 15:35:14,720 p=8566 u=ubuntu n=ansible | TASK [mysql : Check that MySQL listens on port 3306] **************************************************************************
-2026-11-20 15:35:45,236 p=8566 u=ubuntu n=ansible | fatal: [db]: FAILED! => changed=false 
-  elapsed: 30
-  msg: Timeout when waiting for 172.31.15.6:3306
-2026-11-20 15:35:45,238 p=8566 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************************************
-2026-11-20 15:35:45,238 p=8566 u=ubuntu n=ansible | db                         : ok=13   changed=4    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
-2026-11-20 15:37:03,182 p=8818 u=ubuntu n=ansible | db | CHANGED | rc=0 >>
-LISTEN 0      70         127.0.0.1:33060      0.0.0.0:*    users:(("mysqld",pid=3170,fd=21))                      
-LISTEN 0      151          0.0.0.0:3306       0.0.0.0:*    users:(("mysqld",pid=3170,fd=33))                      
-
-2026-11-20 15:38:10,394 p=8987 u=ubuntu n=ansible | db | CHANGED => {
-    "changed": true,
-    "name": "mysql",
-    "state": "started",
-    "status": {
-        "ActiveEnterTimestamp": "Fri 2026-11-20 15:36:12 UTC",
-        "ActiveEnterTimestampMonotonic": "2622855266",
-        "ActiveExitTimestamp": "Fri 2026-11-20 15:36:08 UTC",
-        "ActiveExitTimestampMonotonic": "2618187726",
-        "ActiveState": "active",
-        "After": "basic.target -.mount network.target system.slice systemd-journald.socket sysinit.target",
-        "AllowIsolate": "no",
-        "AssertResult": "yes",
-        "AssertTimestamp": "Fri 2026-11-20 15:31:39 UTC",
-        "AssertTimestampMonotonic": "2349506608",
-        "Before": "shutdown.target multi-user.target",
-        "BindLogSockets": "no",
-        "CPUAffinityFromNUMA": "no",
-        "CPUQuotaPerSecUSec": "infinity",
-        "CPUQuotaPeriodUSec": "infinity",
-        "CPUSchedulingPolicy": "0",
-        "CPUSchedulingPriority": "0",
-        "CPUSchedulingResetOnFork": "no",
-        "CPUUsageNSec": "1979987000",
-        "CPUWeight": "[not set]",
-        "CacheDirectoryAccounting": "no",
-        "CacheDirectoryMode": "0755",
-        "CacheDirectoryQuota": "[not set]",
-        "CanClean": "runtime",
-        "CanFreeze": "yes",
-        "CanIsolate": "no",
-        "CanLiveMount": "no",
-        "CanReload": "no",
-        "CanStart": "yes",
-        "CanStop": "yes",
-        "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read cap_perfmon cap_bpf cap_checkpoint_restore",
-        "CleanResult": "success",
-        "CollectMode": "inactive",
-        "ConditionResult": "yes",
-        "ConditionTimestamp": "Fri 2026-11-20 15:31:39 UTC",
-        "ConditionTimestampMonotonic": "2349506606",
-        "ConfigurationDirectoryMode": "0755",
-        "Conflicts": "shutdown.target",
-        "ControlGroup": "/system.slice/mysql.service",
-        "ControlGroupId": "7532",
-        "ControlPID": "0",
-        "CoredumpFilter": "0x33",
-        "CoredumpReceive": "no",
-        "DebugInvocation": "no",
-        "DefaultDependencies": "yes",
-        "DefaultMemoryLow": "0",
-        "DefaultMemoryMin": "0",
-        "DefaultStartupMemoryLow": "0",
-        "Delegate": "no",
-        "DelegateNamespaces": "18446744073709551615",
-        "Description": "MySQL Community Server",
-        "DevicePolicy": "auto",
-        "DynamicUser": "no",
-        "EffectiveMemoryHigh": "952750080",
-        "EffectiveMemoryMax": "952750080",
-        "EffectiveTasksMax": "627",
-        "Environment": "MYSQLD_PARENT_PID=1",
-        "ExecMainCode": "0",
-        "ExecMainExitTimestampMonotonic": "0",
-        "ExecMainHandoffTimestamp": "Fri 2026-11-20 15:36:09 UTC",
-        "ExecMainHandoffTimestampMonotonic": "2619042212",
-        "ExecMainPID": "3170",
-        "ExecMainStartTimestamp": "Fri 2026-11-20 15:36:09 UTC",
-        "ExecMainStartTimestampMonotonic": "2619029669",
-        "ExecMainStatus": "0",
-        "ExecStart": "{ path=/usr/sbin/mysqld ; argv[]=/usr/sbin/mysqld ; ignore_errors=no ; start_time=[Fri 2026-11-20 15:36:09 UTC] ; stop_time=[n/a] ; pid=3170 ; code=(null) ; status=0/0 }",
-        "ExecStartEx": "{ path=/usr/sbin/mysqld ; argv[]=/usr/sbin/mysqld ; flags= ; start_time=[Fri 2026-11-20 15:36:09 UTC] ; stop_time=[n/a] ; pid=3170 ; code=(null) ; status=0/0 }",
-        "ExecStartPre": "{ path=/usr/share/mysql/mysql-systemd-start ; argv[]=/usr/share/mysql/mysql-systemd-start pre ; ignore_errors=no ; start_time=[Fri 2026-11-20 15:36:08 UTC] ; stop_time=[Fri 2026-11-20 15:36:09 UTC] ; pid=3159 ; code=exited ; status=0 }",
-        "ExecStartPreEx": "{ path=/usr/share/mysql/mysql-systemd-start ; argv[]=/usr/share/mysql/mysql-systemd-start pre ; flags= ; start_time=[Fri 2026-11-20 15:36:08 UTC] ; stop_time=[Fri 2026-11-20 15:36:09 UTC] ; pid=3159 ; code=exited ; status=0 }",
-        "ExitType": "main",
-        "ExtensionImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent",
-        "FailureAction": "none",
-        "FileDescriptorStoreMax": "0",
-        "FileDescriptorStorePreserve": "restart",
-        "FinalKillSignal": "9",
-        "FragmentPath": "/usr/lib/systemd/system/mysql.service",
-        "FreezerState": "running",
-        "GID": "109",
-        "Group": "mysql",
-        "GuessMainPID": "yes",
-        "IOAccounting": "no",
-        "IOReadBytes": "[not set]",
-        "IOReadOperations": "[not set]",
-        "IOSchedulingClass": "2",
-        "IOSchedulingPriority": "4",
-        "IOWeight": "[not set]",
-        "IOWriteBytes": "[not set]",
-        "IOWriteOperations": "[not set]",
-        "IPAccounting": "no",
-        "IPEgressBytes": "[no data]",
-        "IPEgressPackets": "[no data]",
-        "IPIngressBytes": "[no data]",
-        "IPIngressPackets": "[no data]",
-        "Id": "mysql.service",
-        "IgnoreOnIsolate": "no",
-        "IgnoreSIGPIPE": "yes",
-        "InactiveEnterTimestamp": "Fri 2026-11-20 15:36:08 UTC",
-        "InactiveEnterTimestampMonotonic": "2618202747",
-        "InactiveExitTimestamp": "Fri 2026-11-20 15:36:08 UTC",
-        "InactiveExitTimestampMonotonic": "2618211647",
-        "InvocationID": "1bb008975c424582a98ef039cd52da12",
-        "JobRunningTimeoutUSec": "infinity",
-        "JobTimeoutAction": "none",
-        "JobTimeoutUSec": "infinity",
-        "KeyringMode": "private",
-        "KillMode": "control-group",
-        "KillSignal": "15",
-        "LimitAS": "infinity",
-        "LimitASSoft": "infinity",
-        "LimitCORE": "infinity",
-        "LimitCORESoft": "0",
-        "LimitCPU": "infinity",
-        "LimitCPUSoft": "infinity",
-        "LimitDATA": "infinity",
-        "LimitDATASoft": "infinity",
-        "LimitFSIZE": "infinity",
-        "LimitFSIZESoft": "infinity",
-        "LimitLOCKS": "infinity",
-        "LimitLOCKSSoft": "infinity",
-        "LimitMEMLOCK": "8388608",
-        "LimitMEMLOCKSoft": "8388608",
-        "LimitMSGQUEUE": "819200",
-        "LimitMSGQUEUESoft": "819200",
-        "LimitNICE": "0",
-        "LimitNICESoft": "0",
-        "LimitNOFILE": "10000",
-        "LimitNOFILESoft": "10000",
-        "LimitNPROC": "2092",
-        "LimitNPROCSoft": "2092",
-        "LimitRSS": "infinity",
-        "LimitRSSSoft": "infinity",
-        "LimitRTPRIO": "0",
-        "LimitRTPRIOSoft": "0",
-        "LimitRTTIME": "infinity",
-        "LimitRTTIMESoft": "infinity",
-        "LimitSIGPENDING": "2092",
-        "LimitSIGPENDINGSoft": "2092",
-        "LimitSTACK": "infinity",
-        "LimitSTACKSoft": "8388608",
-        "LiveMountResult": "success",
-        "LoadState": "loaded",
-        "LockPersonality": "no",
-        "LogLevelMax": "-1",
-        "LogRateLimitBurst": "0",
-        "LogRateLimitIntervalUSec": "0",
-        "LogsDirectoryAccounting": "no",
-        "LogsDirectoryMode": "0755",
-        "LogsDirectoryQuota": "[not set]",
-        "MainPID": "3170",
-        "ManagedOOMKills": "0",
-        "ManagedOOMMemoryPressure": "auto",
-        "ManagedOOMMemoryPressureDurationUSec": "[not set]",
-        "ManagedOOMMemoryPressureLimit": "0",
-        "ManagedOOMPreference": "none",
-        "ManagedOOMSwap": "auto",
-        "MemoryAccounting": "yes",
-        "MemoryAvailable": "108855296",
-        "MemoryCurrent": "502394880",
-        "MemoryDenyWriteExecute": "no",
-        "MemoryHigh": "infinity",
-        "MemoryKSM": "no",
-        "MemoryLow": "0",
-        "MemoryMax": "infinity",
-        "MemoryMin": "0",
-        "MemoryPeak": "513011712",
-        "MemoryPressureThresholdUSec": "200ms",
-        "MemoryPressureWatch": "auto",
-        "MemorySwapCurrent": "0",
-        "MemorySwapMax": "infinity",
-        "MemorySwapPeak": "0",
-        "MemoryZSwapCurrent": "0",
-        "MemoryZSwapMax": "infinity",
-        "MemoryZSwapWriteback": "yes",
-        "MountAPIVFS": "no",
-        "MountImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent",
-        "NFileDescriptorStore": "0",
-        "NRestarts": "1",
-        "NUMAPolicy": "n/a",
-        "Names": "mysql.service",
-        "NeedDaemonReload": "no",
-        "Nice": "0",
-        "NoNewPrivileges": "no",
-        "NonBlocking": "no",
-        "NotifyAccess": "main",
-        "OOMKills": "0",
-        "OOMPolicy": "stop",
-        "OOMScoreAdjust": "0",
-        "OnFailureJobMode": "replace",
-        "OnSuccessJobMode": "fail",
-        "Perpetual": "no",
-        "PrivateBPF": "no",
-        "PrivateDevices": "no",
-        "PrivateIPC": "no",
-        "PrivateMounts": "no",
-        "PrivateNetwork": "no",
-        "PrivatePIDs": "no",
-        "PrivateTmp": "no",
-        "PrivateTmpEx": "no",
-        "PrivateUsers": "no",
-        "PrivateUsersEx": "no",
-        "ProcSubset": "all",
-        "ProtectClock": "no",
-        "ProtectControlGroups": "no",
-        "ProtectControlGroupsEx": "no",
-        "ProtectHome": "no",
-        "ProtectHostname": "no",
-        "ProtectKernelLogs": "no",
-        "ProtectKernelModules": "no",
-        "ProtectKernelTunables": "no",
-        "ProtectProc": "default",
-        "ProtectSystem": "no",
-        "RefuseManualStart": "no",
-        "RefuseManualStop": "no",
-        "ReloadResult": "success",
-        "ReloadSignal": "1",
-        "RemainAfterExit": "no",
-        "RemoveIPC": "no",
-        "Requires": "sysinit.target -.mount system.slice",
-        "RequiresMountsFor": "/run/mysqld",
-        "Restart": "on-failure",
-        "RestartKillSignal": "15",
-        "RestartMaxDelayUSec": "infinity",
-        "RestartMode": "normal",
-        "RestartSteps": "0",
-        "RestartUSec": "100ms",
-        "RestartUSecNext": "100ms",
-        "RestrictNamespaces": "no",
-        "RestrictRealtime": "no",
-        "RestrictSUIDSGID": "no",
-        "Result": "success",
-        "RootDirectoryStartOnly": "no",
-        "RootEphemeral": "no",
-        "RootImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent",
-        "RuntimeDirectory": "mysqld",
-        "RuntimeDirectoryMode": "0755",
-        "RuntimeDirectoryPreserve": "no",
-        "RuntimeDirectorySymlink": "mysqld:",
-        "RuntimeMaxUSec": "infinity",
-        "RuntimeRandomizedExtraUSec": "0",
-        "SameProcessGroup": "no",
-        "SecureBits": "0",
-        "SendSIGHUP": "no",
-        "SendSIGKILL": "yes",
-        "SetLoginEnvironment": "yes",
-        "Slice": "system.slice",
-        "StandardError": "inherit",
-        "StandardInput": "null",
-        "StandardOutput": "journal",
-        "StartLimitAction": "none",
-        "StartLimitBurst": "5",
-        "StartLimitIntervalUSec": "10s",
-        "StartupCPUWeight": "[not set]",
-        "StartupIOWeight": "[not set]",
-        "StartupMemoryHigh": "infinity",
-        "StartupMemoryLow": "0",
-        "StartupMemoryMax": "infinity",
-        "StartupMemorySwapMax": "infinity",
-        "StartupMemoryZSwapMax": "infinity",
-        "StateChangeTimestamp": "Fri 2026-11-20 15:36:12 UTC",
-        "StateChangeTimestampMonotonic": "2622855266",
-        "StateDirectoryAccounting": "no",
-        "StateDirectoryMode": "0755",
-        "StateDirectoryQuota": "[not set]",
-        "StatusErrno": "0",
-        "StatusText": "Server is operational",
-        "StopWhenUnneeded": "no",
-        "SubState": "running",
-        "SuccessAction": "none",
-        "SurviveFinalKillSignal": "no",
-        "SyslogFacility": "3",
-        "SyslogLevel": "6",
-        "SyslogLevelPrefix": "yes",
-        "SyslogPriority": "30",
-        "SystemCallErrorNumber": "2147483646",
-        "TTYReset": "no",
-        "TTYVHangup": "no",
-        "TTYVTDisallocate": "no",
-        "TasksAccounting": "yes",
-        "TasksCurrent": "34",
-        "TasksMax": "627",
-        "TimeoutAbortUSec": "infinity",
-        "TimeoutCleanUSec": "infinity",
-        "TimeoutStartFailureMode": "terminate",
-        "TimeoutStartUSec": "infinity",
-        "TimeoutStopFailureMode": "terminate",
-        "TimeoutStopUSec": "infinity",
-        "TimerSlackNSec": "50000",
-        "Transient": "no",
-        "Type": "notify",
-        "UID": "104",
-        "UMask": "0022",
-        "UnitFilePreset": "enabled",
-        "UnitFileState": "enabled",
-        "User": "mysql",
-        "UtmpMode": "init",
-        "WantedBy": "multi-user.target",
-        "WatchdogSignal": "6",
-        "WatchdogTimestampMonotonic": "0",
-        "WatchdogUSec": "0"
-    }
-}
-2026-11-20 15:38:37,583 p=9118 u=ubuntu n=ansible | PLAY [database] ***************************************************************************************************************
-2026-11-20 15:38:37,600 p=9118 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************************************
-2026-11-20 15:38:39,112 p=9118 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:38:39,143 p=9118 u=ubuntu n=ansible | TASK [mysql : Print OS family] ************************************************************************************************
-2026-11-20 15:38:39,172 p=9118 u=ubuntu n=ansible | ok: [db] => 
-  msg: 'OS Family: Debian - Ubuntu 26.04'
-2026-11-20 15:38:39,182 p=9118 u=ubuntu n=ansible | TASK [mysql : Load OS specific variables] *************************************************************************************
-2026-11-20 15:38:39,212 p=9118 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:38:39,225 p=9118 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on Debian-based or Ubuntu-based systems] ***************************************
-2026-11-20 15:39:14,195 p=9118 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:39:14,206 p=9118 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on RedHat-based systems] *******************************************************
-2026-11-20 15:39:14,227 p=9118 u=ubuntu n=ansible | skipping: [db]
-2026-11-20 15:39:14,238 p=9118 u=ubuntu n=ansible | TASK [mysql : Start and enable MySQL service] *********************************************************************************
-2026-11-20 15:39:15,320 p=9118 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:39:15,332 p=9118 u=ubuntu n=ansible | TASK [mysql : Configure MySQL bind-address] ***********************************************************************************
-2026-11-20 15:39:15,915 p=9118 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:39:15,927 p=9118 u=ubuntu n=ansible | TASK [mysql : Set MySQL root password] ****************************************************************************************
-2026-11-20 15:39:16,790 p=9118 u=ubuntu n=ansible | changed: [db]
-2026-11-20 15:39:16,801 p=9118 u=ubuntu n=ansible | TASK [mysql : Remove anonymous MySQL users (to prevent access without password)] **********************************************
-2026-11-20 15:39:17,197 p=9118 u=ubuntu n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased.
-The default will be changed to true in community.mysql 4.0.0.
-
-2026-11-20 15:39:17,198 p=9118 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:39:17,208 p=9118 u=ubuntu n=ansible | TASK [mysql : Remove test database] *******************************************************************************************
-2026-11-20 15:39:17,789 p=9118 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:39:17,802 p=9118 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop database] *******************************************************************************
-2026-11-20 15:39:18,151 p=9118 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:39:18,161 p=9118 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop user (allowed from the web server)] *****************************************************
-2026-11-20 15:39:18,564 p=9118 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:39:18,574 p=9118 u=ubuntu n=ansible | TASK [mysql : Gather services facts] ******************************************************************************************
-2026-11-20 15:39:22,467 p=9118 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:39:22,484 p=9118 u=ubuntu n=ansible | TASK [mysql : Allow MySQL from the web server (ufw)] **************************************************************************
-2026-11-20 15:39:23,404 p=9118 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:39:23,421 p=9118 u=ubuntu n=ansible | TASK [mysql : Allow MySQL port (firewalld, only if it is running)] ************************************************************
-2026-11-20 15:39:23,445 p=9118 u=ubuntu n=ansible | skipping: [db]
-2026-11-20 15:39:23,464 p=9118 u=ubuntu n=ansible | TASK [mysql : Apply pending restarts before checking] *************************************************************************
-2026-11-20 15:39:23,496 p=9118 u=ubuntu n=ansible | TASK [mysql : Check that MySQL listens on port 3306] **************************************************************************
-2026-11-20 15:39:24,025 p=9118 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:39:24,118 p=9118 u=ubuntu n=ansible | PLAY [webserver] **************************************************************************************************************
-2026-11-20 15:39:24,118 p=9118 u=ubuntu n=ansible | skipping: no hosts matched
-2026-11-20 15:39:24,118 p=9118 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************************************
-2026-11-20 15:39:24,119 p=9118 u=ubuntu n=ansible | db                         : ok=14   changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
-2026-11-20 15:39:28,601 p=9292 u=ubuntu n=ansible | PLAY [database] ******************************************************************************************************************************************************
-2026-11-20 15:39:28,617 p=9292 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
-2026-11-20 15:39:30,194 p=9292 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:39:30,231 p=9292 u=ubuntu n=ansible | TASK [mysql : Print OS family] ***************************************************************************************************************************************
-2026-11-20 15:39:30,266 p=9292 u=ubuntu n=ansible | ok: [db] => 
-  msg: 'OS Family: Debian - Ubuntu 26.04'
-2026-11-20 15:39:30,276 p=9292 u=ubuntu n=ansible | TASK [mysql : Load OS specific variables] ****************************************************************************************************************************
-2026-11-20 15:39:30,307 p=9292 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:39:30,319 p=9292 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on Debian-based or Ubuntu-based systems] ******************************************************************************
-2026-11-20 15:40:40,230 p=9292 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:40:40,241 p=9292 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on RedHat-based systems] **********************************************************************************************
-2026-11-20 15:40:40,262 p=9292 u=ubuntu n=ansible | skipping: [db]
-2026-11-20 15:40:40,273 p=9292 u=ubuntu n=ansible | TASK [mysql : Start and enable MySQL service] ************************************************************************************************************************
-2026-11-20 15:40:41,364 p=9292 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:40:41,378 p=9292 u=ubuntu n=ansible | TASK [mysql : Configure MySQL bind-address] **************************************************************************************************************************
-2026-11-20 15:40:41,934 p=9292 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:40:41,946 p=9292 u=ubuntu n=ansible | TASK [mysql : Set MySQL root password] *******************************************************************************************************************************
-2026-11-20 15:40:42,739 p=9292 u=ubuntu n=ansible | changed: [db]
-2026-11-20 15:40:42,750 p=9292 u=ubuntu n=ansible | TASK [mysql : Remove anonymous MySQL users (to prevent access without password)] *************************************************************************************
-2026-11-20 15:40:43,248 p=9292 u=ubuntu n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+2026-11-20 16:36:16,005 p=16519 u=ubuntu n=ansible | TASK [mysql : Load OS specific variables] ****************************************************************************************************************************
+2026-11-20 16:36:16,033 p=16519 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:16,043 p=16519 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on Debian-based or Ubuntu-based systems] ******************************************************************************
+2026-11-20 16:36:23,089 p=16519 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:23,099 p=16519 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on RedHat-based systems] **********************************************************************************************
+2026-11-20 16:36:23,120 p=16519 u=ubuntu n=ansible | skipping: [db]
+2026-11-20 16:36:23,131 p=16519 u=ubuntu n=ansible | TASK [mysql : Start and enable MySQL service] ************************************************************************************************************************
+2026-11-20 16:36:24,351 p=16519 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:24,362 p=16519 u=ubuntu n=ansible | TASK [mysql : Configure MySQL bind-address] **************************************************************************************************************************
+2026-11-20 16:36:24,880 p=16519 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:24,894 p=16519 u=ubuntu n=ansible | TASK [mysql : Set MySQL root password] *******************************************************************************************************************************
+2026-11-20 16:36:25,744 p=16519 u=ubuntu n=ansible | changed: [db]
+2026-11-20 16:36:25,755 p=16519 u=ubuntu n=ansible | TASK [mysql : Remove anonymous MySQL users (to prevent access without password)] *************************************************************************************
+2026-11-20 16:36:26,129 p=16519 u=ubuntu n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
 community.mysql 4.0.0.
 
-2026-11-20 15:40:43,249 p=9292 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:40:43,260 p=9292 u=ubuntu n=ansible | TASK [mysql : Remove test database] **********************************************************************************************************************************
-2026-11-20 15:40:43,815 p=9292 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:40:43,829 p=9292 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop database] **********************************************************************************************************************
-2026-11-20 15:40:44,181 p=9292 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:40:44,192 p=9292 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop user (allowed from the web server)] ********************************************************************************************
-2026-11-20 15:40:44,592 p=9292 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:40:44,602 p=9292 u=ubuntu n=ansible | TASK [mysql : Gather services facts] *********************************************************************************************************************************
-2026-11-20 15:40:48,413 p=9292 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:40:48,430 p=9292 u=ubuntu n=ansible | TASK [mysql : Allow MySQL from the web server (ufw)] *****************************************************************************************************************
-2026-11-20 15:40:49,337 p=9292 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:40:49,355 p=9292 u=ubuntu n=ansible | TASK [mysql : Allow MySQL port (firewalld, only if it is running)] ***************************************************************************************************
-2026-11-20 15:40:49,381 p=9292 u=ubuntu n=ansible | skipping: [db]
-2026-11-20 15:40:49,398 p=9292 u=ubuntu n=ansible | TASK [mysql : Apply pending restarts before checking] ****************************************************************************************************************
-2026-11-20 15:40:49,429 p=9292 u=ubuntu n=ansible | TASK [mysql : Check that MySQL listens on port 3306] *****************************************************************************************************************
-2026-11-20 15:40:49,969 p=9292 u=ubuntu n=ansible | ok: [db]
-2026-11-20 15:40:50,057 p=9292 u=ubuntu n=ansible | PLAY [webserver] *****************************************************************************************************************************************************
-2026-11-20 15:40:50,057 p=9292 u=ubuntu n=ansible | skipping: no hosts matched
-2026-11-20 15:40:50,058 p=9292 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
-2026-11-20 15:40:50,058 p=9292 u=ubuntu n=ansible | db                         : ok=14   changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
-2026-11-20 15:51:17,737 p=11450 u=ubuntu n=ansible | PLAY [Deploy MySQL database server] **********************************************************************************************************************************
-2026-11-20 15:51:17,738 p=11450 u=ubuntu n=ansible | skipping: no hosts matched
-2026-11-20 15:51:17,741 p=11450 u=ubuntu n=ansible | PLAY [Deploy PrestaShop web server] **********************************************************************************************************************************
-2026-11-20 15:51:17,760 p=11450 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
-2026-11-20 15:51:20,222 p=11450 u=ubuntu n=ansible | ok: [web]
-2026-11-20 15:51:20,251 p=11450 u=ubuntu n=ansible | TASK [prestashop : Print OS family] **********************************************************************************************************************************
-2026-11-20 15:51:20,281 p=11450 u=ubuntu n=ansible | ok: [web] => 
+2026-11-20 16:36:26,130 p=16519 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:26,139 p=16519 u=ubuntu n=ansible | TASK [mysql : Remove test database] **********************************************************************************************************************************
+2026-11-20 16:36:26,708 p=16519 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:26,719 p=16519 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop database] **********************************************************************************************************************
+2026-11-20 16:36:27,071 p=16519 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:27,082 p=16519 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop user (allowed from the web server)] ********************************************************************************************
+2026-11-20 16:36:27,483 p=16519 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:27,493 p=16519 u=ubuntu n=ansible | TASK [mysql : Gather services facts] *********************************************************************************************************************************
+2026-11-20 16:36:31,295 p=16519 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:31,310 p=16519 u=ubuntu n=ansible | TASK [mysql : Allow MySQL from the web server (ufw)] *****************************************************************************************************************
+2026-11-20 16:36:32,174 p=16519 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:32,191 p=16519 u=ubuntu n=ansible | TASK [mysql : Allow MySQL port (firewalld, only if it is running)] ***************************************************************************************************
+2026-11-20 16:36:32,215 p=16519 u=ubuntu n=ansible | skipping: [db]
+2026-11-20 16:36:32,232 p=16519 u=ubuntu n=ansible | TASK [mysql : Apply pending restarts before checking] ****************************************************************************************************************
+2026-11-20 16:36:32,264 p=16519 u=ubuntu n=ansible | TASK [mysql : Check that MySQL listens on port 3306] *****************************************************************************************************************
+2026-11-20 16:36:32,769 p=16519 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:32,861 p=16519 u=ubuntu n=ansible | PLAY [Deploy PrestaShop web server] **********************************************************************************************************************************
+2026-11-20 16:36:32,873 p=16519 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
+2026-11-20 16:36:34,076 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:34,141 p=16519 u=ubuntu n=ansible | TASK [prestashop : Print OS family] **********************************************************************************************************************************
+2026-11-20 16:36:34,170 p=16519 u=ubuntu n=ansible | ok: [web] => 
   msg: 'OS Family: Debian - Ubuntu 26.04'
-2026-11-20 15:51:20,292 p=11450 u=ubuntu n=ansible | TASK [prestashop : Load OS specific variables] ***********************************************************************************************************************
-2026-11-20 15:51:20,323 p=11450 u=ubuntu n=ansible | ok: [web]
-2026-11-20 15:51:20,333 p=11450 u=ubuntu n=ansible | TASK [prestashop : Enable PHP 8.2 module stream on RHEL 8/9 (default PHP is too old)] ********************************************************************************
-2026-11-20 15:51:20,355 p=11450 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 15:51:20,366 p=11450 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on Debian-based or Ubuntu-based systems] ***********************************************************************
-2026-11-20 15:52:01,385 p=11450 u=ubuntu n=ansible | changed: [web]
-2026-11-20 15:52:01,397 p=11450 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on RedHat-based systems] ***************************************************************************************
-2026-11-20 15:52:01,422 p=11450 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 15:52:01,435 p=11450 u=ubuntu n=ansible | TASK [prestashop : Get PHP version (Debian-based or Ubuntu-based systems)] *******************************************************************************************
-2026-11-20 15:52:02,618 p=11450 u=ubuntu n=ansible | ok: [web]
-2026-11-20 15:52:02,630 p=11450 u=ubuntu n=ansible | TASK [prestashop : Set PHP configuration directory (Debian-based or Ubuntu-based systems)] ***************************************************************************
-2026-11-20 15:52:02,658 p=11450 u=ubuntu n=ansible | ok: [web]
-2026-11-20 15:52:02,670 p=11450 u=ubuntu n=ansible | TASK [prestashop : Apply PHP settings recommended by PrestaShop] *****************************************************************************************************
-2026-11-20 15:52:04,043 p=11450 u=ubuntu n=ansible | changed: [web]
-2026-11-20 15:52:04,058 p=11450 u=ubuntu n=ansible | TASK [prestashop : Start and enable Apache service] ******************************************************************************************************************
-2026-11-20 15:52:05,008 p=11450 u=ubuntu n=ansible | ok: [web]
-2026-11-20 15:52:05,018 p=11450 u=ubuntu n=ansible | TASK [prestashop : Allow Apache to connect to a remote database (SELinux)] *******************************************************************************************
-2026-11-20 15:52:05,041 p=11450 u=ubuntu n=ansible | skipping: [web] => (item=httpd_can_network_connect_db) 
-2026-11-20 15:52:05,046 p=11450 u=ubuntu n=ansible | skipping: [web] => (item=httpd_unified) 
-2026-11-20 15:52:05,048 p=11450 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 15:52:05,060 p=11450 u=ubuntu n=ansible | TASK [prestashop : Check that the database server is reachable on port 3306] *****************************************************************************************
-2026-11-20 15:52:05,545 p=11450 u=ubuntu n=ansible | ok: [web]
-2026-11-20 15:52:05,555 p=11450 u=ubuntu n=ansible | TASK [prestashop : Create PrestaShop web root directory] *************************************************************************************************************
-2026-11-20 15:52:06,024 p=11450 u=ubuntu n=ansible | changed: [web]
-2026-11-20 15:52:06,033 p=11450 u=ubuntu n=ansible | TASK [prestashop : Download PrestaShop archive] **********************************************************************************************************************
-2026-11-20 15:52:06,903 p=11450 u=ubuntu n=ansible | [WARNING]: Module remote_tmp /root/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running as another user. To avoid this,
-create the remote_tmp dir with the correct permissions manually
-
-2026-11-20 15:52:06,905 p=11450 u=ubuntu n=ansible | fatal: [web]: FAILED! => changed=false 
-  dest: /tmp/prestashop_9.2.1.zip
-  elapsed: 0
-  msg: Request failed
-  response: 'HTTP Error 404: Not Found'
-  status_code: 404
-  url: https://github.com/PrestaShop/PrestaShop/releases/download/9.2.1/prestashop_9.2.1.zip
-2026-11-20 15:52:06,926 p=11450 u=ubuntu n=ansible | RUNNING HANDLER [prestashop : Restart Apache] ************************************************************************************************************************
-2026-11-20 15:52:07,650 p=11450 u=ubuntu n=ansible | changed: [web]
-2026-11-20 15:52:07,652 p=11450 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
-2026-11-20 15:52:07,653 p=11450 u=ubuntu n=ansible | web                        : ok=11   changed=4    unreachable=0    failed=1    skipped=3    rescued=0    ignored=0   
-2026-11-20 16:05:03,960 p=13216 u=ubuntu n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
-JSON: Expecting value: line 1 column 1 (char 0)
-
-Syntax Error while loading YAML.
-  did not find expected key
-
-The error appears to be in '/home/ubuntu/exam_lachaize_karim/ansible/roles/prestashop/defaults/main.yml': line 6, column 186, but may
-be elsewhere in the file depending on the exact syntax problem.
-
-The offending line appears to be:
-
-PRESTASHOP_EDITION: basic
-PRESTASHOP_DOWNLOAD_URL: "https://assets.prestashop3.com/dst/edition/corporate/{{ PRESTASHOP_VERSION }}/prestashop_edition_{{ PRESTASHOP_EDITION }}_version_{{ PRESTASHOP_VERSION }}.zip"PRESTASHOP_ROOT: /var/www/prestashop
-                                                                                                                                                                                         ^ here
-We could be wrong, but this one looks like it might be an issue with
-missing quotes. Always quote template expression brackets when they
-start a value. For instance:
-
-    with_items:
-      - {{ foo }}
-
-Should be written as:
-
-    with_items:
-      - "{{ foo }}"
-
-2026-11-20 16:07:48,710 p=13359 u=ubuntu n=ansible | playbook: website.yaml
-2026-11-20 16:07:54,843 p=13398 u=ubuntu n=ansible | PLAY [Deploy MySQL database server] **********************************************************************************************************************************
-2026-11-20 16:07:54,844 p=13398 u=ubuntu n=ansible | skipping: no hosts matched
-2026-11-20 16:07:54,846 p=13398 u=ubuntu n=ansible | PLAY [Deploy PrestaShop web server] **********************************************************************************************************************************
-2026-11-20 16:07:54,864 p=13398 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
-2026-11-20 16:07:57,461 p=13398 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:07:57,489 p=13398 u=ubuntu n=ansible | TASK [prestashop : Print OS family] **********************************************************************************************************************************
-2026-11-20 16:07:57,517 p=13398 u=ubuntu n=ansible | ok: [web] => 
+2026-11-20 16:36:34,180 p=16519 u=ubuntu n=ansible | TASK [prestashop : Load OS specific variables] ***********************************************************************************************************************
+2026-11-20 16:36:34,209 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:34,219 p=16519 u=ubuntu n=ansible | TASK [prestashop : Enable PHP 8.2 module stream on RHEL 8/9 (default PHP is too old)] ********************************************************************************
+2026-11-20 16:36:34,240 p=16519 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:36:34,252 p=16519 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on Debian-based or Ubuntu-based systems] ***********************************************************************
+2026-11-20 16:36:36,026 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:36,036 p=16519 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on RedHat-based systems] ***************************************************************************************
+2026-11-20 16:36:36,058 p=16519 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:36:36,068 p=16519 u=ubuntu n=ansible | TASK [prestashop : Get PHP version (Debian-based or Ubuntu-based systems)] *******************************************************************************************
+2026-11-20 16:36:37,104 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:37,115 p=16519 u=ubuntu n=ansible | TASK [prestashop : Set PHP configuration directory (Debian-based or Ubuntu-based systems)] ***************************************************************************
+2026-11-20 16:36:37,145 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:37,156 p=16519 u=ubuntu n=ansible | TASK [prestashop : Apply PHP settings recommended by PrestaShop] *****************************************************************************************************
+2026-11-20 16:36:38,501 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:38,515 p=16519 u=ubuntu n=ansible | TASK [prestashop : Allow Apache to connect to a remote database (SELinux)] *******************************************************************************************
+2026-11-20 16:36:38,539 p=16519 u=ubuntu n=ansible | skipping: [web] => (item=httpd_can_network_connect_db) 
+2026-11-20 16:36:38,544 p=16519 u=ubuntu n=ansible | skipping: [web] => (item=httpd_unified) 
+2026-11-20 16:36:38,546 p=16519 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:36:38,558 p=16519 u=ubuntu n=ansible | TASK [prestashop : Check that the database server is reachable on port 3306] *****************************************************************************************
+2026-11-20 16:36:38,899 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:38,910 p=16519 u=ubuntu n=ansible | TASK [prestashop : Create PrestaShop web root directory] *************************************************************************************************************
+2026-11-20 16:36:39,222 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:39,232 p=16519 u=ubuntu n=ansible | TASK [prestashop : Download PrestaShop archive] **********************************************************************************************************************
+2026-11-20 16:36:40,082 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:40,097 p=16519 u=ubuntu n=ansible | TASK [prestashop : Extract PrestaShop archive] ***********************************************************************************************************************
+2026-11-20 16:36:40,361 p=16519 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:36:40,371 p=16519 u=ubuntu n=ansible | TASK [prestashop : Check if the archive contains a nested prestashop.zip] ********************************************************************************************
+2026-11-20 16:36:40,675 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:40,685 p=16519 u=ubuntu n=ansible | TASK [prestashop : Extract nested prestashop.zip] ********************************************************************************************************************
+2026-11-20 16:36:40,707 p=16519 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:36:40,719 p=16519 u=ubuntu n=ansible | TASK [prestashop : Remove installation leftovers] ********************************************************************************************************************
+2026-11-20 16:36:41,020 p=16519 u=ubuntu n=ansible | ok: [web] => (item=prestashop.zip)
+2026-11-20 16:36:41,297 p=16519 u=ubuntu n=ansible | ok: [web] => (item=Install_PrestaShop.html)
+2026-11-20 16:36:41,308 p=16519 u=ubuntu n=ansible | TASK [prestashop : Check if PrestaShop is already installed] *********************************************************************************************************
+2026-11-20 16:36:41,614 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:41,624 p=16519 u=ubuntu n=ansible | TASK [prestashop : Install PrestaShop with the CLI installer] ********************************************************************************************************
+2026-11-20 16:36:41,646 p=16519 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:36:41,656 p=16519 u=ubuntu n=ansible | TASK [prestashop : Print installer output] ***************************************************************************************************************************
+2026-11-20 16:36:41,681 p=16519 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:36:41,691 p=16519 u=ubuntu n=ansible | TASK [prestashop : Check that the installation created parameters.php] ***********************************************************************************************
+2026-11-20 16:36:41,999 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:42,010 p=16519 u=ubuntu n=ansible | TASK [prestashop : Remove install directory (required by PrestaShop after installation)] *****************************************************************************
+2026-11-20 16:36:42,351 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:42,361 p=16519 u=ubuntu n=ansible | TASK [prestashop : Configure Apache virtual host for PrestaShop] *****************************************************************************************************
+2026-11-20 16:36:43,131 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:43,141 p=16519 u=ubuntu n=ansible | TASK [prestashop : Enable Apache rewrite module (Debian-based or Ubuntu-based systems)] ******************************************************************************
+2026-11-20 16:36:43,726 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:43,736 p=16519 u=ubuntu n=ansible | TASK [prestashop : Disable Apache default site (Debian-based or Ubuntu-based systems)] *******************************************************************************
+2026-11-20 16:36:44,040 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:44,056 p=16519 u=ubuntu n=ansible | TASK [prestashop : Enable PrestaShop site (Debian-based or Ubuntu-based systems)] ************************************************************************************
+2026-11-20 16:36:44,356 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:44,366 p=16519 u=ubuntu n=ansible | TASK [prestashop : Start and enable Apache service] ******************************************************************************************************************
+2026-11-20 16:36:44,955 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:44,964 p=16519 u=ubuntu n=ansible | TASK [prestashop : Gather services facts] ****************************************************************************************************************************
+2026-11-20 16:36:48,963 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:48,981 p=16519 u=ubuntu n=ansible | TASK [prestashop : Allow HTTP traffic (ufw)] *************************************************************************************************************************
+2026-11-20 16:36:49,682 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:49,701 p=16519 u=ubuntu n=ansible | TASK [prestashop : Allow HTTP traffic (firewalld, only if it is running)] ********************************************************************************************
+2026-11-20 16:36:49,724 p=16519 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:36:49,743 p=16519 u=ubuntu n=ansible | TASK [prestashop : Apply pending restarts before checking] ***********************************************************************************************************
+2026-11-20 16:36:49,774 p=16519 u=ubuntu n=ansible | TASK [prestashop : Find back office directory] ***********************************************************************************************************************
+2026-11-20 16:36:50,284 p=16519 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:36:50,306 p=16519 u=ubuntu n=ansible | TASK [prestashop : Check that the shop answers on http://13.38.76.244/] **********************************************************************************************
+2026-11-20 16:36:52,491 p=16519 u=ubuntu n=ansible | ok: [web -> localhost]
+2026-11-20 16:36:52,510 p=16519 u=ubuntu n=ansible | TASK [prestashop : Print shop URLs] **********************************************************************************************************************************
+2026-11-20 16:36:52,583 p=16519 u=ubuntu n=ansible | ok: [web] => 
+  msg:
+  - 'Front office: http://13.38.76.244/'
+  - 'Back office:  http://13.38.76.244/admin119b49eantgqxgoq0qj/'
+  - 'Login: admin@liora-shop.com'
+2026-11-20 16:36:52,676 p=16519 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
+2026-11-20 16:36:52,677 p=16519 u=ubuntu n=ansible | db                         : ok=14   changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2026-11-20 16:36:52,677 p=16519 u=ubuntu n=ansible | web                        : ok=25   changed=0    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0   
+2026-11-20 16:36:53,845 p=16819 u=ubuntu n=ansible | PLAY [Deploy MySQL database server] **********************************************************************************************************************************
+2026-11-20 16:36:53,862 p=16819 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
+2026-11-20 16:36:55,409 p=16819 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:55,437 p=16819 u=ubuntu n=ansible | TASK [mysql : Print OS family] ***************************************************************************************************************************************
+2026-11-20 16:36:55,466 p=16819 u=ubuntu n=ansible | ok: [db] => 
   msg: 'OS Family: Debian - Ubuntu 26.04'
-2026-11-20 16:07:57,528 p=13398 u=ubuntu n=ansible | TASK [prestashop : Load OS specific variables] ***********************************************************************************************************************
-2026-11-20 16:07:57,557 p=13398 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:07:57,567 p=13398 u=ubuntu n=ansible | TASK [prestashop : Enable PHP 8.2 module stream on RHEL 8/9 (default PHP is too old)] ********************************************************************************
-2026-11-20 16:07:57,587 p=13398 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:07:57,597 p=13398 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on Debian-based or Ubuntu-based systems] ***********************************************************************
-2026-11-20 16:07:58,905 p=13398 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:07:58,916 p=13398 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on RedHat-based systems] ***************************************************************************************
-2026-11-20 16:07:58,936 p=13398 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:07:58,946 p=13398 u=ubuntu n=ansible | TASK [prestashop : Get PHP version (Debian-based or Ubuntu-based systems)] *******************************************************************************************
-2026-11-20 16:07:59,479 p=13398 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:07:59,491 p=13398 u=ubuntu n=ansible | TASK [prestashop : Set PHP configuration directory (Debian-based or Ubuntu-based systems)] ***************************************************************************
-2026-11-20 16:07:59,521 p=13398 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:07:59,533 p=13398 u=ubuntu n=ansible | TASK [prestashop : Apply PHP settings recommended by PrestaShop] *****************************************************************************************************
-2026-11-20 16:08:00,738 p=13398 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:08:00,751 p=13398 u=ubuntu n=ansible | TASK [prestashop : Start and enable Apache service] ******************************************************************************************************************
-2026-11-20 16:08:02,014 p=13398 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:08:02,026 p=13398 u=ubuntu n=ansible | TASK [prestashop : Allow Apache to connect to a remote database (SELinux)] *******************************************************************************************
-2026-11-20 16:08:02,051 p=13398 u=ubuntu n=ansible | skipping: [web] => (item=httpd_can_network_connect_db) 
-2026-11-20 16:08:02,056 p=13398 u=ubuntu n=ansible | skipping: [web] => (item=httpd_unified) 
-2026-11-20 16:08:02,057 p=13398 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:08:02,070 p=13398 u=ubuntu n=ansible | TASK [prestashop : Check that the database server is reachable on port 3306] *****************************************************************************************
-2026-11-20 16:08:02,657 p=13398 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:08:02,668 p=13398 u=ubuntu n=ansible | TASK [prestashop : Create PrestaShop web root directory] *************************************************************************************************************
-2026-11-20 16:08:02,992 p=13398 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:08:03,002 p=13398 u=ubuntu n=ansible | TASK [prestashop : Download PrestaShop archive] **********************************************************************************************************************
-2026-11-20 16:08:04,812 p=13398 u=ubuntu n=ansible | changed: [web]
-2026-11-20 16:08:04,827 p=13398 u=ubuntu n=ansible | TASK [prestashop : Extract PrestaShop archive] ***********************************************************************************************************************
-2026-11-20 16:08:07,175 p=13398 u=ubuntu n=ansible | changed: [web]
-2026-11-20 16:08:07,185 p=13398 u=ubuntu n=ansible | TASK [prestashop : Check if the archive contains a nested prestashop.zip] ********************************************************************************************
-2026-11-20 16:08:07,780 p=13398 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:08:07,790 p=13398 u=ubuntu n=ansible | TASK [prestashop : Extract nested prestashop.zip] ********************************************************************************************************************
-2026-11-20 16:08:24,283 p=13398 u=ubuntu n=ansible | changed: [web]
-2026-11-20 16:08:24,292 p=13398 u=ubuntu n=ansible | TASK [prestashop : Remove installation leftovers] ********************************************************************************************************************
-2026-11-20 16:08:24,778 p=13398 u=ubuntu n=ansible | changed: [web] => (item=prestashop.zip)
-2026-11-20 16:08:25,080 p=13398 u=ubuntu n=ansible | changed: [web] => (item=Install_PrestaShop.html)
-2026-11-20 16:08:25,092 p=13398 u=ubuntu n=ansible | TASK [prestashop : Install PrestaShop with the CLI installer] ********************************************************************************************************
-2026-11-20 16:10:17,830 p=13398 u=ubuntu n=ansible | [WARNING]: Unable to use /var/www/.ansible/tmp as temporary directory, failing back to system: [Errno 13] Permission denied: '/var/www/.ansible'
+2026-11-20 16:36:55,477 p=16819 u=ubuntu n=ansible | TASK [mysql : Load OS specific variables] ****************************************************************************************************************************
+2026-11-20 16:36:55,505 p=16819 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:55,514 p=16819 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on Debian-based or Ubuntu-based systems] ******************************************************************************
+2026-11-20 16:36:57,455 p=16819 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:57,466 p=16819 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on RedHat-based systems] **********************************************************************************************
+2026-11-20 16:36:57,487 p=16819 u=ubuntu n=ansible | skipping: [db]
+2026-11-20 16:36:57,498 p=16819 u=ubuntu n=ansible | TASK [mysql : Start and enable MySQL service] ************************************************************************************************************************
+2026-11-20 16:36:58,683 p=16819 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:58,692 p=16819 u=ubuntu n=ansible | TASK [mysql : Configure MySQL bind-address] **************************************************************************************************************************
+2026-11-20 16:36:59,196 p=16819 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:36:59,209 p=16819 u=ubuntu n=ansible | TASK [mysql : Set MySQL root password] *******************************************************************************************************************************
+2026-11-20 16:37:00,028 p=16819 u=ubuntu n=ansible | changed: [db]
+2026-11-20 16:37:00,038 p=16819 u=ubuntu n=ansible | TASK [mysql : Remove anonymous MySQL users (to prevent access without password)] *************************************************************************************
+2026-11-20 16:37:00,428 p=16819 u=ubuntu n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+community.mysql 4.0.0.
 
-2026-11-20 16:10:17,831 p=13398 u=ubuntu n=ansible | changed: [web]
-2026-11-20 16:10:17,841 p=13398 u=ubuntu n=ansible | TASK [prestashop : Remove install directory (required by PrestaShop after installation)] *****************************************************************************
-2026-11-20 16:10:18,325 p=13398 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:10:18,339 p=13398 u=ubuntu n=ansible | TASK [prestashop : Configure Apache virtual host for PrestaShop] *****************************************************************************************************
-2026-11-20 16:10:19,561 p=13398 u=ubuntu n=ansible | changed: [web]
-2026-11-20 16:10:19,573 p=13398 u=ubuntu n=ansible | TASK [prestashop : Enable Apache rewrite module (Debian-based or Ubuntu-based systems)] ******************************************************************************
-2026-11-20 16:10:20,343 p=13398 u=ubuntu n=ansible | changed: [web]
-2026-11-20 16:10:20,354 p=13398 u=ubuntu n=ansible | TASK [prestashop : Disable Apache default site (Debian-based or Ubuntu-based systems)] *******************************************************************************
-2026-11-20 16:10:20,712 p=13398 u=ubuntu n=ansible | changed: [web]
-2026-11-20 16:10:20,722 p=13398 u=ubuntu n=ansible | TASK [prestashop : Enable PrestaShop site (Debian-based or Ubuntu-based systems)] ************************************************************************************
-2026-11-20 16:10:21,085 p=13398 u=ubuntu n=ansible | changed: [web]
-2026-11-20 16:10:21,094 p=13398 u=ubuntu n=ansible | TASK [prestashop : Gather services facts] ****************************************************************************************************************************
-2026-11-20 16:10:25,326 p=13398 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:10:25,344 p=13398 u=ubuntu n=ansible | TASK [prestashop : Allow HTTP traffic (ufw)] *************************************************************************************************************************
-2026-11-20 16:10:26,280 p=13398 u=ubuntu n=ansible | changed: [web]
-2026-11-20 16:10:26,299 p=13398 u=ubuntu n=ansible | TASK [prestashop : Allow HTTP traffic (firewalld, only if it is running)] ********************************************************************************************
-2026-11-20 16:10:26,322 p=13398 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:10:26,341 p=13398 u=ubuntu n=ansible | TASK [prestashop : Apply pending restarts before checking] ***********************************************************************************************************
-2026-11-20 16:10:26,380 p=13398 u=ubuntu n=ansible | RUNNING HANDLER [prestashop : Restart Apache] ************************************************************************************************************************
-2026-11-20 16:10:29,101 p=13398 u=ubuntu n=ansible | fatal: [web]: FAILED! => changed=false 
-  msg: |-
-    Unable to restart service apache2: Job for apache2.service failed because the control process exited with error code.
-    See "systemctl status apache2.service" and "journalctl -xeu apache2.service" for details.
-2026-11-20 16:10:29,131 p=13398 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
-2026-11-20 16:10:29,132 p=13398 u=ubuntu n=ansible | web                        : ok=23   changed=10   unreachable=0    failed=1    skipped=4    rescued=0    ignored=0   
-2026-11-20 16:11:10,379 p=13845 u=ubuntu n=ansible | web | CHANGED | rc=0 >>
-lrwxrwxrwx 1 root root 28 Nov 20 15:51 alias.conf -> ../mods-available/alias.conf
-lrwxrwxrwx 1 root root 32 Nov 20 15:51 autoindex.conf -> ../mods-available/autoindex.conf
-lrwxrwxrwx 1 root root 30 Nov 20 15:51 deflate.conf -> ../mods-available/deflate.conf
-lrwxrwxrwx 1 root root 26 Nov 20 15:51 dir.conf -> ../mods-available/dir.conf
-lrwxrwxrwx 1 root root 27 Nov 20 15:51 mime.conf -> ../mods-available/mime.conf
-lrwxrwxrwx 1 root root 34 Nov 20 15:51 mpm_prefork.conf -> ../mods-available/mpm_prefork.conf
-lrwxrwxrwx 1 root root 34 Nov 20 15:51 mpm_prefork.load -> ../mods-available/mpm_prefork.load
-lrwxrwxrwx 1 root root 34 Nov 20 15:51 negotiation.conf -> ../mods-available/negotiation.conf
-lrwxrwxrwx 1 root root 29 Nov 20 15:51 php8.5.conf -> ../mods-available/php8.5.conf
-lrwxrwxrwx 1 root root 29 Nov 20 15:51 php8.5.load -> ../mods-available/php8.5.load
-lrwxrwxrwx 1 root root 33 Nov 20 15:51 reqtimeout.conf -> ../mods-available/reqtimeout.conf
-lrwxrwxrwx 1 root root 30 Nov 20 16:10 rewrite.load -> ../mods-available/rewrite.load
-lrwxrwxrwx 1 root root 31 Nov 20 15:51 setenvif.conf -> ../mods-available/setenvif.conf
-lrwxrwxrwx 1 root root 29 Nov 20 15:51 status.conf -> ../mods-available/status.conf
-lrwxrwxrwx 1 root root 34 Nov 20 16:10 prestashop.conf -> ../sites-available/prestashop.conf
-Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: Stopped apache2.service - The Apache HTTP Server.
-Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: Starting apache2.service - The Apache HTTP Server...
-Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: Started apache2.service - The Apache HTTP Server.
-Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: Stopping apache2.service - The Apache HTTP Server...
-Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: apache2.service: Deactivated successfully.
-Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: Stopped apache2.service - The Apache HTTP Server.
-Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: Starting apache2.service - The Apache HTTP Server...
-Nov 20 15:51:54 ip-172-31-11-237 systemd[1]: Started apache2.service - The Apache HTTP Server.
-Nov 20 15:51:57 ip-172-31-11-237 systemd[1]: Stopping apache2.service - The Apache HTTP Server...
-Nov 20 15:51:57 ip-172-31-11-237 systemd[1]: apache2.service: Deactivated successfully.
-Nov 20 15:51:57 ip-172-31-11-237 systemd[1]: Stopped apache2.service - The Apache HTTP Server.
-Nov 20 15:51:57 ip-172-31-11-237 systemd[1]: Starting apache2.service - The Apache HTTP Server...
-Nov 20 15:51:58 ip-172-31-11-237 systemd[1]: Started apache2.service - The Apache HTTP Server.
-Nov 20 15:52:07 ip-172-31-11-237 systemd[1]: Stopping apache2.service - The Apache HTTP Server...
-Nov 20 15:52:07 ip-172-31-11-237 systemd[1]: apache2.service: Deactivated successfully.
-Nov 20 15:52:07 ip-172-31-11-237 systemd[1]: Stopped apache2.service - The Apache HTTP Server.
-Nov 20 15:52:07 ip-172-31-11-237 systemd[1]: Starting apache2.service - The Apache HTTP Server...
-Nov 20 15:52:07 ip-172-31-11-237 systemd[1]: Started apache2.service - The Apache HTTP Server.
-Nov 20 16:10:26 ip-172-31-11-237 systemd[1]: Stopping apache2.service - The Apache HTTP Server...
-Nov 20 16:10:26 ip-172-31-11-237 apachectl[15430]: (2)No such file or directory: AH02291: Cannot access directory '/etc/apache2/logs/' for error log of vhost defined at /etc/apache2/sites-enabled/prestashop.conf:1
-Nov 20 16:10:26 ip-172-31-11-237 apachectl[15430]: AH00014: Configuration check failed
-Nov 20 16:10:26 ip-172-31-11-237 systemd[1]: apache2.service: Control process exited, code=exited, status=1/FAILURE
-Nov 20 16:10:27 ip-172-31-11-237 systemd[1]: apache2.service: Failed with result 'exit-code'.
-Nov 20 16:10:27 ip-172-31-11-237 systemd[1]: Stopped apache2.service - The Apache HTTP Server.
-Nov 20 16:10:27 ip-172-31-11-237 systemd[1]: Starting apache2.service - The Apache HTTP Server...
-Nov 20 16:10:28 ip-172-31-11-237 apachectl[15437]: (2)No such file or directory: AH02291: Cannot access directory '/etc/apache2/logs/' for error log of vhost defined at /etc/apache2/sites-enabled/prestashop.conf:1
-Nov 20 16:10:28 ip-172-31-11-237 apachectl[15437]: AH00014: Configuration check failed
-Nov 20 16:10:28 ip-172-31-11-237 systemd[1]: apache2.service: Main process exited, code=exited, status=1/FAILURE
-Nov 20 16:10:28 ip-172-31-11-237 systemd[1]: apache2.service: Failed with result 'exit-code'.
-Nov 20 16:10:28 ip-172-31-11-237 systemd[1]: Failed to start apache2.service - The Apache HTTP Server.(2)No such file or directory: AH02291: Cannot access directory '/etc/apache2/logs/' for error log of vhost defined at /etc/apache2/sites-enabled/prestashop.conf:1
-AH00014: Configuration check failed
-
-2026-11-20 16:13:29,360 p=14040 u=ubuntu n=ansible | PLAY [Deploy MySQL database server] **********************************************************************************************************************************
-2026-11-20 16:13:29,360 p=14040 u=ubuntu n=ansible | skipping: no hosts matched
-2026-11-20 16:13:29,363 p=14040 u=ubuntu n=ansible | PLAY [Deploy PrestaShop web server] **********************************************************************************************************************************
-2026-11-20 16:13:29,381 p=14040 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
-2026-11-20 16:13:32,396 p=14040 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:13:32,426 p=14040 u=ubuntu n=ansible | TASK [prestashop : Print OS family] **********************************************************************************************************************************
-2026-11-20 16:13:32,456 p=14040 u=ubuntu n=ansible | ok: [web] => 
+2026-11-20 16:37:00,429 p=16819 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:37:00,438 p=16819 u=ubuntu n=ansible | TASK [mysql : Remove test database] **********************************************************************************************************************************
+2026-11-20 16:37:00,984 p=16819 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:37:00,995 p=16819 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop database] **********************************************************************************************************************
+2026-11-20 16:37:01,364 p=16819 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:37:01,374 p=16819 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop user (allowed from the web server)] ********************************************************************************************
+2026-11-20 16:37:01,824 p=16819 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:37:01,834 p=16819 u=ubuntu n=ansible | TASK [mysql : Gather services facts] *********************************************************************************************************************************
+2026-11-20 16:37:05,725 p=16819 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:37:05,741 p=16819 u=ubuntu n=ansible | TASK [mysql : Allow MySQL from the web server (ufw)] *****************************************************************************************************************
+2026-11-20 16:37:06,626 p=16819 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:37:06,645 p=16819 u=ubuntu n=ansible | TASK [mysql : Allow MySQL port (firewalld, only if it is running)] ***************************************************************************************************
+2026-11-20 16:37:06,669 p=16819 u=ubuntu n=ansible | skipping: [db]
+2026-11-20 16:37:06,687 p=16819 u=ubuntu n=ansible | TASK [mysql : Apply pending restarts before checking] ****************************************************************************************************************
+2026-11-20 16:37:06,721 p=16819 u=ubuntu n=ansible | TASK [mysql : Check that MySQL listens on port 3306] *****************************************************************************************************************
+2026-11-20 16:37:07,240 p=16819 u=ubuntu n=ansible | ok: [db]
+2026-11-20 16:37:07,337 p=16819 u=ubuntu n=ansible | PLAY [Deploy PrestaShop web server] **********************************************************************************************************************************
+2026-11-20 16:37:07,350 p=16819 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
+2026-11-20 16:37:08,549 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:08,624 p=16819 u=ubuntu n=ansible | TASK [prestashop : Print OS family] **********************************************************************************************************************************
+2026-11-20 16:37:08,653 p=16819 u=ubuntu n=ansible | ok: [web] => 
   msg: 'OS Family: Debian - Ubuntu 26.04'
-2026-11-20 16:13:32,468 p=14040 u=ubuntu n=ansible | TASK [prestashop : Load OS specific variables] ***********************************************************************************************************************
-2026-11-20 16:13:32,498 p=14040 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:13:32,511 p=14040 u=ubuntu n=ansible | TASK [prestashop : Enable PHP 8.2 module stream on RHEL 8/9 (default PHP is too old)] ********************************************************************************
-2026-11-20 16:13:32,543 p=14040 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:13:32,554 p=14040 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on Debian-based or Ubuntu-based systems] ***********************************************************************
-2026-11-20 16:13:35,317 p=14040 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:13:35,328 p=14040 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on RedHat-based systems] ***************************************************************************************
-2026-11-20 16:13:35,351 p=14040 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:13:35,361 p=14040 u=ubuntu n=ansible | TASK [prestashop : Get PHP version (Debian-based or Ubuntu-based systems)] *******************************************************************************************
-2026-11-20 16:13:36,017 p=14040 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:13:36,028 p=14040 u=ubuntu n=ansible | TASK [prestashop : Set PHP configuration directory (Debian-based or Ubuntu-based systems)] ***************************************************************************
-2026-11-20 16:13:36,059 p=14040 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:13:36,070 p=14040 u=ubuntu n=ansible | TASK [prestashop : Apply PHP settings recommended by PrestaShop] *****************************************************************************************************
-2026-11-20 16:13:37,244 p=14040 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:13:37,260 p=14040 u=ubuntu n=ansible | TASK [prestashop : Start and enable Apache service] ******************************************************************************************************************
-2026-11-20 16:13:38,366 p=14040 u=ubuntu n=ansible | fatal: [web]: FAILED! => changed=false 
-  msg: |-
-    Unable to start service apache2: Job for apache2.service failed because the control process exited with error code.
-    See "systemctl status apache2.service" and "journalctl -xeu apache2.service" for details.
-2026-11-20 16:13:38,384 p=14040 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
-2026-11-20 16:13:38,385 p=14040 u=ubuntu n=ansible | web                        : ok=7    changed=0    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
-2026-11-20 16:16:23,744 p=14287 u=ubuntu n=ansible | playbook: website.yaml
-2026-11-20 16:16:24,855 p=14301 u=ubuntu n=ansible | PLAY [Deploy MySQL database server] **********************************************************************************************************************************
-2026-11-20 16:16:24,856 p=14301 u=ubuntu n=ansible | skipping: no hosts matched
-2026-11-20 16:16:24,858 p=14301 u=ubuntu n=ansible | PLAY [Deploy PrestaShop web server] **********************************************************************************************************************************
-2026-11-20 16:16:24,876 p=14301 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
-2026-11-20 16:16:27,281 p=14301 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:16:27,309 p=14301 u=ubuntu n=ansible | TASK [prestashop : Print OS family] **********************************************************************************************************************************
-2026-11-20 16:16:27,340 p=14301 u=ubuntu n=ansible | ok: [web] => 
-  msg: 'OS Family: Debian - Ubuntu 26.04'
-2026-11-20 16:16:27,350 p=14301 u=ubuntu n=ansible | TASK [prestashop : Load OS specific variables] ***********************************************************************************************************************
-2026-11-20 16:16:27,380 p=14301 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:16:27,391 p=14301 u=ubuntu n=ansible | TASK [prestashop : Enable PHP 8.2 module stream on RHEL 8/9 (default PHP is too old)] ********************************************************************************
-2026-11-20 16:16:27,415 p=14301 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:16:27,425 p=14301 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on Debian-based or Ubuntu-based systems] ***********************************************************************
-2026-11-20 16:16:28,763 p=14301 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:16:28,774 p=14301 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on RedHat-based systems] ***************************************************************************************
-2026-11-20 16:16:28,796 p=14301 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:16:28,807 p=14301 u=ubuntu n=ansible | TASK [prestashop : Get PHP version (Debian-based or Ubuntu-based systems)] *******************************************************************************************
-2026-11-20 16:16:29,324 p=14301 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:16:29,335 p=14301 u=ubuntu n=ansible | TASK [prestashop : Set PHP configuration directory (Debian-based or Ubuntu-based systems)] ***************************************************************************
-2026-11-20 16:16:29,365 p=14301 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:16:29,376 p=14301 u=ubuntu n=ansible | TASK [prestashop : Apply PHP settings recommended by PrestaShop] *****************************************************************************************************
-2026-11-20 16:16:30,500 p=14301 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:16:30,518 p=14301 u=ubuntu n=ansible | TASK [prestashop : Allow Apache to connect to a remote database (SELinux)] *******************************************************************************************
-2026-11-20 16:16:30,545 p=14301 u=ubuntu n=ansible | skipping: [web] => (item=httpd_can_network_connect_db) 
-2026-11-20 16:16:30,550 p=14301 u=ubuntu n=ansible | skipping: [web] => (item=httpd_unified) 
-2026-11-20 16:16:30,551 p=14301 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:16:30,565 p=14301 u=ubuntu n=ansible | TASK [prestashop : Check that the database server is reachable on port 3306] *****************************************************************************************
-2026-11-20 16:16:31,074 p=14301 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:16:31,085 p=14301 u=ubuntu n=ansible | TASK [prestashop : Create PrestaShop web root directory] *************************************************************************************************************
-2026-11-20 16:16:31,399 p=14301 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:16:31,410 p=14301 u=ubuntu n=ansible | TASK [prestashop : Download PrestaShop archive] **********************************************************************************************************************
-2026-11-20 16:16:32,311 p=14301 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:16:32,322 p=14301 u=ubuntu n=ansible | TASK [prestashop : Extract PrestaShop archive] ***********************************************************************************************************************
-2026-11-20 16:16:32,574 p=14301 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:16:32,584 p=14301 u=ubuntu n=ansible | TASK [prestashop : Check if the archive contains a nested prestashop.zip] ********************************************************************************************
-2026-11-20 16:16:32,883 p=14301 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:16:32,893 p=14301 u=ubuntu n=ansible | TASK [prestashop : Extract nested prestashop.zip] ********************************************************************************************************************
-2026-11-20 16:16:32,911 p=14301 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:16:32,922 p=14301 u=ubuntu n=ansible | TASK [prestashop : Remove installation leftovers] ********************************************************************************************************************
-2026-11-20 16:16:33,221 p=14301 u=ubuntu n=ansible | ok: [web] => (item=prestashop.zip)
-2026-11-20 16:16:33,494 p=14301 u=ubuntu n=ansible | ok: [web] => (item=Install_PrestaShop.html)
-2026-11-20 16:16:33,505 p=14301 u=ubuntu n=ansible | TASK [prestashop : Install PrestaShop with the CLI installer] ********************************************************************************************************
-2026-11-20 16:16:33,808 p=14301 u=ubuntu n=ansible | [WARNING]: Unable to use /var/www/.ansible/tmp as temporary directory, failing back to system: [Errno 13] Permission denied: '/var/www/.ansible'
+2026-11-20 16:37:08,663 p=16819 u=ubuntu n=ansible | TASK [prestashop : Load OS specific variables] ***********************************************************************************************************************
+2026-11-20 16:37:08,693 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:08,705 p=16819 u=ubuntu n=ansible | TASK [prestashop : Enable PHP 8.2 module stream on RHEL 8/9 (default PHP is too old)] ********************************************************************************
+2026-11-20 16:37:08,726 p=16819 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:37:08,739 p=16819 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on Debian-based or Ubuntu-based systems] ***********************************************************************
+2026-11-20 16:37:10,485 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:10,495 p=16819 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on RedHat-based systems] ***************************************************************************************
+2026-11-20 16:37:10,521 p=16819 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:37:10,533 p=16819 u=ubuntu n=ansible | TASK [prestashop : Get PHP version (Debian-based or Ubuntu-based systems)] *******************************************************************************************
+2026-11-20 16:37:11,614 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:11,625 p=16819 u=ubuntu n=ansible | TASK [prestashop : Set PHP configuration directory (Debian-based or Ubuntu-based systems)] ***************************************************************************
+2026-11-20 16:37:11,654 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:11,665 p=16819 u=ubuntu n=ansible | TASK [prestashop : Apply PHP settings recommended by PrestaShop] *****************************************************************************************************
+2026-11-20 16:37:12,909 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:12,921 p=16819 u=ubuntu n=ansible | TASK [prestashop : Allow Apache to connect to a remote database (SELinux)] *******************************************************************************************
+2026-11-20 16:37:12,943 p=16819 u=ubuntu n=ansible | skipping: [web] => (item=httpd_can_network_connect_db) 
+2026-11-20 16:37:12,948 p=16819 u=ubuntu n=ansible | skipping: [web] => (item=httpd_unified) 
+2026-11-20 16:37:12,950 p=16819 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:37:12,961 p=16819 u=ubuntu n=ansible | TASK [prestashop : Check that the database server is reachable on port 3306] *****************************************************************************************
+2026-11-20 16:37:13,316 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:13,327 p=16819 u=ubuntu n=ansible | TASK [prestashop : Create PrestaShop web root directory] *************************************************************************************************************
+2026-11-20 16:37:13,634 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:13,646 p=16819 u=ubuntu n=ansible | TASK [prestashop : Download PrestaShop archive] **********************************************************************************************************************
+2026-11-20 16:37:14,488 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:14,503 p=16819 u=ubuntu n=ansible | TASK [prestashop : Extract PrestaShop archive] ***********************************************************************************************************************
+2026-11-20 16:37:14,769 p=16819 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:37:14,779 p=16819 u=ubuntu n=ansible | TASK [prestashop : Check if the archive contains a nested prestashop.zip] ********************************************************************************************
+2026-11-20 16:37:15,086 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:15,097 p=16819 u=ubuntu n=ansible | TASK [prestashop : Extract nested prestashop.zip] ********************************************************************************************************************
+2026-11-20 16:37:15,116 p=16819 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:37:15,128 p=16819 u=ubuntu n=ansible | TASK [prestashop : Remove installation leftovers] ********************************************************************************************************************
+2026-11-20 16:37:15,428 p=16819 u=ubuntu n=ansible | ok: [web] => (item=prestashop.zip)
+2026-11-20 16:37:15,709 p=16819 u=ubuntu n=ansible | ok: [web] => (item=Install_PrestaShop.html)
+2026-11-20 16:37:15,720 p=16819 u=ubuntu n=ansible | TASK [prestashop : Check if PrestaShop is already installed] *********************************************************************************************************
+2026-11-20 16:37:16,021 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:16,032 p=16819 u=ubuntu n=ansible | TASK [prestashop : Install PrestaShop with the CLI installer] ********************************************************************************************************
+2026-11-20 16:37:16,052 p=16819 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:37:16,062 p=16819 u=ubuntu n=ansible | TASK [prestashop : Print installer output] ***************************************************************************************************************************
+2026-11-20 16:37:16,087 p=16819 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:37:16,098 p=16819 u=ubuntu n=ansible | TASK [prestashop : Check that the installation created parameters.php] ***********************************************************************************************
+2026-11-20 16:37:16,407 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:16,416 p=16819 u=ubuntu n=ansible | TASK [prestashop : Remove install directory (required by PrestaShop after installation)] *****************************************************************************
+2026-11-20 16:37:16,718 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:16,728 p=16819 u=ubuntu n=ansible | TASK [prestashop : Configure Apache virtual host for PrestaShop] *****************************************************************************************************
+2026-11-20 16:37:17,506 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:17,518 p=16819 u=ubuntu n=ansible | TASK [prestashop : Enable Apache rewrite module (Debian-based or Ubuntu-based systems)] ******************************************************************************
+2026-11-20 16:37:18,120 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:18,131 p=16819 u=ubuntu n=ansible | TASK [prestashop : Disable Apache default site (Debian-based or Ubuntu-based systems)] *******************************************************************************
+2026-11-20 16:37:18,445 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:18,459 p=16819 u=ubuntu n=ansible | TASK [prestashop : Enable PrestaShop site (Debian-based or Ubuntu-based systems)] ************************************************************************************
+2026-11-20 16:37:18,755 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:18,766 p=16819 u=ubuntu n=ansible | TASK [prestashop : Start and enable Apache service] ******************************************************************************************************************
+2026-11-20 16:37:19,344 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:19,356 p=16819 u=ubuntu n=ansible | TASK [prestashop : Gather services facts] ****************************************************************************************************************************
+2026-11-20 16:37:23,422 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:23,439 p=16819 u=ubuntu n=ansible | TASK [prestashop : Allow HTTP traffic (ufw)] *************************************************************************************************************************
+2026-11-20 16:37:24,134 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:24,153 p=16819 u=ubuntu n=ansible | TASK [prestashop : Allow HTTP traffic (firewalld, only if it is running)] ********************************************************************************************
+2026-11-20 16:37:24,177 p=16819 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:37:24,195 p=16819 u=ubuntu n=ansible | TASK [prestashop : Apply pending restarts before checking] ***********************************************************************************************************
+2026-11-20 16:37:24,226 p=16819 u=ubuntu n=ansible | TASK [prestashop : Find back office directory] ***********************************************************************************************************************
+2026-11-20 16:37:24,737 p=16819 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:37:24,758 p=16819 u=ubuntu n=ansible | TASK [prestashop : Check that the shop answers on http://13.38.76.244/] **********************************************************************************************
+2026-11-20 16:37:26,609 p=16819 u=ubuntu n=ansible | ok: [web -> localhost]
+2026-11-20 16:37:26,627 p=16819 u=ubuntu n=ansible | TASK [prestashop : Print shop URLs] **********************************************************************************************************************************
+2026-11-20 16:37:26,688 p=16819 u=ubuntu n=ansible | ok: [web] => 
+  msg:
+  - 'Front office: http://13.38.76.244/'
+  - 'Back office:  http://13.38.76.244/admin119b49eantgqxgoq0qj/'
+  - 'Login: admin@liora-shop.com'
+2026-11-20 16:37:26,796 p=16819 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
+2026-11-20 16:37:26,797 p=16819 u=ubuntu n=ansible | db                         : ok=14   changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2026-11-20 16:37:26,797 p=16819 u=ubuntu n=ansible | web                        : ok=25   changed=0    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0   
+2026-11-20 16:37:28,328 p=17099 u=ubuntu n=ansible | db | CHANGED | rc=0 >>
+319mysql: [Warning] Using a password on the command line interface can be insecure.
 
-2026-11-20 16:16:33,810 p=14301 u=ubuntu n=ansible | fatal: [web]: FAILED! => changed=false 
-  cmd:
-  - php
-  - /var/www/prestashop/install/index_cli.php
-  - --domain=13.38.76.244
-  - --db_server=172.31.15.6:3306
-  - --db_name=prestashop
-  - --db_user=prestashop
-  - --db_password=LioraPrestashop2026!
-  - --prefix=ps_
-  - --name=Liora Shop
-  - --language=fr
-  - --country=fr
-  - --firstname=Admin
-  - --lastname=Liora
-  - --email=admin@liora-shop.com
-  - --password=LioraAdmin2026!
-  - --ssl=0
-  delta: null
-  end: null
-  msg: 'Unable to change directory before execution: [Errno 2] No such file or directory: b''/var/www/prestashop/install'''
-  rc: null
-  start: null
-  stderr: ''
-  stderr_lines: <omitted>
-  stdout: ''
-  stdout_lines: <omitted>
-2026-11-20 16:16:33,826 p=14301 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
-2026-11-20 16:16:33,826 p=14301 u=ubuntu n=ansible | web                        : ok=12   changed=0    unreachable=0    failed=1    skipped=5    rescued=0    ignored=0   
-2026-11-20 16:18:37,610 p=14800 u=ubuntu n=ansible | playbook: website.yaml
-2026-11-20 16:18:38,744 p=14813 u=ubuntu n=ansible | PLAY [Deploy MySQL database server] **********************************************************************************************************************************
-2026-11-20 16:18:38,745 p=14813 u=ubuntu n=ansible | skipping: no hosts matched
-2026-11-20 16:18:38,747 p=14813 u=ubuntu n=ansible | PLAY [Deploy PrestaShop web server] **********************************************************************************************************************************
-2026-11-20 16:18:38,766 p=14813 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
-2026-11-20 16:18:41,183 p=14813 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:18:41,211 p=14813 u=ubuntu n=ansible | TASK [prestashop : Print OS family] **********************************************************************************************************************************
-2026-11-20 16:18:41,240 p=14813 u=ubuntu n=ansible | ok: [web] => 
-  msg: 'OS Family: Debian - Ubuntu 26.04'
-2026-11-20 16:18:41,250 p=14813 u=ubuntu n=ansible | TASK [prestashop : Load OS specific variables] ***********************************************************************************************************************
-2026-11-20 16:18:41,279 p=14813 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:18:41,290 p=14813 u=ubuntu n=ansible | TASK [prestashop : Enable PHP 8.2 module stream on RHEL 8/9 (default PHP is too old)] ********************************************************************************
-2026-11-20 16:18:41,313 p=14813 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:18:41,323 p=14813 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on Debian-based or Ubuntu-based systems] ***********************************************************************
-2026-11-20 16:18:42,669 p=14813 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:18:42,681 p=14813 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on RedHat-based systems] ***************************************************************************************
-2026-11-20 16:18:42,704 p=14813 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:18:42,714 p=14813 u=ubuntu n=ansible | TASK [prestashop : Get PHP version (Debian-based or Ubuntu-based systems)] *******************************************************************************************
-2026-11-20 16:18:43,250 p=14813 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:18:43,261 p=14813 u=ubuntu n=ansible | TASK [prestashop : Set PHP configuration directory (Debian-based or Ubuntu-based systems)] ***************************************************************************
-2026-11-20 16:18:43,293 p=14813 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:18:43,304 p=14813 u=ubuntu n=ansible | TASK [prestashop : Apply PHP settings recommended by PrestaShop] *****************************************************************************************************
-2026-11-20 16:18:44,439 p=14813 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:18:44,454 p=14813 u=ubuntu n=ansible | TASK [prestashop : Allow Apache to connect to a remote database (SELinux)] *******************************************************************************************
-2026-11-20 16:18:44,479 p=14813 u=ubuntu n=ansible | skipping: [web] => (item=httpd_can_network_connect_db) 
-2026-11-20 16:18:44,485 p=14813 u=ubuntu n=ansible | skipping: [web] => (item=httpd_unified) 
-2026-11-20 16:18:44,487 p=14813 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:18:44,499 p=14813 u=ubuntu n=ansible | TASK [prestashop : Check that the database server is reachable on port 3306] *****************************************************************************************
-2026-11-20 16:18:45,001 p=14813 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:18:45,012 p=14813 u=ubuntu n=ansible | TASK [prestashop : Create PrestaShop web root directory] *************************************************************************************************************
-2026-11-20 16:18:45,314 p=14813 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:18:45,324 p=14813 u=ubuntu n=ansible | TASK [prestashop : Download PrestaShop archive] **********************************************************************************************************************
-2026-11-20 16:18:45,975 p=14813 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:18:45,986 p=14813 u=ubuntu n=ansible | TASK [prestashop : Extract PrestaShop archive] ***********************************************************************************************************************
-2026-11-20 16:18:46,230 p=14813 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:18:46,241 p=14813 u=ubuntu n=ansible | TASK [prestashop : Check if the archive contains a nested prestashop.zip] ********************************************************************************************
-2026-11-20 16:18:46,527 p=14813 u=ubuntu n=ansible | ok: [web]
-2026-11-20 16:18:46,536 p=14813 u=ubuntu n=ansible | TASK [prestashop : Extract nested prestashop.zip] ********************************************************************************************************************
-2026-11-20 16:18:46,555 p=14813 u=ubuntu n=ansible | skipping: [web]
-2026-11-20 16:18:46,565 p=14813 u=ubuntu n=ansible | TASK [prestashop : Remove installation leftovers] ********************************************************************************************************************
-2026-11-20 16:18:46,862 p=14813 u=ubuntu n=ansible | ok: [web] => (item=prestashop.zip)
-2026-11-20 16:18:47,137 p=14813 u=ubuntu n=ansible | ok: [web] => (item=Install_PrestaShop.html)
-2026-11-20 16:18:47,149 p=14813 u=ubuntu n=ansible | TASK [prestashop : Install PrestaShop with the CLI installer] ********************************************************************************************************
-2026-11-20 16:18:47,450 p=14813 u=ubuntu n=ansible | [WARNING]: Unable to use /var/www/.ansible/tmp as temporary directory, failing back to system: [Errno 13] Permission denied: '/var/www/.ansible'
-
-2026-11-20 16:18:47,452 p=14813 u=ubuntu n=ansible | fatal: [web]: FAILED! => changed=false 
-  cmd:
-  - php
-  - /var/www/prestashop/install/index_cli.php
-  - --domain=13.38.76.244
-  - --db_server=172.31.15.6:3306
-  - --db_name=prestashop
-  - --db_user=prestashop
-  - --db_password=LioraPrestashop2026!
-  - --prefix=ps_
-  - --name=Liora Shop
-  - --language=fr
-  - --country=fr
-  - --firstname=Admin
-  - --lastname=Liora
-  - --email=admin@liora-shop.com
-  - --password=LioraAdmin2026!
-  - --ssl=0
-  delta: null
-  end: null
-  msg: 'Unable to change directory before execution: [Errno 2] No such file or directory: b''/var/www/prestashop/install'''
-  rc: null
-  start: null
-  stderr: ''
-  stderr_lines: <omitted>
-  stdout: ''
-  stdout_lines: <omitted>
-2026-11-20 16:18:47,469 p=14813 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
-2026-11-20 16:18:47,469 p=14813 u=ubuntu n=ansible | web                        : ok=12   changed=0    unreachable=0    failed=1    skipped=5    rescued=0    ignored=0   
-2026-11-20 16:20:05,294 p=14963 u=ubuntu n=ansible | web | CHANGED | rc=0 >>
-addons
-admin
-admin-api
-config.yml
-config_dev.yml
-config_legacy.yml
-config_legacy_dev.yml
-config_legacy_prod.yml
-config_legacy_test.yml
-config_prod.yml
-config_test.yml
-doctrine.yml
-front
-messenger.yml
-parameters.php
-parameters.yml
-parameters.yml.dist
-services.yml
-set_parameters.php
-[2026-11-20T17:09:24.079070+01:00] app.DEBUG: Protect vendor folder in module ps_dataprivacy [] []
-[2026-11-20T17:09:24.079207+01:00] app.DEBUG: Module ps_dataprivacy has no vendor folder [] []
-[2026-11-20T17:09:24.193072+01:00] app.DEBUG: Protect vendor folder in module ps_categorytree [] []
-[2026-11-20T17:09:24.193211+01:00] app.DEBUG: Module ps_categorytree has no vendor folder [] []
-[2026-11-20T17:09:24.563564+01:00] app.DEBUG: Protect vendor folder in module ps_emailalerts [] []
-[2026-11-20T17:09:24.563697+01:00] app.DEBUG: Module ps_emailalerts has no vendor folder [] []
-[2026-11-20T17:09:24.836973+01:00] app.DEBUG: Protect vendor folder in module ps_linklist [] []
-[2026-11-20T17:09:24.837101+01:00] app.DEBUG: Module ps_linklist has no vendor folder [] []
-[2026-11-20T17:09:24.956580+01:00] app.DEBUG: Protect vendor folder in module ps_mcp_tools [] []
-[2026-11-20T17:09:26.797540+01:00] app.DEBUG: Protect vendor folder in module ps_checkout [] []
-[2026-11-20T17:09:26.965944+01:00] app.DEBUG: Protect vendor folder in module statscarrier [] []
-[2026-11-20T17:09:26.966118+01:00] app.DEBUG: Module statscarrier has no vendor folder [] []
-[2026-11-20T17:10:09.197895+01:00] app.DEBUG: Protect vendor folder in module ps_facetedsearch [] []
-[2026-11-20T17:10:09.198716+01:00] app.DEBUG: Module ps_facetedsearch has no vendor folder [] []
-[2026-11-20T17:10:17.600419+01:00] app.DEBUG: SymfonyCacheClearer: No symfony cache to clear for admin env prod [] []
-[2026-11-20T17:10:17.600510+01:00] app.DEBUG: SymfonyCacheClearer: No symfony cache to clear for admin-api env prod [] []
-[2026-11-20T17:10:17.600540+01:00] app.DEBUG: SymfonyCacheClearer: No symfony cache to clear for front env prod [] []
-[2026-11-20T17:10:17.600681+01:00] app.DEBUG: SymfonyCacheClearer: No symfony cache to clear for admin env dev [] []
-[2026-11-20T17:10:17.600713+01:00] app.DEBUG: SymfonyCacheClearer: No symfony cache to clear for admin-api env dev [] []
-[2026-11-20T17:10:17.600736+01:00] app.DEBUG: SymfonyCacheClearer: No symfony cache to clear for front env dev [] []
-
+2026-11-20 16:37:30,463 p=17113 u=ubuntu n=ansible | web | SUCCESS => {
+    "cache_control": "no-store, no-cache, must-revalidate",
+    "changed": false,
+    "connection": "close",
+    "content_type": "text/html; charset=utf-8",
+    "cookies": {
+        "PHPSESSID": "baf0524f2fd5e96808818015edb0ae99",
+        "PrestaShop-4333cdc5b9cf9dc0b9f62941ca5ec399": "def5020050c1d1e90c0551c71799b0aa272073b19416cc19ba416c816f27c22032e960f36cef36f30e8d1993f2804e2012f6308dd0304a80cfb5d9c7f0b12b5f85246dd7e8c8db108a1a8cac361f8a48165a7689ed21fc78abc7fd37e5fbfd009ed75cf871597be17388a5ae555cee7d37c7e84c1096de279296c8afaf4d600a1e2d2afb625fff2cb439b45f53fe42f38e8fe42f545392d252ea4aab944e2b706cb78e13298fc191c7e4a888d30772b46a945efa061d42a9b9b7f3c2a1571df58a4694f5760f19f9b79449aa64301cdb427c4686af1a742a07d58b3237810ddc97fb8a3021ad5a6d136f862860a0ceeda2f30f"
+    },
+    "cookies_string": "PHPSESSID=baf0524f2fd5e96808818015edb0ae99; PrestaShop-4333cdc5b9cf9dc0b9f62941ca5ec399=def5020050c1d1e90c0551c71799b0aa272073b19416cc19ba416c816f27c22032e960f36cef36f30e8d1993f2804e2012f6308dd0304a80cfb5d9c7f0b12b5f85246dd7e8c8db108a1a8cac361f8a48165a7689ed21fc78abc7fd37e5fbfd009ed75cf871597be17388a5ae555cee7d37c7e84c1096de279296c8afaf4d600a1e2d2afb625fff2cb439b45f53fe42f38e8fe42f545392d252ea4aab944e2b706cb78e13298fc191c7e4a888d30772b46a945efa061d42a9b9b7f3c2a1571df58a4694f5760f19f9b79449aa64301cdb427c4686af1a742a07d58b3237810ddc97fb8a3021ad5a6d136f862860a0ceeda2f30f",
+    "date": "Fri, 20 Nov 2026 16:37:30 GMT",
+    "elapsed": 0,
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "msg": "OK (unknown bytes)",
+    "pragma": "no-cache",
+    "redirected": false,
+    "server": "Apache/2.4.66 (Ubuntu)",
+    "set_cookie": "PHPSESSID=baf0524f2fd5e96808818015edb0ae99; expires=Sat, 30 Oct 2083 09:15:00 GMT; Max-Age=1796920650; path=/; HttpOnly; SameSite=Lax, PrestaShop-4333cdc5b9cf9dc0b9f62941ca5ec399=def50200a76ccd1d43a9216438c3eac6633e431083403af7d7b71950d82624749781bf62b932d60f5a73a97b4e35387054ec5d30dd79f45d69de7ec2c5f8478d01778e199db1d5e28f680d503be353b3b29c10bf40608cf3aeab54dc27aa64e4c7251db8b02ab30d90b3380cacc69a409246cc0152d6055d474b57c12b3fc16894b704a866d246697cce898b57dbe08669f9786c4b5676920a310af452ed1170749863c3381161c40d6dd4ccafe2571435146c80a95c928335f713965e5276cf63c78a9a95e559c90df9c4b1fc10f62348fb30c8a8; expires=Thu, 10 Dec 2026 16:37:30 GMT; Max-Age=1728000; path=/; HttpOnly; SameSite=Lax, PrestaShop-4333cdc5b9cf9dc0b9f62941ca5ec399=def5020050c1d1e90c0551c71799b0aa272073b19416cc19ba416c816f27c22032e960f36cef36f30e8d1993f2804e2012f6308dd0304a80cfb5d9c7f0b12b5f85246dd7e8c8db108a1a8cac361f8a48165a7689ed21fc78abc7fd37e5fbfd009ed75cf871597be17388a5ae555cee7d37c7e84c1096de279296c8afaf4d600a1e2d2afb625fff2cb439b45f53fe42f38e8fe42f545392d252ea4aab944e2b706cb78e13298fc191c7e4a888d30772b46a945efa061d42a9b9b7f3c2a1571df58a4694f5760f19f9b79449aa64301cdb427c4686af1a742a07d58b3237810ddc97fb8a3021ad5a6d136f862860a0ceeda2f30f; expires=Thu, 10 Dec 2026 16:37:30 GMT; Max-Age=1728000; path=/; HttpOnly; SameSite=Lax",
+    "status": 200,
+    "transfer_encoding": "chunked",
+    "url": "http://13.38.76.244/",
+    "vary": "Accept-Encoding"
+}
