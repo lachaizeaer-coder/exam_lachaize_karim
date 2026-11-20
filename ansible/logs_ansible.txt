@@ -115,3 +115,490 @@ Collection                               Version
 2026-11-20 15:24:43,877 p=7268 u=ubuntu n=ansible | vultr.cloud                              1.12.1 
 2026-11-20 15:24:43,877 p=7268 u=ubuntu n=ansible | vyos.vyos                                4.1.0  
 2026-11-20 15:24:43,877 p=7268 u=ubuntu n=ansible | wti.remote                               1.0.5  
+2026-11-20 15:31:12,051 p=8161 u=ubuntu n=ansible | PLAY [database] ***************************************************************************************************************
+2026-11-20 15:31:12,070 p=8161 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************************************
+2026-11-20 15:31:14,574 p=8161 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:31:14,599 p=8161 u=ubuntu n=ansible | TASK [mysql : Print OS family] ************************************************************************************************
+2026-11-20 15:31:14,628 p=8161 u=ubuntu n=ansible | ok: [db] => 
+  msg: 'OS Family: Debian - Ubuntu 26.04'
+2026-11-20 15:31:14,638 p=8161 u=ubuntu n=ansible | TASK [mysql : Load OS specific variables] *************************************************************************************
+2026-11-20 15:31:14,671 p=8161 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:31:14,680 p=8161 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on Debian-based or Ubuntu-based systems] ***************************************
+2026-11-20 15:31:49,185 p=8161 u=ubuntu n=ansible | changed: [db]
+2026-11-20 15:31:49,196 p=8161 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on RedHat-based systems] *******************************************************
+2026-11-20 15:31:49,217 p=8161 u=ubuntu n=ansible | skipping: [db]
+2026-11-20 15:31:49,228 p=8161 u=ubuntu n=ansible | TASK [mysql : Start and enable MySQL service] *********************************************************************************
+2026-11-20 15:31:50,444 p=8161 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:31:50,454 p=8161 u=ubuntu n=ansible | TASK [mysql : Configure MySQL bind-address] ***********************************************************************************
+2026-11-20 15:31:50,979 p=8161 u=ubuntu n=ansible | [WARNING]: Module remote_tmp /root/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when
+running as another user. To avoid this, create the remote_tmp dir with the correct permissions manually
+
+2026-11-20 15:31:50,979 p=8161 u=ubuntu n=ansible | changed: [db]
+2026-11-20 15:31:50,991 p=8161 u=ubuntu n=ansible | TASK [mysql : Set MySQL root password] ****************************************************************************************
+2026-11-20 15:31:51,860 p=8161 u=ubuntu n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased.
+The default will be changed to true in community.mysql 4.0.0.
+
+2026-11-20 15:31:51,861 p=8161 u=ubuntu n=ansible | fatal: [db]: FAILED! => changed=false 
+  msg: (1524, "Plugin 'mysql_native_password' is not loaded")
+2026-11-20 15:31:51,863 p=8161 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************************************
+2026-11-20 15:31:51,863 p=8161 u=ubuntu n=ansible | db                         : ok=6    changed=2    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2026-11-20 15:32:00,988 p=8282 u=ubuntu n=ansible | PLAY [database] ***************************************************************************************************************
+2026-11-20 15:32:01,003 p=8282 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************************************
+2026-11-20 15:32:03,837 p=8282 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:32:03,860 p=8282 u=ubuntu n=ansible | TASK [mysql : Print OS family] ************************************************************************************************
+2026-11-20 15:32:03,889 p=8282 u=ubuntu n=ansible | ok: [db] => 
+  msg: 'OS Family: Debian - Ubuntu 26.04'
+2026-11-20 15:32:03,903 p=8282 u=ubuntu n=ansible | TASK [mysql : Load OS specific variables] *************************************************************************************
+2026-11-20 15:32:03,934 p=8282 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:32:03,944 p=8282 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on Debian-based or Ubuntu-based systems] ***************************************
+2026-11-20 15:32:05,838 p=8282 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:32:05,850 p=8282 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on RedHat-based systems] *******************************************************
+2026-11-20 15:32:05,870 p=8282 u=ubuntu n=ansible | skipping: [db]
+2026-11-20 15:32:05,881 p=8282 u=ubuntu n=ansible | TASK [mysql : Start and enable MySQL service] *********************************************************************************
+2026-11-20 15:32:07,009 p=8282 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:32:07,019 p=8282 u=ubuntu n=ansible | TASK [mysql : Configure MySQL bind-address] ***********************************************************************************
+2026-11-20 15:32:07,482 p=8282 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:32:07,493 p=8282 u=ubuntu n=ansible | TASK [mysql : Set MySQL root password] ****************************************************************************************
+2026-11-20 15:32:08,275 p=8282 u=ubuntu n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased.
+The default will be changed to true in community.mysql 4.0.0.
+
+2026-11-20 15:32:08,277 p=8282 u=ubuntu n=ansible | fatal: [db]: FAILED! => changed=false 
+  msg: (1524, "Plugin 'mysql_native_password' is not loaded")
+2026-11-20 15:32:08,279 p=8282 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************************************
+2026-11-20 15:32:08,279 p=8282 u=ubuntu n=ansible | db                         : ok=6    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2026-11-20 15:34:58,922 p=8566 u=ubuntu n=ansible | PLAY [database] ***************************************************************************************************************
+2026-11-20 15:34:58,940 p=8566 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************************************
+2026-11-20 15:35:02,885 p=8566 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:35:02,911 p=8566 u=ubuntu n=ansible | TASK [mysql : Print OS family] ************************************************************************************************
+2026-11-20 15:35:02,947 p=8566 u=ubuntu n=ansible | ok: [db] => 
+  msg: 'OS Family: Debian - Ubuntu 26.04'
+2026-11-20 15:35:02,960 p=8566 u=ubuntu n=ansible | TASK [mysql : Load OS specific variables] *************************************************************************************
+2026-11-20 15:35:02,991 p=8566 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:35:03,001 p=8566 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on Debian-based or Ubuntu-based systems] ***************************************
+2026-11-20 15:35:05,219 p=8566 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:35:05,239 p=8566 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on RedHat-based systems] *******************************************************
+2026-11-20 15:35:05,266 p=8566 u=ubuntu n=ansible | skipping: [db]
+2026-11-20 15:35:05,281 p=8566 u=ubuntu n=ansible | TASK [mysql : Start and enable MySQL service] *********************************************************************************
+2026-11-20 15:35:06,517 p=8566 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:35:06,533 p=8566 u=ubuntu n=ansible | TASK [mysql : Configure MySQL bind-address] ***********************************************************************************
+2026-11-20 15:35:07,026 p=8566 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:35:07,039 p=8566 u=ubuntu n=ansible | TASK [mysql : Set MySQL root password] ****************************************************************************************
+2026-11-20 15:35:07,888 p=8566 u=ubuntu n=ansible | changed: [db]
+2026-11-20 15:35:07,899 p=8566 u=ubuntu n=ansible | TASK [mysql : Remove anonymous MySQL users (to prevent access without password)] **********************************************
+2026-11-20 15:35:08,275 p=8566 u=ubuntu n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased.
+The default will be changed to true in community.mysql 4.0.0.
+
+2026-11-20 15:35:08,276 p=8566 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:35:08,286 p=8566 u=ubuntu n=ansible | TASK [mysql : Remove test database] *******************************************************************************************
+2026-11-20 15:35:08,833 p=8566 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:35:08,844 p=8566 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop database] *******************************************************************************
+2026-11-20 15:35:09,208 p=8566 u=ubuntu n=ansible | changed: [db]
+2026-11-20 15:35:09,221 p=8566 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop user (allowed from the web server)] *****************************************************
+2026-11-20 15:35:09,668 p=8566 u=ubuntu n=ansible | changed: [db]
+2026-11-20 15:35:09,678 p=8566 u=ubuntu n=ansible | TASK [mysql : Gather services facts] ******************************************************************************************
+2026-11-20 15:35:13,601 p=8566 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:35:13,617 p=8566 u=ubuntu n=ansible | TASK [mysql : Allow MySQL from the web server (ufw)] **************************************************************************
+2026-11-20 15:35:14,631 p=8566 u=ubuntu n=ansible | changed: [db]
+2026-11-20 15:35:14,649 p=8566 u=ubuntu n=ansible | TASK [mysql : Allow MySQL port (firewalld, only if it is running)] ************************************************************
+2026-11-20 15:35:14,672 p=8566 u=ubuntu n=ansible | skipping: [db]
+2026-11-20 15:35:14,689 p=8566 u=ubuntu n=ansible | TASK [mysql : Apply pending restarts before checking] *************************************************************************
+2026-11-20 15:35:14,720 p=8566 u=ubuntu n=ansible | TASK [mysql : Check that MySQL listens on port 3306] **************************************************************************
+2026-11-20 15:35:45,236 p=8566 u=ubuntu n=ansible | fatal: [db]: FAILED! => changed=false 
+  elapsed: 30
+  msg: Timeout when waiting for 172.31.15.6:3306
+2026-11-20 15:35:45,238 p=8566 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************************************
+2026-11-20 15:35:45,238 p=8566 u=ubuntu n=ansible | db                         : ok=13   changed=4    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2026-11-20 15:37:03,182 p=8818 u=ubuntu n=ansible | db | CHANGED | rc=0 >>
+LISTEN 0      70         127.0.0.1:33060      0.0.0.0:*    users:(("mysqld",pid=3170,fd=21))                      
+LISTEN 0      151          0.0.0.0:3306       0.0.0.0:*    users:(("mysqld",pid=3170,fd=33))                      
+
+2026-11-20 15:38:10,394 p=8987 u=ubuntu n=ansible | db | CHANGED => {
+    "changed": true,
+    "name": "mysql",
+    "state": "started",
+    "status": {
+        "ActiveEnterTimestamp": "Fri 2026-11-20 15:36:12 UTC",
+        "ActiveEnterTimestampMonotonic": "2622855266",
+        "ActiveExitTimestamp": "Fri 2026-11-20 15:36:08 UTC",
+        "ActiveExitTimestampMonotonic": "2618187726",
+        "ActiveState": "active",
+        "After": "basic.target -.mount network.target system.slice systemd-journald.socket sysinit.target",
+        "AllowIsolate": "no",
+        "AssertResult": "yes",
+        "AssertTimestamp": "Fri 2026-11-20 15:31:39 UTC",
+        "AssertTimestampMonotonic": "2349506608",
+        "Before": "shutdown.target multi-user.target",
+        "BindLogSockets": "no",
+        "CPUAffinityFromNUMA": "no",
+        "CPUQuotaPerSecUSec": "infinity",
+        "CPUQuotaPeriodUSec": "infinity",
+        "CPUSchedulingPolicy": "0",
+        "CPUSchedulingPriority": "0",
+        "CPUSchedulingResetOnFork": "no",
+        "CPUUsageNSec": "1979987000",
+        "CPUWeight": "[not set]",
+        "CacheDirectoryAccounting": "no",
+        "CacheDirectoryMode": "0755",
+        "CacheDirectoryQuota": "[not set]",
+        "CanClean": "runtime",
+        "CanFreeze": "yes",
+        "CanIsolate": "no",
+        "CanLiveMount": "no",
+        "CanReload": "no",
+        "CanStart": "yes",
+        "CanStop": "yes",
+        "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read cap_perfmon cap_bpf cap_checkpoint_restore",
+        "CleanResult": "success",
+        "CollectMode": "inactive",
+        "ConditionResult": "yes",
+        "ConditionTimestamp": "Fri 2026-11-20 15:31:39 UTC",
+        "ConditionTimestampMonotonic": "2349506606",
+        "ConfigurationDirectoryMode": "0755",
+        "Conflicts": "shutdown.target",
+        "ControlGroup": "/system.slice/mysql.service",
+        "ControlGroupId": "7532",
+        "ControlPID": "0",
+        "CoredumpFilter": "0x33",
+        "CoredumpReceive": "no",
+        "DebugInvocation": "no",
+        "DefaultDependencies": "yes",
+        "DefaultMemoryLow": "0",
+        "DefaultMemoryMin": "0",
+        "DefaultStartupMemoryLow": "0",
+        "Delegate": "no",
+        "DelegateNamespaces": "18446744073709551615",
+        "Description": "MySQL Community Server",
+        "DevicePolicy": "auto",
+        "DynamicUser": "no",
+        "EffectiveMemoryHigh": "952750080",
+        "EffectiveMemoryMax": "952750080",
+        "EffectiveTasksMax": "627",
+        "Environment": "MYSQLD_PARENT_PID=1",
+        "ExecMainCode": "0",
+        "ExecMainExitTimestampMonotonic": "0",
+        "ExecMainHandoffTimestamp": "Fri 2026-11-20 15:36:09 UTC",
+        "ExecMainHandoffTimestampMonotonic": "2619042212",
+        "ExecMainPID": "3170",
+        "ExecMainStartTimestamp": "Fri 2026-11-20 15:36:09 UTC",
+        "ExecMainStartTimestampMonotonic": "2619029669",
+        "ExecMainStatus": "0",
+        "ExecStart": "{ path=/usr/sbin/mysqld ; argv[]=/usr/sbin/mysqld ; ignore_errors=no ; start_time=[Fri 2026-11-20 15:36:09 UTC] ; stop_time=[n/a] ; pid=3170 ; code=(null) ; status=0/0 }",
+        "ExecStartEx": "{ path=/usr/sbin/mysqld ; argv[]=/usr/sbin/mysqld ; flags= ; start_time=[Fri 2026-11-20 15:36:09 UTC] ; stop_time=[n/a] ; pid=3170 ; code=(null) ; status=0/0 }",
+        "ExecStartPre": "{ path=/usr/share/mysql/mysql-systemd-start ; argv[]=/usr/share/mysql/mysql-systemd-start pre ; ignore_errors=no ; start_time=[Fri 2026-11-20 15:36:08 UTC] ; stop_time=[Fri 2026-11-20 15:36:09 UTC] ; pid=3159 ; code=exited ; status=0 }",
+        "ExecStartPreEx": "{ path=/usr/share/mysql/mysql-systemd-start ; argv[]=/usr/share/mysql/mysql-systemd-start pre ; flags= ; start_time=[Fri 2026-11-20 15:36:08 UTC] ; stop_time=[Fri 2026-11-20 15:36:09 UTC] ; pid=3159 ; code=exited ; status=0 }",
+        "ExitType": "main",
+        "ExtensionImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent",
+        "FailureAction": "none",
+        "FileDescriptorStoreMax": "0",
+        "FileDescriptorStorePreserve": "restart",
+        "FinalKillSignal": "9",
+        "FragmentPath": "/usr/lib/systemd/system/mysql.service",
+        "FreezerState": "running",
+        "GID": "109",
+        "Group": "mysql",
+        "GuessMainPID": "yes",
+        "IOAccounting": "no",
+        "IOReadBytes": "[not set]",
+        "IOReadOperations": "[not set]",
+        "IOSchedulingClass": "2",
+        "IOSchedulingPriority": "4",
+        "IOWeight": "[not set]",
+        "IOWriteBytes": "[not set]",
+        "IOWriteOperations": "[not set]",
+        "IPAccounting": "no",
+        "IPEgressBytes": "[no data]",
+        "IPEgressPackets": "[no data]",
+        "IPIngressBytes": "[no data]",
+        "IPIngressPackets": "[no data]",
+        "Id": "mysql.service",
+        "IgnoreOnIsolate": "no",
+        "IgnoreSIGPIPE": "yes",
+        "InactiveEnterTimestamp": "Fri 2026-11-20 15:36:08 UTC",
+        "InactiveEnterTimestampMonotonic": "2618202747",
+        "InactiveExitTimestamp": "Fri 2026-11-20 15:36:08 UTC",
+        "InactiveExitTimestampMonotonic": "2618211647",
+        "InvocationID": "1bb008975c424582a98ef039cd52da12",
+        "JobRunningTimeoutUSec": "infinity",
+        "JobTimeoutAction": "none",
+        "JobTimeoutUSec": "infinity",
+        "KeyringMode": "private",
+        "KillMode": "control-group",
+        "KillSignal": "15",
+        "LimitAS": "infinity",
+        "LimitASSoft": "infinity",
+        "LimitCORE": "infinity",
+        "LimitCORESoft": "0",
+        "LimitCPU": "infinity",
+        "LimitCPUSoft": "infinity",
+        "LimitDATA": "infinity",
+        "LimitDATASoft": "infinity",
+        "LimitFSIZE": "infinity",
+        "LimitFSIZESoft": "infinity",
+        "LimitLOCKS": "infinity",
+        "LimitLOCKSSoft": "infinity",
+        "LimitMEMLOCK": "8388608",
+        "LimitMEMLOCKSoft": "8388608",
+        "LimitMSGQUEUE": "819200",
+        "LimitMSGQUEUESoft": "819200",
+        "LimitNICE": "0",
+        "LimitNICESoft": "0",
+        "LimitNOFILE": "10000",
+        "LimitNOFILESoft": "10000",
+        "LimitNPROC": "2092",
+        "LimitNPROCSoft": "2092",
+        "LimitRSS": "infinity",
+        "LimitRSSSoft": "infinity",
+        "LimitRTPRIO": "0",
+        "LimitRTPRIOSoft": "0",
+        "LimitRTTIME": "infinity",
+        "LimitRTTIMESoft": "infinity",
+        "LimitSIGPENDING": "2092",
+        "LimitSIGPENDINGSoft": "2092",
+        "LimitSTACK": "infinity",
+        "LimitSTACKSoft": "8388608",
+        "LiveMountResult": "success",
+        "LoadState": "loaded",
+        "LockPersonality": "no",
+        "LogLevelMax": "-1",
+        "LogRateLimitBurst": "0",
+        "LogRateLimitIntervalUSec": "0",
+        "LogsDirectoryAccounting": "no",
+        "LogsDirectoryMode": "0755",
+        "LogsDirectoryQuota": "[not set]",
+        "MainPID": "3170",
+        "ManagedOOMKills": "0",
+        "ManagedOOMMemoryPressure": "auto",
+        "ManagedOOMMemoryPressureDurationUSec": "[not set]",
+        "ManagedOOMMemoryPressureLimit": "0",
+        "ManagedOOMPreference": "none",
+        "ManagedOOMSwap": "auto",
+        "MemoryAccounting": "yes",
+        "MemoryAvailable": "108855296",
+        "MemoryCurrent": "502394880",
+        "MemoryDenyWriteExecute": "no",
+        "MemoryHigh": "infinity",
+        "MemoryKSM": "no",
+        "MemoryLow": "0",
+        "MemoryMax": "infinity",
+        "MemoryMin": "0",
+        "MemoryPeak": "513011712",
+        "MemoryPressureThresholdUSec": "200ms",
+        "MemoryPressureWatch": "auto",
+        "MemorySwapCurrent": "0",
+        "MemorySwapMax": "infinity",
+        "MemorySwapPeak": "0",
+        "MemoryZSwapCurrent": "0",
+        "MemoryZSwapMax": "infinity",
+        "MemoryZSwapWriteback": "yes",
+        "MountAPIVFS": "no",
+        "MountImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent",
+        "NFileDescriptorStore": "0",
+        "NRestarts": "1",
+        "NUMAPolicy": "n/a",
+        "Names": "mysql.service",
+        "NeedDaemonReload": "no",
+        "Nice": "0",
+        "NoNewPrivileges": "no",
+        "NonBlocking": "no",
+        "NotifyAccess": "main",
+        "OOMKills": "0",
+        "OOMPolicy": "stop",
+        "OOMScoreAdjust": "0",
+        "OnFailureJobMode": "replace",
+        "OnSuccessJobMode": "fail",
+        "Perpetual": "no",
+        "PrivateBPF": "no",
+        "PrivateDevices": "no",
+        "PrivateIPC": "no",
+        "PrivateMounts": "no",
+        "PrivateNetwork": "no",
+        "PrivatePIDs": "no",
+        "PrivateTmp": "no",
+        "PrivateTmpEx": "no",
+        "PrivateUsers": "no",
+        "PrivateUsersEx": "no",
+        "ProcSubset": "all",
+        "ProtectClock": "no",
+        "ProtectControlGroups": "no",
+        "ProtectControlGroupsEx": "no",
+        "ProtectHome": "no",
+        "ProtectHostname": "no",
+        "ProtectKernelLogs": "no",
+        "ProtectKernelModules": "no",
+        "ProtectKernelTunables": "no",
+        "ProtectProc": "default",
+        "ProtectSystem": "no",
+        "RefuseManualStart": "no",
+        "RefuseManualStop": "no",
+        "ReloadResult": "success",
+        "ReloadSignal": "1",
+        "RemainAfterExit": "no",
+        "RemoveIPC": "no",
+        "Requires": "sysinit.target -.mount system.slice",
+        "RequiresMountsFor": "/run/mysqld",
+        "Restart": "on-failure",
+        "RestartKillSignal": "15",
+        "RestartMaxDelayUSec": "infinity",
+        "RestartMode": "normal",
+        "RestartSteps": "0",
+        "RestartUSec": "100ms",
+        "RestartUSecNext": "100ms",
+        "RestrictNamespaces": "no",
+        "RestrictRealtime": "no",
+        "RestrictSUIDSGID": "no",
+        "Result": "success",
+        "RootDirectoryStartOnly": "no",
+        "RootEphemeral": "no",
+        "RootImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent",
+        "RuntimeDirectory": "mysqld",
+        "RuntimeDirectoryMode": "0755",
+        "RuntimeDirectoryPreserve": "no",
+        "RuntimeDirectorySymlink": "mysqld:",
+        "RuntimeMaxUSec": "infinity",
+        "RuntimeRandomizedExtraUSec": "0",
+        "SameProcessGroup": "no",
+        "SecureBits": "0",
+        "SendSIGHUP": "no",
+        "SendSIGKILL": "yes",
+        "SetLoginEnvironment": "yes",
+        "Slice": "system.slice",
+        "StandardError": "inherit",
+        "StandardInput": "null",
+        "StandardOutput": "journal",
+        "StartLimitAction": "none",
+        "StartLimitBurst": "5",
+        "StartLimitIntervalUSec": "10s",
+        "StartupCPUWeight": "[not set]",
+        "StartupIOWeight": "[not set]",
+        "StartupMemoryHigh": "infinity",
+        "StartupMemoryLow": "0",
+        "StartupMemoryMax": "infinity",
+        "StartupMemorySwapMax": "infinity",
+        "StartupMemoryZSwapMax": "infinity",
+        "StateChangeTimestamp": "Fri 2026-11-20 15:36:12 UTC",
+        "StateChangeTimestampMonotonic": "2622855266",
+        "StateDirectoryAccounting": "no",
+        "StateDirectoryMode": "0755",
+        "StateDirectoryQuota": "[not set]",
+        "StatusErrno": "0",
+        "StatusText": "Server is operational",
+        "StopWhenUnneeded": "no",
+        "SubState": "running",
+        "SuccessAction": "none",
+        "SurviveFinalKillSignal": "no",
+        "SyslogFacility": "3",
+        "SyslogLevel": "6",
+        "SyslogLevelPrefix": "yes",
+        "SyslogPriority": "30",
+        "SystemCallErrorNumber": "2147483646",
+        "TTYReset": "no",
+        "TTYVHangup": "no",
+        "TTYVTDisallocate": "no",
+        "TasksAccounting": "yes",
+        "TasksCurrent": "34",
+        "TasksMax": "627",
+        "TimeoutAbortUSec": "infinity",
+        "TimeoutCleanUSec": "infinity",
+        "TimeoutStartFailureMode": "terminate",
+        "TimeoutStartUSec": "infinity",
+        "TimeoutStopFailureMode": "terminate",
+        "TimeoutStopUSec": "infinity",
+        "TimerSlackNSec": "50000",
+        "Transient": "no",
+        "Type": "notify",
+        "UID": "104",
+        "UMask": "0022",
+        "UnitFilePreset": "enabled",
+        "UnitFileState": "enabled",
+        "User": "mysql",
+        "UtmpMode": "init",
+        "WantedBy": "multi-user.target",
+        "WatchdogSignal": "6",
+        "WatchdogTimestampMonotonic": "0",
+        "WatchdogUSec": "0"
+    }
+}
+2026-11-20 15:38:37,583 p=9118 u=ubuntu n=ansible | PLAY [database] ***************************************************************************************************************
+2026-11-20 15:38:37,600 p=9118 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************************************
+2026-11-20 15:38:39,112 p=9118 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:38:39,143 p=9118 u=ubuntu n=ansible | TASK [mysql : Print OS family] ************************************************************************************************
+2026-11-20 15:38:39,172 p=9118 u=ubuntu n=ansible | ok: [db] => 
+  msg: 'OS Family: Debian - Ubuntu 26.04'
+2026-11-20 15:38:39,182 p=9118 u=ubuntu n=ansible | TASK [mysql : Load OS specific variables] *************************************************************************************
+2026-11-20 15:38:39,212 p=9118 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:38:39,225 p=9118 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on Debian-based or Ubuntu-based systems] ***************************************
+2026-11-20 15:39:14,195 p=9118 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:39:14,206 p=9118 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on RedHat-based systems] *******************************************************
+2026-11-20 15:39:14,227 p=9118 u=ubuntu n=ansible | skipping: [db]
+2026-11-20 15:39:14,238 p=9118 u=ubuntu n=ansible | TASK [mysql : Start and enable MySQL service] *********************************************************************************
+2026-11-20 15:39:15,320 p=9118 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:39:15,332 p=9118 u=ubuntu n=ansible | TASK [mysql : Configure MySQL bind-address] ***********************************************************************************
+2026-11-20 15:39:15,915 p=9118 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:39:15,927 p=9118 u=ubuntu n=ansible | TASK [mysql : Set MySQL root password] ****************************************************************************************
+2026-11-20 15:39:16,790 p=9118 u=ubuntu n=ansible | changed: [db]
+2026-11-20 15:39:16,801 p=9118 u=ubuntu n=ansible | TASK [mysql : Remove anonymous MySQL users (to prevent access without password)] **********************************************
+2026-11-20 15:39:17,197 p=9118 u=ubuntu n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased.
+The default will be changed to true in community.mysql 4.0.0.
+
+2026-11-20 15:39:17,198 p=9118 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:39:17,208 p=9118 u=ubuntu n=ansible | TASK [mysql : Remove test database] *******************************************************************************************
+2026-11-20 15:39:17,789 p=9118 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:39:17,802 p=9118 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop database] *******************************************************************************
+2026-11-20 15:39:18,151 p=9118 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:39:18,161 p=9118 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop user (allowed from the web server)] *****************************************************
+2026-11-20 15:39:18,564 p=9118 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:39:18,574 p=9118 u=ubuntu n=ansible | TASK [mysql : Gather services facts] ******************************************************************************************
+2026-11-20 15:39:22,467 p=9118 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:39:22,484 p=9118 u=ubuntu n=ansible | TASK [mysql : Allow MySQL from the web server (ufw)] **************************************************************************
+2026-11-20 15:39:23,404 p=9118 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:39:23,421 p=9118 u=ubuntu n=ansible | TASK [mysql : Allow MySQL port (firewalld, only if it is running)] ************************************************************
+2026-11-20 15:39:23,445 p=9118 u=ubuntu n=ansible | skipping: [db]
+2026-11-20 15:39:23,464 p=9118 u=ubuntu n=ansible | TASK [mysql : Apply pending restarts before checking] *************************************************************************
+2026-11-20 15:39:23,496 p=9118 u=ubuntu n=ansible | TASK [mysql : Check that MySQL listens on port 3306] **************************************************************************
+2026-11-20 15:39:24,025 p=9118 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:39:24,118 p=9118 u=ubuntu n=ansible | PLAY [webserver] **************************************************************************************************************
+2026-11-20 15:39:24,118 p=9118 u=ubuntu n=ansible | skipping: no hosts matched
+2026-11-20 15:39:24,118 p=9118 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************************************
+2026-11-20 15:39:24,119 p=9118 u=ubuntu n=ansible | db                         : ok=14   changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2026-11-20 15:39:28,601 p=9292 u=ubuntu n=ansible | PLAY [database] ******************************************************************************************************************************************************
+2026-11-20 15:39:28,617 p=9292 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
+2026-11-20 15:39:30,194 p=9292 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:39:30,231 p=9292 u=ubuntu n=ansible | TASK [mysql : Print OS family] ***************************************************************************************************************************************
+2026-11-20 15:39:30,266 p=9292 u=ubuntu n=ansible | ok: [db] => 
+  msg: 'OS Family: Debian - Ubuntu 26.04'
+2026-11-20 15:39:30,276 p=9292 u=ubuntu n=ansible | TASK [mysql : Load OS specific variables] ****************************************************************************************************************************
+2026-11-20 15:39:30,307 p=9292 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:39:30,319 p=9292 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on Debian-based or Ubuntu-based systems] ******************************************************************************
+2026-11-20 15:40:40,230 p=9292 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:40:40,241 p=9292 u=ubuntu n=ansible | TASK [mysql : Install MySQL server and PyMySQL on RedHat-based systems] **********************************************************************************************
+2026-11-20 15:40:40,262 p=9292 u=ubuntu n=ansible | skipping: [db]
+2026-11-20 15:40:40,273 p=9292 u=ubuntu n=ansible | TASK [mysql : Start and enable MySQL service] ************************************************************************************************************************
+2026-11-20 15:40:41,364 p=9292 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:40:41,378 p=9292 u=ubuntu n=ansible | TASK [mysql : Configure MySQL bind-address] **************************************************************************************************************************
+2026-11-20 15:40:41,934 p=9292 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:40:41,946 p=9292 u=ubuntu n=ansible | TASK [mysql : Set MySQL root password] *******************************************************************************************************************************
+2026-11-20 15:40:42,739 p=9292 u=ubuntu n=ansible | changed: [db]
+2026-11-20 15:40:42,750 p=9292 u=ubuntu n=ansible | TASK [mysql : Remove anonymous MySQL users (to prevent access without password)] *************************************************************************************
+2026-11-20 15:40:43,248 p=9292 u=ubuntu n=ansible | [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+community.mysql 4.0.0.
+
+2026-11-20 15:40:43,249 p=9292 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:40:43,260 p=9292 u=ubuntu n=ansible | TASK [mysql : Remove test database] **********************************************************************************************************************************
+2026-11-20 15:40:43,815 p=9292 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:40:43,829 p=9292 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop database] **********************************************************************************************************************
+2026-11-20 15:40:44,181 p=9292 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:40:44,192 p=9292 u=ubuntu n=ansible | TASK [mysql : Create MySQL Prestashop user (allowed from the web server)] ********************************************************************************************
+2026-11-20 15:40:44,592 p=9292 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:40:44,602 p=9292 u=ubuntu n=ansible | TASK [mysql : Gather services facts] *********************************************************************************************************************************
+2026-11-20 15:40:48,413 p=9292 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:40:48,430 p=9292 u=ubuntu n=ansible | TASK [mysql : Allow MySQL from the web server (ufw)] *****************************************************************************************************************
+2026-11-20 15:40:49,337 p=9292 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:40:49,355 p=9292 u=ubuntu n=ansible | TASK [mysql : Allow MySQL port (firewalld, only if it is running)] ***************************************************************************************************
+2026-11-20 15:40:49,381 p=9292 u=ubuntu n=ansible | skipping: [db]
+2026-11-20 15:40:49,398 p=9292 u=ubuntu n=ansible | TASK [mysql : Apply pending restarts before checking] ****************************************************************************************************************
+2026-11-20 15:40:49,429 p=9292 u=ubuntu n=ansible | TASK [mysql : Check that MySQL listens on port 3306] *****************************************************************************************************************
+2026-11-20 15:40:49,969 p=9292 u=ubuntu n=ansible | ok: [db]
+2026-11-20 15:40:50,057 p=9292 u=ubuntu n=ansible | PLAY [webserver] *****************************************************************************************************************************************************
+2026-11-20 15:40:50,057 p=9292 u=ubuntu n=ansible | skipping: no hosts matched
+2026-11-20 15:40:50,058 p=9292 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
+2026-11-20 15:40:50,058 p=9292 u=ubuntu n=ansible | db                         : ok=14   changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
