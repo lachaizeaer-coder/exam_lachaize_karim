@@ -1,9 +1,12 @@
-#SPDX-License-Identifier: MIT-0
 ---
 # defaults file for prestashop (can be overridden in group_vars)
+
 PRESTASHOP_VERSION: "9.2.1-6.1"
 PRESTASHOP_EDITION: basic
-PRESTASHOP_DOWNLOAD_URL: "https://assets.prestashop3.com/dst/edition/corporate/{{ PRESTASHOP_VERSION }}/prestashop_edition_{{ PRESTASHOP_EDITION }}_version_{{ PRESTASHOP_VERSION }}.zip"PRESTASHOP_ROOT: /var/www/prestashop
+PRESTASHOP_DOWNLOAD_URL: "https://assets.prestashop3.com/dst/edition/corporate/{{ PRESTASHOP_VERSION }}/prestashop_edition_{{ PRESTASHOP_EDITION }}_version_{{ PRESTASHOP_VERSION }}.zip"
+PRESTASHOP_LOCAL_ZIP: false
+
+PRESTASHOP_ROOT: /var/www/prestashop
 PRESTASHOP_DOMAIN: "{{ ansible_host }}"
 
 PRESTASHOP_SHOP_NAME: "Liora Shop"
@@ -17,5 +20,6 @@ PRESTASHOP_ADMIN_LASTNAME: "Liora"
 PRESTASHOP_ADMIN_EMAIL: "admin@liora-shop.com"
 PRESTASHOP_ADMIN_PASSWORD: "LioraAdmin2026!"
 
+# Database server: private IP of the database host from the inventory
 DB_SERVER: "{{ hostvars[groups['database'][0]]['private_ip'] }}"
 DB_PORT: 3306

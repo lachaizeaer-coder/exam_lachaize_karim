@@ -1,13 +1,16 @@
+cat > roles/prestashop/templates/prestashop.conf.j2 <<'EOF'
+# {{ ansible_managed }}
 <VirtualHost *:80>
-    ServerName {{ PRESTASHOP_DOMAIN | default(ansible_fqdn) }}
-    DocumentRoot /var/www/html
+    ServerName {{ PRESTASHOP_DOMAIN }}
+    DocumentRoot {{ PRESTASHOP_ROOT }}
 
-    <Directory /var/www/html>
-        Options Indexes FollowSymLinks
+    <Directory {{ PRESTASHOP_ROOT }}>
+        Options FollowSymLinks
         AllowOverride All
         Require all granted
     </Directory>
 
-    ErrorLog logs/prestashop_error.log
-    CustomLog logs/prestashop_access.log combined
+    ErrorLog {{ apache_log_dir }}/prestashop_error.log
+    CustomLog {{ apache_log_dir }}/prestashop_access.log combined
 </VirtualHost>
+EOF
