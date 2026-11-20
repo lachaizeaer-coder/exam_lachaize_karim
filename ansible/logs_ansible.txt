@@ -602,3 +602,50 @@ community.mysql 4.0.0.
 2026-11-20 15:40:50,057 p=9292 u=ubuntu n=ansible | skipping: no hosts matched
 2026-11-20 15:40:50,058 p=9292 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
 2026-11-20 15:40:50,058 p=9292 u=ubuntu n=ansible | db                         : ok=14   changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2026-11-20 15:51:17,737 p=11450 u=ubuntu n=ansible | PLAY [Deploy MySQL database server] **********************************************************************************************************************************
+2026-11-20 15:51:17,738 p=11450 u=ubuntu n=ansible | skipping: no hosts matched
+2026-11-20 15:51:17,741 p=11450 u=ubuntu n=ansible | PLAY [Deploy PrestaShop web server] **********************************************************************************************************************************
+2026-11-20 15:51:17,760 p=11450 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
+2026-11-20 15:51:20,222 p=11450 u=ubuntu n=ansible | ok: [web]
+2026-11-20 15:51:20,251 p=11450 u=ubuntu n=ansible | TASK [prestashop : Print OS family] **********************************************************************************************************************************
+2026-11-20 15:51:20,281 p=11450 u=ubuntu n=ansible | ok: [web] => 
+  msg: 'OS Family: Debian - Ubuntu 26.04'
+2026-11-20 15:51:20,292 p=11450 u=ubuntu n=ansible | TASK [prestashop : Load OS specific variables] ***********************************************************************************************************************
+2026-11-20 15:51:20,323 p=11450 u=ubuntu n=ansible | ok: [web]
+2026-11-20 15:51:20,333 p=11450 u=ubuntu n=ansible | TASK [prestashop : Enable PHP 8.2 module stream on RHEL 8/9 (default PHP is too old)] ********************************************************************************
+2026-11-20 15:51:20,355 p=11450 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 15:51:20,366 p=11450 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on Debian-based or Ubuntu-based systems] ***********************************************************************
+2026-11-20 15:52:01,385 p=11450 u=ubuntu n=ansible | changed: [web]
+2026-11-20 15:52:01,397 p=11450 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on RedHat-based systems] ***************************************************************************************
+2026-11-20 15:52:01,422 p=11450 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 15:52:01,435 p=11450 u=ubuntu n=ansible | TASK [prestashop : Get PHP version (Debian-based or Ubuntu-based systems)] *******************************************************************************************
+2026-11-20 15:52:02,618 p=11450 u=ubuntu n=ansible | ok: [web]
+2026-11-20 15:52:02,630 p=11450 u=ubuntu n=ansible | TASK [prestashop : Set PHP configuration directory (Debian-based or Ubuntu-based systems)] ***************************************************************************
+2026-11-20 15:52:02,658 p=11450 u=ubuntu n=ansible | ok: [web]
+2026-11-20 15:52:02,670 p=11450 u=ubuntu n=ansible | TASK [prestashop : Apply PHP settings recommended by PrestaShop] *****************************************************************************************************
+2026-11-20 15:52:04,043 p=11450 u=ubuntu n=ansible | changed: [web]
+2026-11-20 15:52:04,058 p=11450 u=ubuntu n=ansible | TASK [prestashop : Start and enable Apache service] ******************************************************************************************************************
+2026-11-20 15:52:05,008 p=11450 u=ubuntu n=ansible | ok: [web]
+2026-11-20 15:52:05,018 p=11450 u=ubuntu n=ansible | TASK [prestashop : Allow Apache to connect to a remote database (SELinux)] *******************************************************************************************
+2026-11-20 15:52:05,041 p=11450 u=ubuntu n=ansible | skipping: [web] => (item=httpd_can_network_connect_db) 
+2026-11-20 15:52:05,046 p=11450 u=ubuntu n=ansible | skipping: [web] => (item=httpd_unified) 
+2026-11-20 15:52:05,048 p=11450 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 15:52:05,060 p=11450 u=ubuntu n=ansible | TASK [prestashop : Check that the database server is reachable on port 3306] *****************************************************************************************
+2026-11-20 15:52:05,545 p=11450 u=ubuntu n=ansible | ok: [web]
+2026-11-20 15:52:05,555 p=11450 u=ubuntu n=ansible | TASK [prestashop : Create PrestaShop web root directory] *************************************************************************************************************
+2026-11-20 15:52:06,024 p=11450 u=ubuntu n=ansible | changed: [web]
+2026-11-20 15:52:06,033 p=11450 u=ubuntu n=ansible | TASK [prestashop : Download PrestaShop archive] **********************************************************************************************************************
+2026-11-20 15:52:06,903 p=11450 u=ubuntu n=ansible | [WARNING]: Module remote_tmp /root/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running as another user. To avoid this,
+create the remote_tmp dir with the correct permissions manually
+
+2026-11-20 15:52:06,905 p=11450 u=ubuntu n=ansible | fatal: [web]: FAILED! => changed=false 
+  dest: /tmp/prestashop_9.2.1.zip
+  elapsed: 0
+  msg: Request failed
+  response: 'HTTP Error 404: Not Found'
+  status_code: 404
+  url: https://github.com/PrestaShop/PrestaShop/releases/download/9.2.1/prestashop_9.2.1.zip
+2026-11-20 15:52:06,926 p=11450 u=ubuntu n=ansible | RUNNING HANDLER [prestashop : Restart Apache] ************************************************************************************************************************
+2026-11-20 15:52:07,650 p=11450 u=ubuntu n=ansible | changed: [web]
+2026-11-20 15:52:07,652 p=11450 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
+2026-11-20 15:52:07,653 p=11450 u=ubuntu n=ansible | web                        : ok=11   changed=4    unreachable=0    failed=1    skipped=3    rescued=0    ignored=0   
