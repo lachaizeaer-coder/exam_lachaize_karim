@@ -1,4 +1,3 @@
-cat > roles/prestashop/templates/prestashop.conf.j2 <<'EOF'
 # {{ ansible_managed }}
 <VirtualHost *:80>
     ServerName {{ PRESTASHOP_DOMAIN }}
@@ -13,4 +12,3 @@ cat > roles/prestashop/templates/prestashop.conf.j2 <<'EOF'
     ErrorLog {{ apache_log_dir }}/prestashop_error.log
     CustomLog {{ apache_log_dir }}/prestashop_access.log combined
 </VirtualHost>
-EOF
