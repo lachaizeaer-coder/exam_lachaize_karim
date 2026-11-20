@@ -4,7 +4,6 @@
 PRESTASHOP_VERSION: "9.2.1-6.1"
 PRESTASHOP_EDITION: basic
 PRESTASHOP_DOWNLOAD_URL: "https://assets.prestashop3.com/dst/edition/corporate/{{ PRESTASHOP_VERSION }}/prestashop_edition_{{ PRESTASHOP_EDITION }}_version_{{ PRESTASHOP_VERSION }}.zip"PRESTASHOP_ROOT: /var/www/prestashop
-# URL of the shop: public IP of the web server (use an Elastic IP or a DNS name in production)
 PRESTASHOP_DOMAIN: "{{ ansible_host }}"
 
 PRESTASHOP_SHOP_NAME: "Liora Shop"
@@ -18,6 +17,5 @@ PRESTASHOP_ADMIN_LASTNAME: "Liora"
 PRESTASHOP_ADMIN_EMAIL: "admin@liora-shop.com"
 PRESTASHOP_ADMIN_PASSWORD: "LioraAdmin2026!"
 
-# Database server: private IP of the database host from the inventory
 DB_SERVER: "{{ hostvars[groups['database'][0]]['private_ip'] }}"
 DB_PORT: 3306
