@@ -649,3 +649,252 @@ create the remote_tmp dir with the correct permissions manually
 2026-11-20 15:52:07,650 p=11450 u=ubuntu n=ansible | changed: [web]
 2026-11-20 15:52:07,652 p=11450 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
 2026-11-20 15:52:07,653 p=11450 u=ubuntu n=ansible | web                        : ok=11   changed=4    unreachable=0    failed=1    skipped=3    rescued=0    ignored=0   
+2026-11-20 16:05:03,960 p=13216 u=ubuntu n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/ubuntu/exam_lachaize_karim/ansible/roles/prestashop/defaults/main.yml': line 6, column 186, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+PRESTASHOP_EDITION: basic
+PRESTASHOP_DOWNLOAD_URL: "https://assets.prestashop3.com/dst/edition/corporate/{{ PRESTASHOP_VERSION }}/prestashop_edition_{{ PRESTASHOP_EDITION }}_version_{{ PRESTASHOP_VERSION }}.zip"PRESTASHOP_ROOT: /var/www/prestashop
+                                                                                                                                                                                         ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2026-11-20 16:07:48,710 p=13359 u=ubuntu n=ansible | playbook: website.yaml
+2026-11-20 16:07:54,843 p=13398 u=ubuntu n=ansible | PLAY [Deploy MySQL database server] **********************************************************************************************************************************
+2026-11-20 16:07:54,844 p=13398 u=ubuntu n=ansible | skipping: no hosts matched
+2026-11-20 16:07:54,846 p=13398 u=ubuntu n=ansible | PLAY [Deploy PrestaShop web server] **********************************************************************************************************************************
+2026-11-20 16:07:54,864 p=13398 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
+2026-11-20 16:07:57,461 p=13398 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:07:57,489 p=13398 u=ubuntu n=ansible | TASK [prestashop : Print OS family] **********************************************************************************************************************************
+2026-11-20 16:07:57,517 p=13398 u=ubuntu n=ansible | ok: [web] => 
+  msg: 'OS Family: Debian - Ubuntu 26.04'
+2026-11-20 16:07:57,528 p=13398 u=ubuntu n=ansible | TASK [prestashop : Load OS specific variables] ***********************************************************************************************************************
+2026-11-20 16:07:57,557 p=13398 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:07:57,567 p=13398 u=ubuntu n=ansible | TASK [prestashop : Enable PHP 8.2 module stream on RHEL 8/9 (default PHP is too old)] ********************************************************************************
+2026-11-20 16:07:57,587 p=13398 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:07:57,597 p=13398 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on Debian-based or Ubuntu-based systems] ***********************************************************************
+2026-11-20 16:07:58,905 p=13398 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:07:58,916 p=13398 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on RedHat-based systems] ***************************************************************************************
+2026-11-20 16:07:58,936 p=13398 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:07:58,946 p=13398 u=ubuntu n=ansible | TASK [prestashop : Get PHP version (Debian-based or Ubuntu-based systems)] *******************************************************************************************
+2026-11-20 16:07:59,479 p=13398 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:07:59,491 p=13398 u=ubuntu n=ansible | TASK [prestashop : Set PHP configuration directory (Debian-based or Ubuntu-based systems)] ***************************************************************************
+2026-11-20 16:07:59,521 p=13398 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:07:59,533 p=13398 u=ubuntu n=ansible | TASK [prestashop : Apply PHP settings recommended by PrestaShop] *****************************************************************************************************
+2026-11-20 16:08:00,738 p=13398 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:08:00,751 p=13398 u=ubuntu n=ansible | TASK [prestashop : Start and enable Apache service] ******************************************************************************************************************
+2026-11-20 16:08:02,014 p=13398 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:08:02,026 p=13398 u=ubuntu n=ansible | TASK [prestashop : Allow Apache to connect to a remote database (SELinux)] *******************************************************************************************
+2026-11-20 16:08:02,051 p=13398 u=ubuntu n=ansible | skipping: [web] => (item=httpd_can_network_connect_db) 
+2026-11-20 16:08:02,056 p=13398 u=ubuntu n=ansible | skipping: [web] => (item=httpd_unified) 
+2026-11-20 16:08:02,057 p=13398 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:08:02,070 p=13398 u=ubuntu n=ansible | TASK [prestashop : Check that the database server is reachable on port 3306] *****************************************************************************************
+2026-11-20 16:08:02,657 p=13398 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:08:02,668 p=13398 u=ubuntu n=ansible | TASK [prestashop : Create PrestaShop web root directory] *************************************************************************************************************
+2026-11-20 16:08:02,992 p=13398 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:08:03,002 p=13398 u=ubuntu n=ansible | TASK [prestashop : Download PrestaShop archive] **********************************************************************************************************************
+2026-11-20 16:08:04,812 p=13398 u=ubuntu n=ansible | changed: [web]
+2026-11-20 16:08:04,827 p=13398 u=ubuntu n=ansible | TASK [prestashop : Extract PrestaShop archive] ***********************************************************************************************************************
+2026-11-20 16:08:07,175 p=13398 u=ubuntu n=ansible | changed: [web]
+2026-11-20 16:08:07,185 p=13398 u=ubuntu n=ansible | TASK [prestashop : Check if the archive contains a nested prestashop.zip] ********************************************************************************************
+2026-11-20 16:08:07,780 p=13398 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:08:07,790 p=13398 u=ubuntu n=ansible | TASK [prestashop : Extract nested prestashop.zip] ********************************************************************************************************************
+2026-11-20 16:08:24,283 p=13398 u=ubuntu n=ansible | changed: [web]
+2026-11-20 16:08:24,292 p=13398 u=ubuntu n=ansible | TASK [prestashop : Remove installation leftovers] ********************************************************************************************************************
+2026-11-20 16:08:24,778 p=13398 u=ubuntu n=ansible | changed: [web] => (item=prestashop.zip)
+2026-11-20 16:08:25,080 p=13398 u=ubuntu n=ansible | changed: [web] => (item=Install_PrestaShop.html)
+2026-11-20 16:08:25,092 p=13398 u=ubuntu n=ansible | TASK [prestashop : Install PrestaShop with the CLI installer] ********************************************************************************************************
+2026-11-20 16:10:17,830 p=13398 u=ubuntu n=ansible | [WARNING]: Unable to use /var/www/.ansible/tmp as temporary directory, failing back to system: [Errno 13] Permission denied: '/var/www/.ansible'
+
+2026-11-20 16:10:17,831 p=13398 u=ubuntu n=ansible | changed: [web]
+2026-11-20 16:10:17,841 p=13398 u=ubuntu n=ansible | TASK [prestashop : Remove install directory (required by PrestaShop after installation)] *****************************************************************************
+2026-11-20 16:10:18,325 p=13398 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:10:18,339 p=13398 u=ubuntu n=ansible | TASK [prestashop : Configure Apache virtual host for PrestaShop] *****************************************************************************************************
+2026-11-20 16:10:19,561 p=13398 u=ubuntu n=ansible | changed: [web]
+2026-11-20 16:10:19,573 p=13398 u=ubuntu n=ansible | TASK [prestashop : Enable Apache rewrite module (Debian-based or Ubuntu-based systems)] ******************************************************************************
+2026-11-20 16:10:20,343 p=13398 u=ubuntu n=ansible | changed: [web]
+2026-11-20 16:10:20,354 p=13398 u=ubuntu n=ansible | TASK [prestashop : Disable Apache default site (Debian-based or Ubuntu-based systems)] *******************************************************************************
+2026-11-20 16:10:20,712 p=13398 u=ubuntu n=ansible | changed: [web]
+2026-11-20 16:10:20,722 p=13398 u=ubuntu n=ansible | TASK [prestashop : Enable PrestaShop site (Debian-based or Ubuntu-based systems)] ************************************************************************************
+2026-11-20 16:10:21,085 p=13398 u=ubuntu n=ansible | changed: [web]
+2026-11-20 16:10:21,094 p=13398 u=ubuntu n=ansible | TASK [prestashop : Gather services facts] ****************************************************************************************************************************
+2026-11-20 16:10:25,326 p=13398 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:10:25,344 p=13398 u=ubuntu n=ansible | TASK [prestashop : Allow HTTP traffic (ufw)] *************************************************************************************************************************
+2026-11-20 16:10:26,280 p=13398 u=ubuntu n=ansible | changed: [web]
+2026-11-20 16:10:26,299 p=13398 u=ubuntu n=ansible | TASK [prestashop : Allow HTTP traffic (firewalld, only if it is running)] ********************************************************************************************
+2026-11-20 16:10:26,322 p=13398 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:10:26,341 p=13398 u=ubuntu n=ansible | TASK [prestashop : Apply pending restarts before checking] ***********************************************************************************************************
+2026-11-20 16:10:26,380 p=13398 u=ubuntu n=ansible | RUNNING HANDLER [prestashop : Restart Apache] ************************************************************************************************************************
+2026-11-20 16:10:29,101 p=13398 u=ubuntu n=ansible | fatal: [web]: FAILED! => changed=false 
+  msg: |-
+    Unable to restart service apache2: Job for apache2.service failed because the control process exited with error code.
+    See "systemctl status apache2.service" and "journalctl -xeu apache2.service" for details.
+2026-11-20 16:10:29,131 p=13398 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
+2026-11-20 16:10:29,132 p=13398 u=ubuntu n=ansible | web                        : ok=23   changed=10   unreachable=0    failed=1    skipped=4    rescued=0    ignored=0   
+2026-11-20 16:11:10,379 p=13845 u=ubuntu n=ansible | web | CHANGED | rc=0 >>
+lrwxrwxrwx 1 root root 28 Nov 20 15:51 alias.conf -> ../mods-available/alias.conf
+lrwxrwxrwx 1 root root 32 Nov 20 15:51 autoindex.conf -> ../mods-available/autoindex.conf
+lrwxrwxrwx 1 root root 30 Nov 20 15:51 deflate.conf -> ../mods-available/deflate.conf
+lrwxrwxrwx 1 root root 26 Nov 20 15:51 dir.conf -> ../mods-available/dir.conf
+lrwxrwxrwx 1 root root 27 Nov 20 15:51 mime.conf -> ../mods-available/mime.conf
+lrwxrwxrwx 1 root root 34 Nov 20 15:51 mpm_prefork.conf -> ../mods-available/mpm_prefork.conf
+lrwxrwxrwx 1 root root 34 Nov 20 15:51 mpm_prefork.load -> ../mods-available/mpm_prefork.load
+lrwxrwxrwx 1 root root 34 Nov 20 15:51 negotiation.conf -> ../mods-available/negotiation.conf
+lrwxrwxrwx 1 root root 29 Nov 20 15:51 php8.5.conf -> ../mods-available/php8.5.conf
+lrwxrwxrwx 1 root root 29 Nov 20 15:51 php8.5.load -> ../mods-available/php8.5.load
+lrwxrwxrwx 1 root root 33 Nov 20 15:51 reqtimeout.conf -> ../mods-available/reqtimeout.conf
+lrwxrwxrwx 1 root root 30 Nov 20 16:10 rewrite.load -> ../mods-available/rewrite.load
+lrwxrwxrwx 1 root root 31 Nov 20 15:51 setenvif.conf -> ../mods-available/setenvif.conf
+lrwxrwxrwx 1 root root 29 Nov 20 15:51 status.conf -> ../mods-available/status.conf
+lrwxrwxrwx 1 root root 34 Nov 20 16:10 prestashop.conf -> ../sites-available/prestashop.conf
+Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: Stopped apache2.service - The Apache HTTP Server.
+Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: Started apache2.service - The Apache HTTP Server.
+Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: Stopping apache2.service - The Apache HTTP Server...
+Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: apache2.service: Deactivated successfully.
+Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: Stopped apache2.service - The Apache HTTP Server.
+Nov 20 15:51:53 ip-172-31-11-237 systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Nov 20 15:51:54 ip-172-31-11-237 systemd[1]: Started apache2.service - The Apache HTTP Server.
+Nov 20 15:51:57 ip-172-31-11-237 systemd[1]: Stopping apache2.service - The Apache HTTP Server...
+Nov 20 15:51:57 ip-172-31-11-237 systemd[1]: apache2.service: Deactivated successfully.
+Nov 20 15:51:57 ip-172-31-11-237 systemd[1]: Stopped apache2.service - The Apache HTTP Server.
+Nov 20 15:51:57 ip-172-31-11-237 systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Nov 20 15:51:58 ip-172-31-11-237 systemd[1]: Started apache2.service - The Apache HTTP Server.
+Nov 20 15:52:07 ip-172-31-11-237 systemd[1]: Stopping apache2.service - The Apache HTTP Server...
+Nov 20 15:52:07 ip-172-31-11-237 systemd[1]: apache2.service: Deactivated successfully.
+Nov 20 15:52:07 ip-172-31-11-237 systemd[1]: Stopped apache2.service - The Apache HTTP Server.
+Nov 20 15:52:07 ip-172-31-11-237 systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Nov 20 15:52:07 ip-172-31-11-237 systemd[1]: Started apache2.service - The Apache HTTP Server.
+Nov 20 16:10:26 ip-172-31-11-237 systemd[1]: Stopping apache2.service - The Apache HTTP Server...
+Nov 20 16:10:26 ip-172-31-11-237 apachectl[15430]: (2)No such file or directory: AH02291: Cannot access directory '/etc/apache2/logs/' for error log of vhost defined at /etc/apache2/sites-enabled/prestashop.conf:1
+Nov 20 16:10:26 ip-172-31-11-237 apachectl[15430]: AH00014: Configuration check failed
+Nov 20 16:10:26 ip-172-31-11-237 systemd[1]: apache2.service: Control process exited, code=exited, status=1/FAILURE
+Nov 20 16:10:27 ip-172-31-11-237 systemd[1]: apache2.service: Failed with result 'exit-code'.
+Nov 20 16:10:27 ip-172-31-11-237 systemd[1]: Stopped apache2.service - The Apache HTTP Server.
+Nov 20 16:10:27 ip-172-31-11-237 systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Nov 20 16:10:28 ip-172-31-11-237 apachectl[15437]: (2)No such file or directory: AH02291: Cannot access directory '/etc/apache2/logs/' for error log of vhost defined at /etc/apache2/sites-enabled/prestashop.conf:1
+Nov 20 16:10:28 ip-172-31-11-237 apachectl[15437]: AH00014: Configuration check failed
+Nov 20 16:10:28 ip-172-31-11-237 systemd[1]: apache2.service: Main process exited, code=exited, status=1/FAILURE
+Nov 20 16:10:28 ip-172-31-11-237 systemd[1]: apache2.service: Failed with result 'exit-code'.
+Nov 20 16:10:28 ip-172-31-11-237 systemd[1]: Failed to start apache2.service - The Apache HTTP Server.(2)No such file or directory: AH02291: Cannot access directory '/etc/apache2/logs/' for error log of vhost defined at /etc/apache2/sites-enabled/prestashop.conf:1
+AH00014: Configuration check failed
+
+2026-11-20 16:13:29,360 p=14040 u=ubuntu n=ansible | PLAY [Deploy MySQL database server] **********************************************************************************************************************************
+2026-11-20 16:13:29,360 p=14040 u=ubuntu n=ansible | skipping: no hosts matched
+2026-11-20 16:13:29,363 p=14040 u=ubuntu n=ansible | PLAY [Deploy PrestaShop web server] **********************************************************************************************************************************
+2026-11-20 16:13:29,381 p=14040 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
+2026-11-20 16:13:32,396 p=14040 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:13:32,426 p=14040 u=ubuntu n=ansible | TASK [prestashop : Print OS family] **********************************************************************************************************************************
+2026-11-20 16:13:32,456 p=14040 u=ubuntu n=ansible | ok: [web] => 
+  msg: 'OS Family: Debian - Ubuntu 26.04'
+2026-11-20 16:13:32,468 p=14040 u=ubuntu n=ansible | TASK [prestashop : Load OS specific variables] ***********************************************************************************************************************
+2026-11-20 16:13:32,498 p=14040 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:13:32,511 p=14040 u=ubuntu n=ansible | TASK [prestashop : Enable PHP 8.2 module stream on RHEL 8/9 (default PHP is too old)] ********************************************************************************
+2026-11-20 16:13:32,543 p=14040 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:13:32,554 p=14040 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on Debian-based or Ubuntu-based systems] ***********************************************************************
+2026-11-20 16:13:35,317 p=14040 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:13:35,328 p=14040 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on RedHat-based systems] ***************************************************************************************
+2026-11-20 16:13:35,351 p=14040 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:13:35,361 p=14040 u=ubuntu n=ansible | TASK [prestashop : Get PHP version (Debian-based or Ubuntu-based systems)] *******************************************************************************************
+2026-11-20 16:13:36,017 p=14040 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:13:36,028 p=14040 u=ubuntu n=ansible | TASK [prestashop : Set PHP configuration directory (Debian-based or Ubuntu-based systems)] ***************************************************************************
+2026-11-20 16:13:36,059 p=14040 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:13:36,070 p=14040 u=ubuntu n=ansible | TASK [prestashop : Apply PHP settings recommended by PrestaShop] *****************************************************************************************************
+2026-11-20 16:13:37,244 p=14040 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:13:37,260 p=14040 u=ubuntu n=ansible | TASK [prestashop : Start and enable Apache service] ******************************************************************************************************************
+2026-11-20 16:13:38,366 p=14040 u=ubuntu n=ansible | fatal: [web]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service apache2: Job for apache2.service failed because the control process exited with error code.
+    See "systemctl status apache2.service" and "journalctl -xeu apache2.service" for details.
+2026-11-20 16:13:38,384 p=14040 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
+2026-11-20 16:13:38,385 p=14040 u=ubuntu n=ansible | web                        : ok=7    changed=0    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2026-11-20 16:16:23,744 p=14287 u=ubuntu n=ansible | playbook: website.yaml
+2026-11-20 16:16:24,855 p=14301 u=ubuntu n=ansible | PLAY [Deploy MySQL database server] **********************************************************************************************************************************
+2026-11-20 16:16:24,856 p=14301 u=ubuntu n=ansible | skipping: no hosts matched
+2026-11-20 16:16:24,858 p=14301 u=ubuntu n=ansible | PLAY [Deploy PrestaShop web server] **********************************************************************************************************************************
+2026-11-20 16:16:24,876 p=14301 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************
+2026-11-20 16:16:27,281 p=14301 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:16:27,309 p=14301 u=ubuntu n=ansible | TASK [prestashop : Print OS family] **********************************************************************************************************************************
+2026-11-20 16:16:27,340 p=14301 u=ubuntu n=ansible | ok: [web] => 
+  msg: 'OS Family: Debian - Ubuntu 26.04'
+2026-11-20 16:16:27,350 p=14301 u=ubuntu n=ansible | TASK [prestashop : Load OS specific variables] ***********************************************************************************************************************
+2026-11-20 16:16:27,380 p=14301 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:16:27,391 p=14301 u=ubuntu n=ansible | TASK [prestashop : Enable PHP 8.2 module stream on RHEL 8/9 (default PHP is too old)] ********************************************************************************
+2026-11-20 16:16:27,415 p=14301 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:16:27,425 p=14301 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on Debian-based or Ubuntu-based systems] ***********************************************************************
+2026-11-20 16:16:28,763 p=14301 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:16:28,774 p=14301 u=ubuntu n=ansible | TASK [prestashop : Install Apache, PHP and extensions on RedHat-based systems] ***************************************************************************************
+2026-11-20 16:16:28,796 p=14301 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:16:28,807 p=14301 u=ubuntu n=ansible | TASK [prestashop : Get PHP version (Debian-based or Ubuntu-based systems)] *******************************************************************************************
+2026-11-20 16:16:29,324 p=14301 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:16:29,335 p=14301 u=ubuntu n=ansible | TASK [prestashop : Set PHP configuration directory (Debian-based or Ubuntu-based systems)] ***************************************************************************
+2026-11-20 16:16:29,365 p=14301 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:16:29,376 p=14301 u=ubuntu n=ansible | TASK [prestashop : Apply PHP settings recommended by PrestaShop] *****************************************************************************************************
+2026-11-20 16:16:30,500 p=14301 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:16:30,518 p=14301 u=ubuntu n=ansible | TASK [prestashop : Allow Apache to connect to a remote database (SELinux)] *******************************************************************************************
+2026-11-20 16:16:30,545 p=14301 u=ubuntu n=ansible | skipping: [web] => (item=httpd_can_network_connect_db) 
+2026-11-20 16:16:30,550 p=14301 u=ubuntu n=ansible | skipping: [web] => (item=httpd_unified) 
+2026-11-20 16:16:30,551 p=14301 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:16:30,565 p=14301 u=ubuntu n=ansible | TASK [prestashop : Check that the database server is reachable on port 3306] *****************************************************************************************
+2026-11-20 16:16:31,074 p=14301 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:16:31,085 p=14301 u=ubuntu n=ansible | TASK [prestashop : Create PrestaShop web root directory] *************************************************************************************************************
+2026-11-20 16:16:31,399 p=14301 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:16:31,410 p=14301 u=ubuntu n=ansible | TASK [prestashop : Download PrestaShop archive] **********************************************************************************************************************
+2026-11-20 16:16:32,311 p=14301 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:16:32,322 p=14301 u=ubuntu n=ansible | TASK [prestashop : Extract PrestaShop archive] ***********************************************************************************************************************
+2026-11-20 16:16:32,574 p=14301 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:16:32,584 p=14301 u=ubuntu n=ansible | TASK [prestashop : Check if the archive contains a nested prestashop.zip] ********************************************************************************************
+2026-11-20 16:16:32,883 p=14301 u=ubuntu n=ansible | ok: [web]
+2026-11-20 16:16:32,893 p=14301 u=ubuntu n=ansible | TASK [prestashop : Extract nested prestashop.zip] ********************************************************************************************************************
+2026-11-20 16:16:32,911 p=14301 u=ubuntu n=ansible | skipping: [web]
+2026-11-20 16:16:32,922 p=14301 u=ubuntu n=ansible | TASK [prestashop : Remove installation leftovers] ********************************************************************************************************************
+2026-11-20 16:16:33,221 p=14301 u=ubuntu n=ansible | ok: [web] => (item=prestashop.zip)
+2026-11-20 16:16:33,494 p=14301 u=ubuntu n=ansible | ok: [web] => (item=Install_PrestaShop.html)
+2026-11-20 16:16:33,505 p=14301 u=ubuntu n=ansible | TASK [prestashop : Install PrestaShop with the CLI installer] ********************************************************************************************************
+2026-11-20 16:16:33,808 p=14301 u=ubuntu n=ansible | [WARNING]: Unable to use /var/www/.ansible/tmp as temporary directory, failing back to system: [Errno 13] Permission denied: '/var/www/.ansible'
+
+2026-11-20 16:16:33,810 p=14301 u=ubuntu n=ansible | fatal: [web]: FAILED! => changed=false 
+  cmd:
+  - php
+  - /var/www/prestashop/install/index_cli.php
+  - --domain=13.38.76.244
+  - --db_server=172.31.15.6:3306
+  - --db_name=prestashop
+  - --db_user=prestashop
+  - --db_password=LioraPrestashop2026!
+  - --prefix=ps_
+  - --name=Liora Shop
+  - --language=fr
+  - --country=fr
+  - --firstname=Admin
+  - --lastname=Liora
+  - --email=admin@liora-shop.com
+  - --password=LioraAdmin2026!
+  - --ssl=0
+  delta: null
+  end: null
+  msg: 'Unable to change directory before execution: [Errno 2] No such file or directory: b''/var/www/prestashop/install'''
+  rc: null
+  start: null
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2026-11-20 16:16:33,826 p=14301 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************
+2026-11-20 16:16:33,826 p=14301 u=ubuntu n=ansible | web                        : ok=12   changed=0    unreachable=0    failed=1    skipped=5    rescued=0    ignored=0   
